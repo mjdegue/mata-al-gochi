@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D5579FC1A1BCACA00E97B72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FB1A1BCACA00E97B72 /* main.m */; };
+		0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FE1A1BCACA00E97B72 /* AppDelegate.m */; };
+		0D557A071A1BCACA00E97B72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D557A061A1BCACA00E97B72 /* Images.xcassets */; };
+		0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557A081A1BCACA00E97B72 /* LaunchScreen.xib */; };
+		0D557A161A1BCACA00E97B72 /* MataAlGochiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557A151A1BCACA00E97B72 /* MataAlGochiTests.m */; };
+		0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557A2A1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m */; };
+		0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557A2B1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib */; };
+		0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557A2F1A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m */; };
+		0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557A301A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib */; };
+		0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B451A1BE4AC00E97B72 /* MainSceneViewController.m */; };
+		0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B461A1BE4AC00E97B72 /* MainSceneViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D557A101A1BCACA00E97B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5579EE1A1BCACA00E97B72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D5579F51A1BCACA00E97B72;
+			remoteInfo = MataAlGochi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D5579F61A1BCACA00E97B72 /* MataAlGochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataAlGochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5579FA1A1BCACA00E97B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D5579FB1A1BCACA00E97B72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D5579FD1A1BCACA00E97B72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D5579FE1A1BCACA00E97B72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0D557A061A1BCACA00E97B72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0D557A091A1BCACA00E97B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0D557A0F1A1BCACA00E97B72 /* MataAlGochiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MataAlGochiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D557A141A1BCACA00E97B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D557A151A1BCACA00E97B72 /* MataAlGochiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MataAlGochiTests.m; sourceTree = "<group>"; };
+		0D557A291A1BD50E00E97B72 /* TamagochiNameSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TamagochiNameSelectionViewController.h; sourceTree = "<group>"; };
+		0D557A2A1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TamagochiNameSelectionViewController.m; sourceTree = "<group>"; };
+		0D557A2B1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TamagochiNameSelectionViewController.xib; sourceTree = "<group>"; };
+		0D557A2E1A1BD54000E97B72 /* TamagochiAssetSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TamagochiAssetSelectorViewController.h; sourceTree = "<group>"; };
+		0D557A2F1A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TamagochiAssetSelectorViewController.m; sourceTree = "<group>"; };
+		0D557A301A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TamagochiAssetSelectorViewController.xib; sourceTree = "<group>"; };
+		0D557B441A1BE4AC00E97B72 /* MainSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSceneViewController.h; sourceTree = "<group>"; };
+		0D557B451A1BE4AC00E97B72 /* MainSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSceneViewController.m; sourceTree = "<group>"; };
+		0D557B461A1BE4AC00E97B72 /* MainSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSceneViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D5579F31A1BCACA00E97B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D557A0C1A1BCACA00E97B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D5579ED1A1BCACA00E97B72 = {
+			isa = PBXGroup;
+			children = (
+				0D5579F81A1BCACA00E97B72 /* MataAlGochi */,
+				0D557A121A1BCACA00E97B72 /* MataAlGochiTests */,
+				0D5579F71A1BCACA00E97B72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D5579F71A1BCACA00E97B72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D5579F61A1BCACA00E97B72 /* MataAlGochi.app */,
+				0D557A0F1A1BCACA00E97B72 /* MataAlGochiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D5579F81A1BCACA00E97B72 /* MataAlGochi */ = {
+			isa = PBXGroup;
+			children = (
+				0D557A241A1BD50E00E97B72 /* scenes */,
+				0D5579FD1A1BCACA00E97B72 /* AppDelegate.h */,
+				0D5579FE1A1BCACA00E97B72 /* AppDelegate.m */,
+				0D557A061A1BCACA00E97B72 /* Images.xcassets */,
+				0D557A081A1BCACA00E97B72 /* LaunchScreen.xib */,
+				0D5579F91A1BCACA00E97B72 /* Supporting Files */,
+			);
+			path = MataAlGochi;
+			sourceTree = "<group>";
+		};
+		0D5579F91A1BCACA00E97B72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D5579FA1A1BCACA00E97B72 /* Info.plist */,
+				0D5579FB1A1BCACA00E97B72 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D557A121A1BCACA00E97B72 /* MataAlGochiTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D557A151A1BCACA00E97B72 /* MataAlGochiTests.m */,
+				0D557A131A1BCACA00E97B72 /* Supporting Files */,
+			);
+			path = MataAlGochiTests;
+			sourceTree = "<group>";
+		};
+		0D557A131A1BCACA00E97B72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D557A141A1BCACA00E97B72 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D557A241A1BD50E00E97B72 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0D557A251A1BD50E00E97B72 /* gameScenes */,
+				0D557A261A1BD50E00E97B72 /* tamagochiCreationScenes */,
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
+		0D557A251A1BD50E00E97B72 /* gameScenes */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B431A1BE49800E97B72 /* MainScene */,
+			);
+			path = gameScenes;
+			sourceTree = "<group>";
+		};
+		0D557A261A1BD50E00E97B72 /* tamagochiCreationScenes */ = {
+			isa = PBXGroup;
+			children = (
+				0D557A271A1BD50E00E97B72 /* tamagochiAssetSelector */,
+				0D557A281A1BD50E00E97B72 /* tamagochiNameSelector */,
+			);
+			path = tamagochiCreationScenes;
+			sourceTree = "<group>";
+		};
+		0D557A271A1BD50E00E97B72 /* tamagochiAssetSelector */ = {
+			isa = PBXGroup;
+			children = (
+				0D557A2E1A1BD54000E97B72 /* TamagochiAssetSelectorViewController.h */,
+				0D557A2F1A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m */,
+				0D557A301A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib */,
+			);
+			path = tamagochiAssetSelector;
+			sourceTree = "<group>";
+		};
+		0D557A281A1BD50E00E97B72 /* tamagochiNameSelector */ = {
+			isa = PBXGroup;
+			children = (
+				0D557A291A1BD50E00E97B72 /* TamagochiNameSelectionViewController.h */,
+				0D557A2A1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m */,
+				0D557A2B1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib */,
+			);
+			path = tamagochiNameSelector;
+			sourceTree = "<group>";
+		};
+		0D557B431A1BE49800E97B72 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B441A1BE4AC00E97B72 /* MainSceneViewController.h */,
+				0D557B451A1BE4AC00E97B72 /* MainSceneViewController.m */,
+				0D557B461A1BE4AC00E97B72 /* MainSceneViewController.xib */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D5579F51A1BCACA00E97B72 /* MataAlGochi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D557A191A1BCACA00E97B72 /* Build configuration list for PBXNativeTarget "MataAlGochi" */;
+			buildPhases = (
+				0D5579F21A1BCACA00E97B72 /* Sources */,
+				0D5579F31A1BCACA00E97B72 /* Frameworks */,
+				0D5579F41A1BCACA00E97B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MataAlGochi;
+			productName = MataAlGochi;
+			productReference = 0D5579F61A1BCACA00E97B72 /* MataAlGochi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D557A0E1A1BCACA00E97B72 /* MataAlGochiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D557A1C1A1BCACA00E97B72 /* Build configuration list for PBXNativeTarget "MataAlGochiTests" */;
+			buildPhases = (
+				0D557A0B1A1BCACA00E97B72 /* Sources */,
+				0D557A0C1A1BCACA00E97B72 /* Frameworks */,
+				0D557A0D1A1BCACA00E97B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D557A111A1BCACA00E97B72 /* PBXTargetDependency */,
+			);
+			name = MataAlGochiTests;
+			productName = MataAlGochiTests;
+			productReference = 0D557A0F1A1BCACA00E97B72 /* MataAlGochiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D5579EE1A1BCACA00E97B72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Maximiliano Joaquin Degue";
+				TargetAttributes = {
+					0D5579F51A1BCACA00E97B72 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					0D557A0E1A1BCACA00E97B72 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 0D5579F51A1BCACA00E97B72;
+					};
+				};
+			};
+			buildConfigurationList = 0D5579F11A1BCACA00E97B72 /* Build configuration list for PBXProject "MataAlGochi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D5579ED1A1BCACA00E97B72;
+			productRefGroup = 0D5579F71A1BCACA00E97B72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D5579F51A1BCACA00E97B72 /* MataAlGochi */,
+				0D557A0E1A1BCACA00E97B72 /* MataAlGochiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D5579F41A1BCACA00E97B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */,
+				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
+				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
+				0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */,
+				0D557A071A1BCACA00E97B72 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D557A0D1A1BCACA00E97B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D5579F21A1BCACA00E97B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */,
+				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
+				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
+				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
+				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D557A0B1A1BCACA00E97B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D557A161A1BCACA00E97B72 /* MataAlGochiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D557A111A1BCACA00E97B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D5579F51A1BCACA00E97B72 /* MataAlGochi */;
+			targetProxy = 0D557A101A1BCACA00E97B72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D557A081A1BCACA00E97B72 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D557A091A1BCACA00E97B72 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D557A171A1BCACA00E97B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0D557A181A1BCACA00E97B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D557A1A1A1BCACA00E97B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MataAlGochi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0D557A1B1A1BCACA00E97B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MataAlGochi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0D557A1D1A1BCACA00E97B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MataAlGochiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MataAlGochi.app/MataAlGochi";
+			};
+			name = Debug;
+		};
+		0D557A1E1A1BCACA00E97B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MataAlGochiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MataAlGochi.app/MataAlGochi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D5579F11A1BCACA00E97B72 /* Build configuration list for PBXProject "MataAlGochi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D557A171A1BCACA00E97B72 /* Debug */,
+				0D557A181A1BCACA00E97B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D557A191A1BCACA00E97B72 /* Build configuration list for PBXNativeTarget "MataAlGochi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D557A1A1A1BCACA00E97B72 /* Debug */,
+				0D557A1B1A1BCACA00E97B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0D557A1C1A1BCACA00E97B72 /* Build configuration list for PBXNativeTarget "MataAlGochiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D557A1D1A1BCACA00E97B72 /* Debug */,
+				0D557A1E1A1BCACA00E97B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D5579EE1A1BCACA00E97B72 /* Project object */;
+}
