@@ -8,6 +8,7 @@
 
 #import "TamagochiNameSelectionViewController.h"
 #import "TamagochiAssetSelectorViewController.h"
+#import "CreationFlow.h"
 
 @interface TamagochiNameSelectionViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *txtGochisName;
@@ -52,7 +53,10 @@
         [self.lblNotificationLabel setHidden:YES];
     }
     
-    TamagochiAssetSelectorViewController* assetSelectionView = [[TamagochiAssetSelectorViewController alloc] initWithNibName:@"TamagochiAssetSelectorViewController" bundle:nil gochisName:self.sGochisName];
+    CreationFlow* creationFlow = [CreationFlow GetInstance];
+    [creationFlow setGochisName:[self sGochisName]];
+    
+    TamagochiAssetSelectorViewController* assetSelectionView = [[TamagochiAssetSelectorViewController alloc] initWithNibName:@"TamagochiAssetSelectorViewController" bundle:nil];
     
     [self.navigationController pushViewController:assetSelectionView animated:YES];
 }

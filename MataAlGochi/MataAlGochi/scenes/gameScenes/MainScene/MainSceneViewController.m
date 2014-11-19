@@ -7,11 +7,13 @@
 //
 
 #import "MainSceneViewController.h"
+#import "Game.h"
+#import "Gochi.h"
 @interface MainSceneViewController ()
 
 //Properties
-@property (strong, nonatomic) NSString* gochisName;
-@property (assign, nonatomic) PetIdentifier gochisAsset;
+@property(nonatomic,strong) Gochi* activeGochi;
+@property(nonatomic,strong) Game* gameInstance;
 
 //IBOutlets
 @property (strong, nonatomic) IBOutlet UIImageView *imgGochiImage;
@@ -20,18 +22,21 @@
 
 @implementation MainSceneViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil gochisName:(NSString*) gochisName gochisAsset: (PetIdentifier) gochisAsset
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    self.gochisName = gochisName;
-    [self setGochisAsset:gochisAsset];
+    
+    [self setGameInstance:[Game GetInstance]];
+    
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setTitle:self.gochisName];
+    [self setGameInstance:[Game GetInstance]];
+    [self setActiveGochi:[self.gameInstance activeGochi]];
+    [self setTitle:[self.activeGochi name]];
     [self refreshPetImage];
 }
 
@@ -43,7 +48,7 @@
 - (void) refreshPetImage
 {
     NSString* imageName;
-    switch ([self gochisAsset])
+    switch ([[self activeGochi] petType])
     {
         default: //Default value is just for avoid crashes
         case PET_CAT:

@@ -20,6 +20,9 @@
 		0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B461A1BE4AC00E97B72 /* MainSceneViewController.xib */; };
 		0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B4B1A1CED2C00E97B72 /* MainMenuViewController.m */; };
 		0D557B4E1A1CED2C00E97B72 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B4C1A1CED2C00E97B72 /* MainMenuViewController.xib */; };
+		0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B521A1D254900E97B72 /* CreationFlow.m */; };
+		0D557B591A1D291900E97B72 /* Gochi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B581A1D291900E97B72 /* Gochi.m */; };
+		0D557B5D1A1D445A00E97B72 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B5C1A1D445A00E97B72 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,13 @@
 		0D557B4A1A1CED2C00E97B72 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		0D557B4B1A1CED2C00E97B72 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		0D557B4C1A1CED2C00E97B72 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		0D557B511A1D254900E97B72 /* CreationFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationFlow.h; sourceTree = "<group>"; };
+		0D557B521A1D254900E97B72 /* CreationFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationFlow.m; sourceTree = "<group>"; };
+		0D557B561A1D275100E97B72 /* PetConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetConstants.h; sourceTree = "<group>"; };
+		0D557B571A1D291900E97B72 /* Gochi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gochi.h; sourceTree = "<group>"; };
+		0D557B581A1D291900E97B72 /* Gochi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gochi.m; sourceTree = "<group>"; };
+		0D557B5B1A1D445A00E97B72 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		0D557B5C1A1D445A00E97B72 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,8 @@
 		0D5579F81A1BCACA00E97B72 /* MataAlGochi */ = {
 			isa = PBXGroup;
 			children = (
+				0D557B551A1D272100E97B72 /* Constants */,
+				0D557B4F1A1D250100E97B72 /* Classes */,
 				0D557A241A1BD50E00E97B72 /* scenes */,
 				0D5579FD1A1BCACA00E97B72 /* AppDelegate.h */,
 				0D5579FE1A1BCACA00E97B72 /* AppDelegate.m */,
@@ -197,6 +209,51 @@
 				0D557B4C1A1CED2C00E97B72 /* MainMenuViewController.xib */,
 			);
 			path = menuScenes;
+			sourceTree = "<group>";
+		};
+		0D557B4F1A1D250100E97B72 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B5A1A1D444E00E97B72 /* Game */,
+				0D557B541A1D257700E97B72 /* Entities */,
+				0D557B501A1D250100E97B72 /* CreationFlow */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0D557B501A1D250100E97B72 /* CreationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B511A1D254900E97B72 /* CreationFlow.h */,
+				0D557B521A1D254900E97B72 /* CreationFlow.m */,
+			);
+			path = CreationFlow;
+			sourceTree = "<group>";
+		};
+		0D557B541A1D257700E97B72 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B571A1D291900E97B72 /* Gochi.h */,
+				0D557B581A1D291900E97B72 /* Gochi.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0D557B551A1D272100E97B72 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B561A1D275100E97B72 /* PetConstants.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0D557B5A1A1D444E00E97B72 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B5B1A1D445A00E97B72 /* Game.h */,
+				0D557B5C1A1D445A00E97B72 /* Game.m */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,12 +359,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D557B5D1A1D445A00E97B72 /* Game.m in Sources */,
 				0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */,
 				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
 				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
+				0D557B591A1D291900E97B72 /* Gochi.m in Sources */,
 				0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */,
 				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
+				0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
