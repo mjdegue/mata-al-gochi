@@ -18,6 +18,8 @@
 		0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557A301A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib */; };
 		0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B451A1BE4AC00E97B72 /* MainSceneViewController.m */; };
 		0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B461A1BE4AC00E97B72 /* MainSceneViewController.xib */; };
+		0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B4B1A1CED2C00E97B72 /* MainMenuViewController.m */; };
+		0D557B4E1A1CED2C00E97B72 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B4C1A1CED2C00E97B72 /* MainMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		0D557B441A1BE4AC00E97B72 /* MainSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSceneViewController.h; sourceTree = "<group>"; };
 		0D557B451A1BE4AC00E97B72 /* MainSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSceneViewController.m; sourceTree = "<group>"; };
 		0D557B461A1BE4AC00E97B72 /* MainSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSceneViewController.xib; sourceTree = "<group>"; };
+		0D557B4A1A1CED2C00E97B72 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		0D557B4B1A1CED2C00E97B72 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		0D557B4C1A1CED2C00E97B72 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +135,7 @@
 		0D557A241A1BD50E00E97B72 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0D557B491A1CED1400E97B72 /* menuScenes */,
 				0D557A251A1BD50E00E97B72 /* gameScenes */,
 				0D557A261A1BD50E00E97B72 /* tamagochiCreationScenes */,
 			);
@@ -181,6 +187,16 @@
 				0D557B461A1BE4AC00E97B72 /* MainSceneViewController.xib */,
 			);
 			path = MainScene;
+			sourceTree = "<group>";
+		};
+		0D557B491A1CED1400E97B72 /* menuScenes */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B4A1A1CED2C00E97B72 /* MainMenuViewController.h */,
+				0D557B4B1A1CED2C00E97B72 /* MainMenuViewController.m */,
+				0D557B4C1A1CED2C00E97B72 /* MainMenuViewController.xib */,
+			);
+			path = menuScenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +283,7 @@
 				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
 				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
 				0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */,
+				0D557B4E1A1CED2C00E97B72 /* MainMenuViewController.xib in Resources */,
 				0D557A071A1BCACA00E97B72 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +306,7 @@
 				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
 				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
+				0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */,
 				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

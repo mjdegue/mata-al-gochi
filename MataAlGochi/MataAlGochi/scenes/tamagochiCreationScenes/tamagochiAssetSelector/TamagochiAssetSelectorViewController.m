@@ -7,9 +7,15 @@
 //
 
 #import "TamagochiAssetSelectorViewController.h"
+#import "MainSceneViewController.h"
 
 @interface TamagochiAssetSelectorViewController ()
-@property (strong, nonatomic) IBOutlet UILabel *lblGochisName;
+
+//Properties
+@property (strong, nonatomic) NSString* gochisName;
+@property (assign, nonatomic) PetIdentifier gochisAsset;
+
+//IBOutlets:
 @property (strong, nonatomic) IBOutlet UIImageView *imgPetPreview;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollPetSelector;
 
@@ -18,11 +24,24 @@
 
 @implementation TamagochiAssetSelectorViewController
 
+//Csontructor:
+
+- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil gochisName:(NSString*) gochisName
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self.gochisName = gochisName;
+    return self;
+}
+
+//Load general info
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        NSString* gochisName = @"Hardcoded Gochis' Name";
-    [self.lblGochisName setText:gochisName];
+    [self setTitle: self.gochisName];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [self.scrollPetSelector setScrollEnabled:YES];
     [self.scrollPetSelector setContentSize:CGSizeMake(437, 128)];
 }
@@ -35,14 +54,20 @@
 
 - (IBAction)didSelectPet:(UIButton *)sender
 {
-    PetIdentifier pet = (PetIdentifier)[sender tag];
-    
+    PetIdentifier gochisAsset = (PetIdentifier)[sender tag];
+    [self setGochisAsset:gochisAsset];
+    [self refreshPetImage];
+}
+
+- (void) refreshPetImage
+{
     NSString* imageName;
-    switch (pet) {
-        default:
+    switch ([self gochisAsset])
+    {
+        default: //Default value is just for avoid crashes
         case PET_CAT:
             imageName = @"gato_comiendo_1";
-        break;
+            break;
             
         case PET_DEER:
             imageName = @"ciervo_comiendo_1";
@@ -59,5 +84,13 @@
     UIImage* petImage = [UIImage imageNamed:imageName];
     [self.imgPetPreview setImage:petImage];
 }
+
+//Continue Navigation
+- (IBAction)didPressContinue:(id)sender
+{
+    MainSceneViewController* mainGameScene = [[MainSceneViewController alloc] initWithNibName:@"MainSceneViewController" bundle:nil gochisName:[self gochisName] gochisAsset:[self gochisAsset]];
+    [self.navigationController pushViewController:mainGameScene animated:YES];
+}
+
 
 @end

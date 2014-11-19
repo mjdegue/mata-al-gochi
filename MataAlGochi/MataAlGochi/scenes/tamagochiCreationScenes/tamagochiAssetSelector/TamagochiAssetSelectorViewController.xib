@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TamagochiAssetSelectorViewController">
             <connections>
                 <outlet property="imgPetPreview" destination="t63-DB-Em8" id="hVb-MM-PJu"/>
-                <outlet property="lblGochisName" destination="7QA-ii-wJ0" id="uWR-ie-82q"/>
                 <outlet property="scrollPetSelector" destination="KeA-w2-0aX" id="7Mh-DL-0GY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,18 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVA-3n-lHM">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tamagochi's Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-ii-wJ0">
-                            <rect key="frame" x="87" y="8" width="147" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.13549843271341078" green="0.4801496218842034" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ciervo_comiendo_1" translatesAutoresizingMaskIntoConstraints="NO" id="t63-DB-Em8">
                     <rect key="frame" x="42" y="57" width="237" height="181"/>
                 </imageView>
@@ -37,6 +24,9 @@
                     <state key="normal" title="Let's play :)">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="didPressContinue:" destination="-1" eventType="touchUpInside" id="GZz-MT-dPc"/>
+                    </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KeA-w2-0aX">
                     <rect key="frame" x="8" y="262" width="304" height="128"/>

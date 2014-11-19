@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TamagochiAssetSelectorViewController : UIViewController
+
 typedef enum
 {
     PET_DEER = 0,
@@ -16,4 +17,8 @@ typedef enum
     PET_GIRAFFE,
     PET_LION
 } PetIdentifier;
+
+//Init definition...
+- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil gochisName:(NSString*) gochisName;
+
 @end

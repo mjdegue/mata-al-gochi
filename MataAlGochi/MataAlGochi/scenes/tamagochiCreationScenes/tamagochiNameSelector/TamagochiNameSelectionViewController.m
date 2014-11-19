@@ -7,9 +7,11 @@
 //
 
 #import "TamagochiNameSelectionViewController.h"
+#import "TamagochiAssetSelectorViewController.h"
 
 @interface TamagochiNameSelectionViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *txtGochisName;
+@property (strong, nonatomic) IBOutlet UILabel *lblNotificationLabel;
 
 @end
 
@@ -22,6 +24,13 @@
     self.txtGochisName.delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.lblNotificationLabel setText:@"Your gochi's name is invalid."];
+    [self.lblNotificationLabel setTextColor:[UIColor redColor]];
+    [self.lblNotificationLabel setHidden:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -32,6 +41,20 @@
 {
     self.sGochisName = [[NSString alloc] initWithString:[self.txtGochisName text]];
     [self.view endEditing:YES];
+    
+    if(![self validateForm])
+    {
+        [self.lblNotificationLabel setHidden:NO];
+        return;
+    }
+    else
+    {
+        [self.lblNotificationLabel setHidden:YES];
+    }
+    
+    TamagochiAssetSelectorViewController* assetSelectionView = [[TamagochiAssetSelectorViewController alloc] initWithNibName:@"TamagochiAssetSelectorViewController" bundle:nil gochisName:self.sGochisName];
+    
+    [self.navigationController pushViewController:assetSelectionView animated:YES];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -42,6 +65,14 @@
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL) validateForm
+{
+    if([self.txtGochisName.text length] < 5)
+        return NO;
+    
     return YES;
 }
 @end

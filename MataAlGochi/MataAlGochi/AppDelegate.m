@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TamagochiNameSelectionViewController.h"
+#import "MainMenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +20,12 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    TamagochiNameSelectionViewController* home = [[TamagochiNameSelectionViewController alloc] initWithNibName:@"TamagochiNameSelectionViewController" bundle:nil];
-    UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
+    MainMenuViewController* mainMenu = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
+    UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:mainMenu];
     
+    [navControllerHome.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
+
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self.window setRootViewController:navControllerHome];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
