@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainMenuViewController.h"
-
+#import "Game.h"
 @interface AppDelegate ()
 
 @end
@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //Starts windows and navs initialization:
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     MainMenuViewController* mainMenu = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
@@ -29,6 +30,11 @@
     [self.window setRootViewController:navControllerHome];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    //Ends windows and navs initializations.
+    
+    //Starts game initialization
+    [Game InitializeGame];
+    //ends Game initialization
     
     return YES;
 }

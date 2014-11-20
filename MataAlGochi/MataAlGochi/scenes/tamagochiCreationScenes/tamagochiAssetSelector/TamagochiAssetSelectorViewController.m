@@ -8,6 +8,8 @@
 
 #import "TamagochiAssetSelectorViewController.h"
 #import "MainSceneViewController.h"
+#import "CreationFlow.h"
+#import "Game.h"
 
 @interface TamagochiAssetSelectorViewController ()
 
@@ -25,11 +27,10 @@
 @implementation TamagochiAssetSelectorViewController
 
 //Csontructor:
-
-- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil gochisName:(NSString*) gochisName
+- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    self.gochisName = gochisName;
+    self.gochisName = [[CreationFlow GetInstance] getGochisName];
     return self;
 }
 
@@ -88,7 +89,18 @@
 //Continue Navigation
 - (IBAction)didPressContinue:(id)sender
 {
-    MainSceneViewController* mainGameScene = [[MainSceneViewController alloc] initWithNibName:@"MainSceneViewController" bundle:nil gochisName:[self gochisName] gochisAsset:[self gochisAsset]];
+    CreationFlow* creationFlow = [CreationFlow GetInstance];
+    [creationFlow setGochisPet:[self gochisAsset]];
+    
+    BOOL didFinishCreationFlow = [creationFlow completeCreationFlow];
+    if(!didFinishCreationFlow)
+    {
+        return;
+    }
+    
+    //Destroy instance of CreationFlow since it's no longer needed
+    [CreationFlow DestroyInstance];
+    MainSceneViewController* mainGameScene = [[MainSceneViewController alloc] initWithNibName:@"MainSceneViewController" bundle:nil];
     [self.navigationController pushViewController:mainGameScene animated:YES];
 }
 
