@@ -40,7 +40,7 @@
 
 - (IBAction)continueBtnPressed:(id)sender
 {
-    self.sGochisName = [[NSString alloc] initWithString:[self.txtGochisName text]];
+    NSString* gochisName = [[NSString alloc] initWithString:[self.txtGochisName text]];
     [self.view endEditing:YES];
     
     if(![self validateForm])
@@ -54,7 +54,7 @@
     }
     
     CreationFlow* creationFlow = [CreationFlow GetInstance];
-    [creationFlow setGochisName:[self sGochisName]];
+    [creationFlow setGochisName: gochisName];
     
     TamagochiAssetSelectorViewController* assetSelectionView = [[TamagochiAssetSelectorViewController alloc] initWithNibName:@"TamagochiAssetSelectorViewController" bundle:nil];
     

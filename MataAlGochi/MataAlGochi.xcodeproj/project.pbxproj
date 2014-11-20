@@ -25,6 +25,10 @@
 		0D557B5D1A1D445A00E97B72 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B5C1A1D445A00E97B72 /* Game.m */; };
 		0D557B6B1A1E52D500E97B72 /* FeedSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B691A1E52D500E97B72 /* FeedSceneViewController.m */; };
 		0D557B6C1A1E52D500E97B72 /* FeedSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B6A1A1E52D500E97B72 /* FeedSceneViewController.xib */; };
+		0D557B701A1E5F7500E97B72 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B6F1A1E5F7500E97B72 /* Food.m */; };
+		0D557B771A1E671300E97B72 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B761A1E671300E97B72 /* ImageLoader.m */; };
+		0D557B7D1A1E6E7200E97B72 /* FoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */; };
+		0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,14 @@
 		0D557B681A1E52D500E97B72 /* FeedSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedSceneViewController.h; sourceTree = "<group>"; };
 		0D557B691A1E52D500E97B72 /* FeedSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedSceneViewController.m; sourceTree = "<group>"; };
 		0D557B6A1A1E52D500E97B72 /* FeedSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedSceneViewController.xib; sourceTree = "<group>"; };
+		0D557B6E1A1E5F7500E97B72 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		0D557B6F1A1E5F7500E97B72 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		0D557B711A1E5FA300E97B72 /* FoodConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodConstants.h; sourceTree = "<group>"; };
+		0D557B751A1E671300E97B72 /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		0D557B761A1E671300E97B72 /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
+		0D557B7A1A1E6E7200E97B72 /* FoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTableViewCell.h; sourceTree = "<group>"; };
+		0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTableViewCell.m; sourceTree = "<group>"; };
+		0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 		0D5579F81A1BCACA00E97B72 /* MataAlGochi */ = {
 			isa = PBXGroup;
 			children = (
+				0D557B781A1E6E0300E97B72 /* UI */,
 				0D557B551A1D272100E97B72 /* Constants */,
 				0D557B4F1A1D250100E97B72 /* Classes */,
 				0D557A241A1BD50E00E97B72 /* scenes */,
@@ -152,6 +165,7 @@
 		0D557A241A1BD50E00E97B72 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0D557B731A1E63FB00E97B72 /* utils */,
 				0D557B491A1CED1400E97B72 /* menuScenes */,
 				0D557A251A1BD50E00E97B72 /* gameScenes */,
 				0D557A261A1BD50E00E97B72 /* tamagochiCreationScenes */,
@@ -241,6 +255,8 @@
 			children = (
 				0D557B571A1D291900E97B72 /* Gochi.h */,
 				0D557B581A1D291900E97B72 /* Gochi.m */,
+				0D557B6E1A1E5F7500E97B72 /* Food.h */,
+				0D557B6F1A1E5F7500E97B72 /* Food.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				0D557B561A1D275100E97B72 /* PetConstants.h */,
+				0D557B711A1E5FA300E97B72 /* FoodConstants.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -270,6 +287,33 @@
 				0D557B6A1A1E52D500E97B72 /* FeedSceneViewController.xib */,
 			);
 			path = FeedScene;
+			sourceTree = "<group>";
+		};
+		0D557B731A1E63FB00E97B72 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B751A1E671300E97B72 /* ImageLoader.h */,
+				0D557B761A1E671300E97B72 /* ImageLoader.m */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		0D557B781A1E6E0300E97B72 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B791A1E6E0300E97B72 /* CustomCells */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0D557B791A1E6E0300E97B72 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B7A1A1E6E7200E97B72 /* FoodTableViewCell.h */,
+				0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */,
+				0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */,
+				0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */,
 				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
 				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
 				0D557B6C1A1E52D500E97B72 /* FeedSceneViewController.xib in Resources */,
@@ -378,6 +423,8 @@
 			files = (
 				0D557B5D1A1D445A00E97B72 /* Game.m in Sources */,
 				0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */,
+				0D557B701A1E5F7500E97B72 /* Food.m in Sources */,
+				0D557B7D1A1E6E7200E97B72 /* FoodTableViewCell.m in Sources */,
 				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
 				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
@@ -385,6 +432,7 @@
 				0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */,
 				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
 				0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */,
+				0D557B771A1E671300E97B72 /* ImageLoader.m in Sources */,
 				0D557B6B1A1E52D500E97B72 /* FeedSceneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PetConstants.h"
+#import "FeedSceneViewController.h"
 
-@interface MainSceneViewController : UIViewController
+@interface MainSceneViewController : UIViewController<FoodDelegate>
 
 @end

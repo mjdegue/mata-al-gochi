@@ -9,6 +9,8 @@
 #import "MainSceneViewController.h"
 #import "Game.h"
 #import "Gochi.h"
+#import "ImageLoader.h"
+
 @interface MainSceneViewController ()
 
 //Properties
@@ -17,6 +19,7 @@
 
 //IBOutlets
 @property (strong, nonatomic) IBOutlet UIImageView *imgGochiImage;
+@property (strong, nonatomic) IBOutlet UIImageView *imgFood;
 
 @end
 
@@ -29,6 +32,7 @@
     return self;
 }
 
+#pragma mark - ViewController specific
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -40,6 +44,10 @@
     [self setTitle:[self.activeGochi name]];
     [self refreshPetImage];
     
+    //Modify the UIBar
+    UIBarButtonItem* optionsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(goToFeedScreen:)];
+    
+    self.navigationItem.rightBarButtonItem = optionsButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +55,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Navigation
+- (void) goToFeedScreen: (id) sender
+{
+    FeedSceneViewController* feedScene = [[FeedSceneViewController alloc] initWithNibName:@"FeedSceneViewController" bundle:nil];
+    
+    feedScene.foodDelegate = self;
+    
+    [self.navigationController pushViewController:feedScene animated:true];
+}
+
+#pragma mark - Visualization
 - (void) refreshPetImage
 {
     NSString* imageName;
@@ -72,4 +91,14 @@
     UIImage* petImage = [UIImage imageNamed:imageName];
     [self.imgGochiImage setImage:petImage];
 }
+
+#pragma mark - FoodDelegate
+
+- (void) feedGochiWithFood: (Food*) food
+{
+    [self.activeGochi feedWith:food];
+    [self.imgFood setImage:[ImageLoader loadFoodImageByType:[food FoodType]]];
+}
+
 @end
+

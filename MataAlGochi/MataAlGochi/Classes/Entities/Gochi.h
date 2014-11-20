@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PetConstants.h"
+#import "Food.h"
 @interface Gochi : NSObject
 
 @property(strong, nonatomic) NSString* name;
@@ -16,5 +17,8 @@
 //Constructor
 -(instancetype) init;
 -(instancetype) initWithName:(NSString*) name andPetType:(PetIdentifier) petType;
+
+//Functional Methods
+-(void) feedWith:(Food*) food;
 
 @end

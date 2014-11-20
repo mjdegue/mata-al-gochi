@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Food.h"
 
-@interface FeedSceneViewController : UIViewController
+@protocol FoodDelegate <NSObject>
+- (void) feedGochiWithFood: (Food*) food;
+@end
 
+@interface FeedSceneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic,weak) id<FoodDelegate> foodDelegate;
 @end
