@@ -39,9 +39,7 @@
     if([self isGochiCompleted])
     {
         Game* game = [Game GetInstance];
-        NSLog(@"%@", [self futureGochi]);
         [game setOwnGochi:[self futureGochi]];
-        NSLog(@"%@ - %d", [[game activeGochi] name], [[game activeGochi] petType]);
         return YES;
     }
     return NO;
@@ -49,7 +47,6 @@
 
 -(BOOL) isGochiCompleted
 {
-    NSLog(@"%@", [self futureGochi]);
     if([self.futureGochi petType] == PET_INVALID)
     {
         return NO;
@@ -64,6 +61,7 @@
 
 //Singleton Pattern methods:
 static CreationFlow* instance = nil;
+static dispatch_once_t onceToken = 0;
 
 -(instancetype)init
 {
@@ -80,7 +78,6 @@ static CreationFlow* instance = nil;
 
 +(CreationFlow *)GetInstance
 {
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance =[[CreationFlow alloc] initFromSingleton];
     });
@@ -90,6 +87,7 @@ static CreationFlow* instance = nil;
 +(void)DestroyInstance
 {
     instance = nil;
+    onceToken = 0;
 }
 
 @end
