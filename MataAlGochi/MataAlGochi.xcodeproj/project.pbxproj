@@ -23,6 +23,8 @@
 		0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B521A1D254900E97B72 /* CreationFlow.m */; };
 		0D557B591A1D291900E97B72 /* Gochi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B581A1D291900E97B72 /* Gochi.m */; };
 		0D557B5D1A1D445A00E97B72 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B5C1A1D445A00E97B72 /* Game.m */; };
+		0D557B6B1A1E52D500E97B72 /* FeedSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B691A1E52D500E97B72 /* FeedSceneViewController.m */; };
+		0D557B6C1A1E52D500E97B72 /* FeedSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B6A1A1E52D500E97B72 /* FeedSceneViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		0D557B581A1D291900E97B72 /* Gochi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gochi.m; sourceTree = "<group>"; };
 		0D557B5B1A1D445A00E97B72 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0D557B5C1A1D445A00E97B72 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		0D557B681A1E52D500E97B72 /* FeedSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedSceneViewController.h; sourceTree = "<group>"; };
+		0D557B691A1E52D500E97B72 /* FeedSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedSceneViewController.m; sourceTree = "<group>"; };
+		0D557B6A1A1E52D500E97B72 /* FeedSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedSceneViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +162,7 @@
 		0D557A251A1BD50E00E97B72 /* gameScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0D557B671A1E52C100E97B72 /* FeedScene */,
 				0D557B431A1BE49800E97B72 /* MainScene */,
 			);
 			path = gameScenes;
@@ -256,6 +262,16 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		0D557B671A1E52C100E97B72 /* FeedScene */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B681A1E52D500E97B72 /* FeedSceneViewController.h */,
+				0D557B691A1E52D500E97B72 /* FeedSceneViewController.m */,
+				0D557B6A1A1E52D500E97B72 /* FeedSceneViewController.xib */,
+			);
+			path = FeedScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,6 +355,7 @@
 				0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */,
 				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
 				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
+				0D557B6C1A1E52D500E97B72 /* FeedSceneViewController.xib in Resources */,
 				0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */,
 				0D557B4E1A1CED2C00E97B72 /* MainMenuViewController.xib in Resources */,
 				0D557A071A1BCACA00E97B72 /* Images.xcassets in Resources */,
@@ -368,6 +385,7 @@
 				0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */,
 				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
 				0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */,
+				0D557B6B1A1E52D500E97B72 /* FeedSceneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +568,7 @@
 				0D557A1B1A1BCACA00E97B72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D557A1C1A1BCACA00E97B72 /* Build configuration list for PBXNativeTarget "MataAlGochiTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +577,7 @@
 				0D557A1E1A1BCACA00E97B72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -25,19 +25,21 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
     [self setGameInstance:[Game GetInstance]];
-    
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    //Game instance setup
     [self setGameInstance:[Game GetInstance]];
+    
+    //Gochi methods
     [self setActiveGochi:[self.gameInstance activeGochi]];
     [self setTitle:[self.activeGochi name]];
     [self refreshPetImage];
+    
 }
 
 - (void)didReceiveMemoryWarning {
