@@ -12,6 +12,7 @@
 @property (assign, nonatomic) FoodIdentifier FoodType;
 @property (strong, nonatomic) NSString* FoodName;
 @property (strong, nonatomic) NSString* FoodDescription;
+@property (strong, nonatomic) NSNumber* RechargeAmmount;
 
 -(instancetype) initFood:(FoodIdentifier)foodType whichNameIs:(NSString*)foodName andDescription:(NSString*) foodDescription;
 @end

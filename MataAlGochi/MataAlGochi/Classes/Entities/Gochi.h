@@ -7,18 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PetConstants.h"
 #import "Food.h"
 @interface Gochi : NSObject
 
 @property(strong, nonatomic) NSString* name;
 @property(assign, nonatomic) PetIdentifier petType;
+@property(assign, nonatomic) CGRect mouthRect;
+@property(strong, nonatomic, readonly) NSNumber* energy;
 
 //Constructor
 -(instancetype) init;
 -(instancetype) initWithName:(NSString*) name andPetType:(PetIdentifier) petType;
 
 //Functional Methods
--(void) feedWith:(Food*) food;
+-(BOOL) feedWith:(Food*) food;
 
 @end

@@ -10,7 +10,6 @@
 #import "CreationFlow.h"
 
 @interface Gochi ()
-@property (nonatomic, strong) NSMutableArray* foodArray;
 @end
 
 @implementation Gochi
@@ -19,24 +18,32 @@
 -(instancetype) init
 {
     self = [super init];
-    self.foodArray = [[NSMutableArray alloc] init];
     [self setName:@""];
     [self setPetType:PET_INVALID];
+    _energy = [[NSNumber alloc] initWithFloat:50.0f];
     return self;
 }
 
 -(instancetype)initWithName:(NSString *)name andPetType:(PetIdentifier)petType
 {
     self = [super init];
-    self.foodArray = [[NSMutableArray alloc] init];
     [self setPetType:petType];
     [self setName:name];
+    _energy = [[NSNumber alloc] initWithFloat:50.0f];
     return self;
 }
 
 #pragma mark - Functional Methods
--(void) feedWith:(Food*) food
+-(BOOL) feedWith:(Food*) food
 {
-    [self.foodArray addObject:food];
+    if([_energy floatValue] == 100.0f)
+    {
+        return NO;
+    }
+    
+    NSNumber* foodRecharge = [food RechargeAmmount];
+    _energy = [[NSNumber alloc] initWithFloat:([_energy floatValue] + [foodRecharge floatValue])];
+
+    return YES;
 }
 @end

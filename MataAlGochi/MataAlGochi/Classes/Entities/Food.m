@@ -16,7 +16,7 @@
     self.FoodType = foodType;
     self.FoodName = foodName;
     self.FoodDescription = foodDescription;
-    
+    self.RechargeAmmount = [[NSNumber alloc] initWithFloat:20.0f];
     return self;
 }
 @end
