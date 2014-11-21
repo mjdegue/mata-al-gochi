@@ -61,7 +61,6 @@
 
 //Singleton Pattern methods:
 static CreationFlow* instance = nil;
-static dispatch_once_t onceToken = 0;
 
 -(instancetype)init
 {
@@ -78,16 +77,16 @@ static dispatch_once_t onceToken = 0;
 
 +(CreationFlow *)GetInstance
 {
-    dispatch_once(&onceToken, ^{
+    if(instance == nil)
+    {
         instance =[[CreationFlow alloc] initFromSingleton];
-    });
+    }
     return instance;
 }
 
 +(void)DestroyInstance
 {
     instance = nil;
-    onceToken = 0;
 }
 
 @end

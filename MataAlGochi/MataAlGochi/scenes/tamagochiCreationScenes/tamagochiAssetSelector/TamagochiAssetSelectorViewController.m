@@ -8,6 +8,7 @@
 
 #import "TamagochiAssetSelectorViewController.h"
 #import "MainSceneViewController.h"
+#import "ImageLoader.h"
 #import "CreationFlow.h"
 #import "Game.h"
 
@@ -62,28 +63,7 @@
 
 - (void) refreshPetImage
 {
-    NSString* imageName;
-    switch ([self gochisAsset])
-    {
-        default: //Default value is just for avoid crashes
-        case PET_CAT:
-            imageName = @"gato_comiendo_1";
-            break;
-            
-        case PET_DEER:
-            imageName = @"ciervo_comiendo_1";
-            break;
-            
-        case PET_GIRAFFE:
-            imageName = @"jirafa_comiendo_1";
-            break;
-            
-        case PET_LION:
-            imageName = @"leon_comiendo_1";
-            break;
-    }
-    UIImage* petImage = [UIImage imageNamed:imageName];
-    [self.imgPetPreview setImage:petImage];
+    [self.imgPetPreview setImage:[ImageLoader loadPetImageByType:[self gochisAsset]]];
 }
 
 //Continue Navigation

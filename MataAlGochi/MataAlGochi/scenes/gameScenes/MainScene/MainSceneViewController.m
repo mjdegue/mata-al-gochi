@@ -68,28 +68,7 @@
 #pragma mark - Visualization
 - (void) refreshPetImage
 {
-    NSString* imageName;
-    switch ([[self activeGochi] petType])
-    {
-        default: //Default value is just for avoid crashes
-        case PET_CAT:
-            imageName = @"gato_comiendo_1";
-            break;
-            
-        case PET_DEER:
-            imageName = @"ciervo_comiendo_1";
-            break;
-            
-        case PET_GIRAFFE:
-            imageName = @"jirafa_comiendo_1";
-            break;
-            
-        case PET_LION:
-            imageName = @"leon_comiendo_1";
-            break;
-    }
-    UIImage* petImage = [UIImage imageNamed:imageName];
-    [self.imgGochiImage setImage:petImage];
+    [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:[[self activeGochi] petType]]];
 }
 
 #pragma mark - FoodDelegate
