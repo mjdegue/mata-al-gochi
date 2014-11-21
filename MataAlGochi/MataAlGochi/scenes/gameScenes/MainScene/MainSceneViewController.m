@@ -7,19 +7,25 @@
 //
 
 #import "MainSceneViewController.h"
+#import "ImageLoader.h"
 #import "Game.h"
 #import "Gochi.h"
-#import "ImageLoader.h"
 
 @interface MainSceneViewController ()
 
 //Properties
 @property(nonatomic,strong) Gochi* activeGochi;
+@property(nonatomic,strong) Food* activeFood;
 @property(nonatomic,strong) Game* gameInstance;
 
 //IBOutlets
 @property (strong, nonatomic) IBOutlet UIImageView *imgGochiImage;
 @property (strong, nonatomic) IBOutlet UIImageView *imgFood;
+@property (strong, nonatomic) IBOutlet UIView *mouthViewCollider;
+@property (strong, nonatomic) IBOutlet UIProgressView *barFoodStatusBar;
+
+//Gestures
+@property(nonatomic,strong) UITapGestureRecognizer* gestTapGest;
 
 @end
 
@@ -46,8 +52,14 @@
     
     //Modify the UIBar
     UIBarButtonItem* optionsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(goToFeedScreen:)];
+    UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:prepareMailToSend];
     
-    self.navigationItem.rightBarButtonItem = optionsButton;
+    self.navigationItem.rightBarButtonItems = optionsButton;
+    
+    //Gesture setup
+    self.gestTapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    self.gestTapGest.delegate = self;
+    [self.view addGestureRecognizer:self.gestTapGest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,11 +85,112 @@
 
 #pragma mark - FoodDelegate
 
-- (void) feedGochiWithFood: (Food*) food
+- (void) prepareGochisFood: (Food*) food
 {
-    [self.activeGochi feedWith:food];
+    self.activeFood = food;
     [self.imgFood setImage:[ImageLoader loadFoodImageByType:[food FoodType]]];
 }
 
-@end
 
+#pragma mark - Gestures
+
+- (void) handleTap:(UITapGestureRecognizer *)recognizer
+{
+    static BOOL isAnimationInProgress = NO;
+    if((self.activeFood != nil) && !isAnimationInProgress)
+    {
+        //Animate here
+        CGPoint point = [recognizer locationInView:self.view];
+        
+        [UIView animateWithDuration:1.0f
+                              delay:0.2f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+                                    {
+                                        isAnimationInProgress = YES;
+                                        [self.imgFood setCenter:point];
+                                    }
+                         completion:^(BOOL finished)
+                                    {
+                                        isAnimationInProgress = NO;
+                                        if(finished)
+                                        {
+                                            BOOL shouldFeedGochi = [self shouldFeedGochi];
+                                            if(shouldFeedGochi)
+                                            {
+                                                [self feedGochi];
+                                            }
+                                        }
+                                    }];
+    }
+}
+
+
+#pragma mark - Refactor next
+
+//where should be this
+
+-(BOOL) shouldFeedGochi
+{
+    BOOL answer = NO;
+    
+    if (CGRectContainsPoint(self.mouthViewCollider.frame, self.imgFood.center) )
+    {
+        answer = YES;
+    }
+    
+    return answer;
+
+ }
+
+- (void) feedGochi
+{
+    if([self.activeGochi feedWith:self.activeFood])
+    {
+        [UIView animateWithDuration:4.0f
+                              delay:0.2f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+                                    {
+                                        CGRect futureFrame = [self.imgFood frame];
+                                        CGPoint center = [self.imgFood center];
+                                        futureFrame.size.height = 0;
+                                        futureFrame.size.width = 0;
+                                        [self.imgFood setFrame:futureFrame];
+                                        [self.imgFood setCenter:center];
+                                        [self.barFoodStatusBar
+                                         setProgress: ([self.activeGochi.energy floatValue] / 100)
+                                            animated:YES];
+                                    }
+                         completion:^(BOOL finished)
+                                    {
+                                        NSLog(@"%d", finished);
+                                        if(finished)
+                                        {
+                                            [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:[self.activeGochi petType]]];
+                                            [self.imgGochiImage stopAnimating];
+                                            [self.imgFood setImage:nil];
+                                        }
+                                    }];
+        [self.imgGochiImage setAnimationImages:
+            [ImageLoader loadPetAnimationByPet:[self.activeGochi petType]
+                                   andPetState:PET_STATE_EATING]];
+        
+        [self.imgGochiImage startAnimating];
+    }
+}
+
+//When finish eating, should be handled by delegating
+- (void) finishFood
+{
+    self.activeFood = nil;
+}
+
+#pragma mark - Mails
+-(void) prepareMailToSend
+{
+    
+}
+
+
+@end

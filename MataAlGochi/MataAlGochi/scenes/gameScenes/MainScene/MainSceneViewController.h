@@ -10,6 +10,6 @@
 #import "PetConstants.h"
 #import "FeedSceneViewController.h"
 
-@interface MainSceneViewController : UIViewController<FoodDelegate>
+@interface MainSceneViewController : UIViewController<FoodDelegate, UIGestureRecognizerDelegate>
 
 @end

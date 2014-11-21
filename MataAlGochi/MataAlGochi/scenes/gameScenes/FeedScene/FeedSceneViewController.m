@@ -32,6 +32,7 @@
     self.tblFoodTable.delegate = self;
     self.tblFoodTable.dataSource = self;
     [self.tblFoodTable registerNib:[UINib nibWithNibName:FoodTableViewCellNibString bundle:[NSBundle mainBundle]] forCellReuseIdentifier:FoodTableViewCellReuseStringIdentifier];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,7 +103,7 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Food* food = [self.foodArray objectAtIndex:indexPath.row];
-    [self.foodDelegate feedGochiWithFood:food];
+    [self.foodDelegate prepareGochisFood:food];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

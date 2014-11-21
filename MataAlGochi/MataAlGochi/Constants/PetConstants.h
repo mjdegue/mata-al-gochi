@@ -18,4 +18,15 @@ typedef enum
     PET_LION
 } PetIdentifier;
 
+typedef enum
+{
+    PET_STATE_INVALID = -1,
+    PET_STATE_FIRST = 0,
+    PET_STATE_EATING = 0,
+    PET_STATE_TRAINING,
+    PET_STATE_TIRED,
+    PET_STATE_LAST = PET_STATE_TIRED    
+    
+} PetStateIdentifier;
+
 #endif

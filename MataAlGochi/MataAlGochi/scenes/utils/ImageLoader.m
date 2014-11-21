@@ -74,4 +74,55 @@
     return petImage;
 }
 
++ (NSArray*) loadPetAnimationByPet: (PetIdentifier) petType andPetState: (PetStateIdentifier) petState
+{
+    NSMutableArray* imageList = [[NSMutableArray alloc] init];
+    
+    NSString* imageFormat = @"%@_%@_%d";
+    NSString* petName;
+    NSString* stateName;
+    
+    switch (petType)
+    {
+        default:
+        case PET_CAT:
+            petName = @"gato";
+            break;
+        case PET_GIRAFFE:
+            petName = @"jirafa";
+            break;
+        case PET_DEER:
+            petName = @"ciervo";
+            break;
+        case PET_LION:
+            petName = @"leon";
+            break;
+    }
+    
+    switch (petState)
+    {
+        default:
+        case PET_STATE_EATING:
+            stateName = @"comiendo";
+            break;
+        case PET_STATE_TIRED:
+            stateName = @"exhausto";
+            break;
+        case PET_STATE_TRAINING:
+            stateName = @"ejercicio";
+            break;
+    }
+    
+    const int ammountOfImages = petState == PET_STATE_TIRED ? 5 : 4;
+    for(int i = 1; i <= ammountOfImages; ++i)
+    {
+        NSString* imageName = [NSString stringWithFormat:imageFormat, petName, stateName, i];
+        [imageList addObject:[UIImage imageNamed:imageName]];
+    }
+    
+    
+    NSArray* petAnimationImages = [[NSArray alloc] initWithArray:imageList];
+    return petAnimationImages;
+}
+
 @end

@@ -10,7 +10,7 @@
 #import "Food.h"
 
 @protocol FoodDelegate <NSObject>
-- (void) feedGochiWithFood: (Food*) food;
+- (void) prepareGochisFood: (Food*) food;
 @end
 
 @interface FeedSceneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>

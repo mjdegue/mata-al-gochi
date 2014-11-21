@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainSceneViewController">
             <connections>
+                <outlet property="barFoodStatusBar" destination="pOY-Gh-Aty" id="eYg-vz-ytf"/>
                 <outlet property="imgFood" destination="dIk-nr-0SW" id="DJ8-tP-DEB"/>
                 <outlet property="imgGochiImage" destination="3MP-VX-jsr" id="ZrD-PO-Pzn"/>
+                <outlet property="mouthViewCollider" destination="ytZ-W7-JW8" id="nqH-TQ-WrQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,11 +19,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ciervo_comiendo_1" translatesAutoresizingMaskIntoConstraints="NO" id="3MP-VX-jsr">
-                    <rect key="frame" x="8" y="59" width="304" height="230"/>
+                    <rect key="frame" x="0.0" y="44" width="304" height="230"/>
                 </imageView>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pOY-Gh-Aty">
                     <rect key="frame" x="8" y="485" width="304" height="2"/>
                 </progressView>
+                <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytZ-W7-JW8">
+                    <rect key="frame" x="110" y="139" width="70" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-nr-0SW">
                     <rect key="frame" x="227" y="392" width="85" height="85"/>
                 </imageView>

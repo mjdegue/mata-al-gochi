@@ -29,6 +29,7 @@
 		0D557B771A1E671300E97B72 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B761A1E671300E97B72 /* ImageLoader.m */; };
 		0D557B7D1A1E6E7200E97B72 /* FoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */; };
 		0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */; };
+		0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B811A1FB1C200E97B72 /* PetFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		0D557B7A1A1E6E7200E97B72 /* FoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTableViewCell.h; sourceTree = "<group>"; };
 		0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTableViewCell.m; sourceTree = "<group>"; };
 		0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
+		0D557B801A1FB1C200E97B72 /* PetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetFactory.h; sourceTree = "<group>"; };
+		0D557B811A1FB1C200E97B72 /* PetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,7 @@
 		0D557B4F1A1D250100E97B72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D557B7F1A1FB1A400E97B72 /* Factories */,
 				0D557B5A1A1D444E00E97B72 /* Game */,
 				0D557B541A1D257700E97B72 /* Entities */,
 				0D557B501A1D250100E97B72 /* CreationFlow */,
@@ -314,6 +318,15 @@
 				0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		0D557B7F1A1FB1A400E97B72 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				0D557B801A1FB1C200E97B72 /* PetFactory.h */,
+				0D557B811A1FB1C200E97B72 /* PetFactory.m */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +442,7 @@
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
 				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
 				0D557B591A1D291900E97B72 /* Gochi.m in Sources */,
+				0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */,
 				0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */,
 				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
 				0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */,

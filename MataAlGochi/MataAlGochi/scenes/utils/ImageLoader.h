@@ -14,6 +14,7 @@
 
 + (UIImage*) loadPetImageByType: (PetIdentifier) petType;
 + (UIImage*) loadFoodImageByType: (FoodIdentifier) foodType;
++ (NSArray*) loadPetAnimationByPet: (PetIdentifier) petType andPetState: (PetStateIdentifier) petState;
 
 
 @end
