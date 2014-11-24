@@ -11,12 +11,17 @@
 #import "Game.h"
 #import "Gochi.h"
 
+//Local defines
+#define MAIL_STRING_WITH_FORMAT @"Buenas! Soy %@, cómo va? Quería comentarte que estuve usando la App Mata al Gochi para comerme todo y está genial. Bajatela YA!! Saludos!"
+#define MAIL_SUBJECT @"Que App mas copada que tengo para vos";
+
 @interface MainSceneViewController ()
 
 //Properties
 @property(nonatomic,strong) Gochi* activeGochi;
 @property(nonatomic,strong) Food* activeFood;
 @property(nonatomic,strong) Game* gameInstance;
+@property(strong, nonatomic) MFMailComposeViewController* mailComposer;
 
 //IBOutlets
 @property (strong, nonatomic) IBOutlet UIImageView *imgGochiImage;
@@ -52,9 +57,9 @@
     
     //Modify the UIBar
     UIBarButtonItem* optionsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(goToFeedScreen:)];
-    UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:prepareMailToSend];
+    UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:@selector(prepareMailToSend)];
     
-    self.navigationItem.rightBarButtonItems = optionsButton;
+    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:optionsButton, mailButton, nil];
     
     //Gesture setup
     self.gestTapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
@@ -189,8 +194,43 @@
 #pragma mark - Mails
 -(void) prepareMailToSend
 {
-    
+    //NSString* mailBody = [[NSString alloc] initWithFormat:MAIL_STRING_WITH_FORMAT, self.a];
+    NSString* mailBody = [[NSString alloc] initWithFormat:MAIL_STRING_WITH_FORMAT, self.activeGochi.name];
+    NSString* mailSubject = MAIL_SUBJECT;
+    self.mailComposer = [[MFMailComposeViewController alloc]init];
+    self.mailComposer.mailComposeDelegate = self;
+    [self.mailComposer setSubject:mailSubject];
+    [self.mailComposer setMessageBody:mailBody isHTML:NO];
+    [self presentViewController:self.mailComposer animated:YES completion:nil];
 }
 
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    UIAlertView *alert;
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            alert = [[UIAlertView alloc] initWithTitle:@"Cancel by user" message:@"You canceled the mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alert show];
+            break;
+        case MFMailComposeResultSaved:
+            alert = [[UIAlertView alloc] initWithTitle:@"Draft Saved" message:@"Composed Mail is saved in draft." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alert show];
+            break;
+        case MFMailComposeResultSent:
+            alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"You have successfully sent email." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alert show];
+            break;
+        case MFMailComposeResultFailed:
+            alert = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Sorry! Failed to send." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alert show];
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

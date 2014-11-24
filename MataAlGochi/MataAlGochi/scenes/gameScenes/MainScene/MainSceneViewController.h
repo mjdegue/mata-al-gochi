@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PetConstants.h"
 #import "FeedSceneViewController.h"
-
-@interface MainSceneViewController : UIViewController<FoodDelegate, UIGestureRecognizerDelegate>
+#import <MessageUI/MessageUI.h>
+@interface MainSceneViewController : UIViewController<FoodDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate>
 
 @end
