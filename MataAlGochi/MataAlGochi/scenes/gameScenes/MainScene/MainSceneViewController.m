@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgFood;
 @property (strong, nonatomic) IBOutlet UIView *mouthViewCollider;
 @property (strong, nonatomic) IBOutlet UIProgressView *barFoodStatusBar;
+@property (strong, nonatomic) IBOutlet UIButton *btnTrainingButton;
 
 //Gestures
 @property(nonatomic,strong) UITapGestureRecognizer* gestTapGest;
@@ -52,6 +53,7 @@
     
     //Gochi methods
     [self setActiveGochi:[self.gameInstance activeGochi]];
+    [self.activeGochi setDelegate:self];
     [self setTitle:[self.activeGochi name]];
     [self refreshPetImage];
     
@@ -60,6 +62,7 @@
     UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:@selector(prepareMailToSend)];
     
     self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:optionsButton, mailButton, nil];
+    self.navigationItem.rightBarButtonItem = optionsButton;
     
     //Gesture setup
     self.gestTapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
@@ -123,7 +126,7 @@
                                             BOOL shouldFeedGochi = [self shouldFeedGochi];
                                             if(shouldFeedGochi)
                                             {
-                                                [self feedGochi];
+                                                [self.activeGochi feedWith:self.activeFood];
                                             }
                                         }
                                     }];
@@ -148,47 +151,134 @@
 
  }
 
-- (void) feedGochi
+- (void) startFoodDecrease
 {
-    if([self.activeGochi feedWith:self.activeFood])
-    {
-        [UIView animateWithDuration:4.0f
-                              delay:0.2f
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^
-                                    {
-                                        CGRect futureFrame = [self.imgFood frame];
-                                        CGPoint center = [self.imgFood center];
-                                        futureFrame.size.height = 0;
-                                        futureFrame.size.width = 0;
-                                        [self.imgFood setFrame:futureFrame];
-                                        [self.imgFood setCenter:center];
-                                        [self.barFoodStatusBar
-                                         setProgress: ([self.activeGochi.energy floatValue] / 100)
+    
+    [UIView animateWithDuration:4.0f
+                          delay:0.2f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^
+                                {
+                                    CGRect futureFrame = [self.imgFood frame];
+                                    CGPoint center = [self.imgFood center];
+                                    futureFrame.size.height = 0;
+                                    futureFrame.size.width = 0;
+                                    [self.imgFood setFrame:futureFrame];
+                                    [self.imgFood setCenter:center];
+                                    [self.barFoodStatusBar
+                                        setProgress: ([self.activeGochi.energy floatValue] / 100)
                                             animated:YES];
-                                    }
-                         completion:^(BOOL finished)
-                                    {
-                                        NSLog(@"%d", finished);
-                                        if(finished)
-                                        {
-                                            [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:[self.activeGochi petType]]];
-                                            [self.imgGochiImage stopAnimating];
-                                            [self.imgFood setImage:nil];
-                                        }
-                                    }];
-        [self.imgGochiImage setAnimationImages:
-            [ImageLoader loadPetAnimationByPet:[self.activeGochi petType]
-                                   andPetState:PET_STATE_EATING]];
+                                }
+                     completion:^(BOOL finished)
+                               {
+                                   //Should move this to changeStateDelegate
+                                   /*
+                                   NSLog(@"%d", finished);
+                                   if(finished)
+                                   {
+                                       [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:[self.activeGochi petType]]];
+                                       [self.imgGochiImage stopAnimating];
+                                       [self.imgFood setImage:nil];
+                                   }
+                                 */
+                               }];
+    [self.imgGochiImage setAnimationImages:
+        [ImageLoader loadPetAnimationByPet:[self.activeGochi petType]
+                               andPetState:PET_STATE_EATING]];
         
-        [self.imgGochiImage startAnimating];
+    [self.imgGochiImage startAnimating];
+}
+
+- (void) finishEating
+{
+    [self.imgGochiImage stopAnimating];
+    [self.imgFood setImage:nil];
+}
+
+- (IBAction)startTraining:(id)sender
+{
+    if(self.activeGochi.petState != PET_STATE_TRAINING)
+    {
+        [self.activeGochi train];
+    }
+    else
+    {
+        [self.activeGochi stopTraining];
+    }
+    [self updateTrainingButton];
+}
+
+-(void) updateTrainingButton
+{
+    if([self.activeGochi.energy floatValue] == 0.0f)
+    {
+        [self.btnTrainingButton setEnabled:NO];
+        [self.btnTrainingButton setTitle:@"Start Training" forState:UIControlStateDisabled];
+    }
+    else
+    {
+        [self.btnTrainingButton setEnabled:YES];
+        if(self.activeGochi.petState == PET_STATE_TRAINING)
+        {
+            [self.btnTrainingButton setTitle:@"Stop Training" forState:UIControlStateNormal];
+        }
+        else
+        {
+            [self.btnTrainingButton setTitle:@"Start Training" forState:UIControlStateNormal];
+        }
     }
 }
 
-//When finish eating, should be handled by delegating
-- (void) finishFood
+#pragma mark - GochiDelegate
+
+- (void) gochiChangedFromState:(PetStateIdentifier) previousState toState:(PetStateIdentifier) newState
 {
-    self.activeFood = nil;
+    if(previousState == PET_STATE_EATING)
+    {
+        [self finishEating];
+    }
+    switch (newState)
+    {
+        default:
+        case PET_STATE_RESTING:
+            [self startGochiRest];
+            break;
+        case PET_STATE_TRAINING:
+            [self startGochiTrain];
+            break;
+        case PET_STATE_EATING:
+            [self startGochiEat];
+            break;
+        case PET_STATE_TIRED:
+        break;
+    }
+}
+
+- (void) gochiEnergyModified
+{
+    float progress = [self.activeGochi.energy floatValue] / 100.0f;
+    [self.barFoodStatusBar setProgress:progress animated:YES];
+    [self updateTrainingButton];
+}
+
+#pragma mark - Gochi Activities
+- (void) startGochiRest
+{
+    [self.imgGochiImage stopAnimating];
+    [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:(self.activeGochi.petType)]];
+}
+
+- (void) startGochiTrain
+{
+    [self.imgGochiImage setAnimationImages:[ImageLoader loadPetAnimationByPet:(self.activeGochi.petType) andPetState:PET_STATE_TRAINING]];
+    [self.imgGochiImage startAnimating];
+}
+
+- (void) startGochiEat
+{
+    [self.imgGochiImage setAnimationImages:[ImageLoader loadPetAnimationByPet:(self.activeGochi.petType) andPetState:PET_STATE_EATING]];
+    [self.imgGochiImage startAnimating];
+    [self startFoodDecrease];
 }
 
 #pragma mark - Mails

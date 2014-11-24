@@ -8,8 +8,11 @@
 
 #import "Game.h"
 
-@implementation Game
+@interface Game()
+@property (strong, nonatomic) NSTimer* updateTimer;
+@end
 
+@implementation Game
 
 -(void)setOwnGochi:(Gochi *)ownGochi
 {
@@ -18,7 +21,18 @@
 }
 
 
-//Singleton Methods
+#pragma mark - GameSpecifics
+- (void)update
+{
+    NSLog(@"Update gochi");
+    if(self.ownGochi != nil)
+    {
+        [self.ownGochi update];
+    }
+}
+
+
+#pragma mark - Singleton
 static Game* instance = nil;
 
 +(void)InitializeGame
@@ -37,6 +51,9 @@ static Game* instance = nil;
 {
     self = [super init];
     
+    self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(update) userInfo:nil repeats:YES];
+    
+    
     return self;
 }
 
@@ -45,6 +62,7 @@ static Game* instance = nil;
     @throw @"You shall not call this";
     return [super init];
 }
+
 +(void)DestroyInstance
 {
     instance = nil;

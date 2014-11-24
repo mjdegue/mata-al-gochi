@@ -15,6 +15,8 @@
 @property (nonatomic, strong) Gochi* activeGochi;
 
 //Methods
+- (void) update;
+
 //Singleton methods
 +(void) InitializeGame;
 +(Game*) GetInstance;

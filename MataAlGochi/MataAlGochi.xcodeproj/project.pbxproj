@@ -85,6 +85,7 @@
 		0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
 		0D557B801A1FB1C200E97B72 /* PetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetFactory.h; sourceTree = "<group>"; };
 		0D557B811A1FB1C200E97B72 /* PetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetFactory.m; sourceTree = "<group>"; };
+		0D745C0A1A2378D500251EF1 /* GochiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +238,7 @@
 		0D557B4F1A1D250100E97B72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D745C091A2378BB00251EF1 /* Delegates */,
 				0D557B7F1A1FB1A400E97B72 /* Factories */,
 				0D557B5A1A1D444E00E97B72 /* Game */,
 				0D557B541A1D257700E97B72 /* Entities */,
@@ -327,6 +329,14 @@
 				0D557B811A1FB1C200E97B72 /* PetFactory.m */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		0D745C091A2378BB00251EF1 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0D745C0A1A2378D500251EF1 /* GochiDelegate.h */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

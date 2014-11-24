@@ -6,6 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,10 +23,13 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+=======
+>>>>>>> GochisUpdates
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
+<<<<<<< HEAD
             timestampString = "438304064.337912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -33,6 +37,15 @@
             endingLineNumber = "160"
             landmarkName = "-feedGochi"
             landmarkType = "5">
+=======
+            timestampString = "438549157.783977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
+            landmarkName = "@implementation MainSceneViewController"
+            landmarkType = "3">
+>>>>>>> GochisUpdates
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,6 +55,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
+<<<<<<< HEAD
             timestampString = "438304064.337912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -63,6 +77,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
+=======
+            timestampString = "438539907.803903"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+>>>>>>> GochisUpdates
             landmarkName = "-handleTap:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,12 +95,21 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
+<<<<<<< HEAD
             timestampString = "438304064.337912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
             endingLineNumber = "126"
             landmarkName = "-handleTap:"
+=======
+            timestampString = "438539925.088958"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "-startTraining:"
+>>>>>>> GochisUpdates
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,6 +119,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
             timestampString = "438304064.337912"
             startingColumnNumber = "9223372036854775807"
@@ -96,6 +127,15 @@
             startingLineNumber = "175"
             endingLineNumber = "175"
             landmarkName = "-feedGochi"
+=======
+            filePath = "MataAlGochi/Classes/Entities/Gochi.m"
+            timestampString = "438540780.969245"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-stateChange:"
+>>>>>>> GochisUpdates
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +146,21 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
+<<<<<<< HEAD
             timestampString = "438304064.337912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
             endingLineNumber = "180"
             landmarkName = "-feedGochi"
+=======
+            timestampString = "438540195.144915"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-gochiChangedFromState:toState:"
+>>>>>>> GochisUpdates
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
