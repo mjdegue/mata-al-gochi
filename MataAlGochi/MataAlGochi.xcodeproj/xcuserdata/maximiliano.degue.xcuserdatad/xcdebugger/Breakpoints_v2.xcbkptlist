@@ -6,33 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
-            timestampString = "438290754.523096"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
-            timestampString = "438298322.94378"
+            timestampString = "438549157.783977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "-feedGochi"
-            landmarkType = "5">
+            startingLineNumber = "299"
+            endingLineNumber = "299"
+            landmarkName = "@implementation MainSceneViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
-            timestampString = "438297164.40211"
+            timestampString = "438539907.803903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-feedGochi"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
-            timestampString = "438298413.458962"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-handleTap:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
-            timestampString = "438298425.001926"
+            timestampString = "438539925.088958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-handleTap:"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "-startTraining:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MataAlGochi/Classes/Entities/Gochi.m"
+            timestampString = "438540780.969245"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-stateChange:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,28 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
-            timestampString = "438298431.689864"
+            timestampString = "438540195.144915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-feedGochi"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MataAlGochi/scenes/gameScenes/MainScene/MainSceneViewController.m"
-            timestampString = "438298483.427832"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "-feedGochi"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-gochiChangedFromState:toState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,19 +9,31 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "PetConstants.h"
+#import "GochiDelegate.h"
 #import "Food.h"
 @interface Gochi : NSObject
 
+//Pet properties
 @property(strong, nonatomic) NSString* name;
+@property(strong, nonatomic) NSNumber* petLevel;
 @property(assign, nonatomic) PetIdentifier petType;
-@property(assign, nonatomic) CGRect mouthRect;
+@property(assign, nonatomic) PetStateIdentifier petState;
 @property(strong, nonatomic, readonly) NSNumber* energy;
+
+//Delegate specific
+@property(strong, nonatomic) id<GochiDelegate> delegate;
 
 //Constructor
 -(instancetype) init;
 -(instancetype) initWithName:(NSString*) name andPetType:(PetIdentifier) petType;
 
 //Functional Methods
--(BOOL) feedWith:(Food*) food;
+- (void) feedWith:(Food*) food;
+- (void) train;
+- (void) stopTraining;
+
+- (void) update;
+
+//
 
 @end
