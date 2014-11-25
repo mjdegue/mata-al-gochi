@@ -10,13 +10,13 @@
 
 @implementation Food
 
--(instancetype) initFood:(FoodIdentifier)foodType whichNameIs:(NSString*)foodName andDescription:(NSString*) foodDescription
+-(instancetype) initFood:(FoodIdentifier)foodType whichNameIs:(NSString*)foodName andDescription:(NSString*) foodDescription andFoodRecharge:(NSNumber *)recharge
 {
     self = [super init];
     self.FoodType = foodType;
     self.FoodName = foodName;
     self.FoodDescription = foodDescription;
-    self.RechargeAmmount = [[NSNumber alloc] initWithFloat:20.0f];
+    self.RechargeAmmount = recharge;
     return self;
 }
 @end

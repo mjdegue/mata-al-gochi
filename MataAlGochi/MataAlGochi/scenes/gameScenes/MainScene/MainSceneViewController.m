@@ -70,7 +70,7 @@
     [self setActiveGochi:[self.gameInstance activeGochi]];
     [self.activeGochi setDelegate:self];
     [self setTitle:[self.activeGochi name]];
-    [self refreshPetImage];
+    [self loadImageInAppear];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,9 +89,16 @@
 }
 
 #pragma mark - Visualization
-- (void) refreshPetImage
+- (void) loadImageInAppear
 {
-    [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:[[self activeGochi] petType]]];
+    if(self.activeGochi.petState == PET_STATE_TIRED)
+    {
+        [self.imgGochiImage setImage:[[ImageLoader loadPetAnimationByPet:self.activeGochi.petType andPetState:PET_STATE_TIRED] lastObject]];
+    }
+    else if(self.activeGochi.petState == PET_STATE_RESTING)
+    {
+        [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:self.activeGochi.petType]];
+    }
 }
 
 #pragma mark - FoodDelegate
@@ -284,8 +291,16 @@
 
 - (void) startGochiTired
 {
-    [self.imgGochiImage setAnimationImages:[ImageLoader loadPetAnimationByPet:(self.activeGochi.petType) andPetState:PET_STATE_TIRED]];
+    //Set animation:
+    NSArray* animationArray = [ImageLoader loadPetAnimationByPet:(self.activeGochi.petType) andPetState:PET_STATE_TIRED];
+    [self.imgGochiImage setAnimationImages:animationArray];
     [self.imgGochiImage setAnimationDuration:2.0f];
+    [self.imgGochiImage setAnimationRepeatCount:1];
+    
+    //Set post-animation image
+    [self.imgGochiImage setImage:[animationArray lastObject]];
+    
+    //Start image
     [self.imgGochiImage startAnimating];
 }
 

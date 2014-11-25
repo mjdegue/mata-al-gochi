@@ -46,39 +46,48 @@
     self.foodArray = [[NSMutableArray alloc] initWithObjects:
                       [[Food alloc] initFood:FOOD_APPLE
                                  whichNameIs:@"Apple"
-                              andDescription:@"A nice apple"],
+                              andDescription:@"A nice apple. +50 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:50.0f]],
                       
                       [[Food alloc] initFood:FOOD_BREAD
                                  whichNameIs:@"Bread"
-                              andDescription:@"A piese of bread"],
+                              andDescription:@"A piese of bread. +5 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:5.0f]],
                       
                       [[Food alloc] initFood:FOOD_BURGER
                                  whichNameIs:@"Burger"
-                              andDescription:@"A huge burger"],
+                              andDescription:@"A huge burger. +3 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:3.0f]],
                       
                       [[Food alloc] initFood:FOOD_CAKE
                                  whichNameIs:@"Pie"
-                              andDescription:@"A great cake"],
+                              andDescription:@"A great cake. +20 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:20.0f]],
                       
                       [[Food alloc] initFood:FOOD_CAKE_TWO
                                  whichNameIs:@"Piese of Pie"
-                              andDescription:@"Another cake"],
+                              andDescription:@"Another cake. +10 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:10.0f]],
                       
                       [[Food alloc] initFood:FOOD_CHICKEN
                                  whichNameIs:@"Chicken"
-                              andDescription:@"A little chicken"],
+                              andDescription:@"A little chicken. +13 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:13.0f]],
                       
                       [[Food alloc] initFood:FOOD_ICE_CREAM
                                  whichNameIs:@"Ice cream"
-                              andDescription:@"An cold ice cream"],
+                              andDescription:@"An cold ice cream. +40 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:40.0f]],
                       
                       [[Food alloc] initFood:FOOD_LEMON_FISH
                                  whichNameIs:@"Fish"
-                              andDescription:@"A wild Magicarp Appears"],
+                              andDescription:@"A wild Magicarp Appears. +25 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:25.0f]],
                       
                       [[Food alloc] initFood:FOOD_SAUSAGE
                                  whichNameIs:@"Sausage"
-                              andDescription:@"Mr. Sausage"],
+                              andDescription:@"Mr. Sausage. +100 Energy"
+                             andFoodRecharge:[[NSNumber alloc] initWithFloat:100.0f]],
                       nil];
 }
 

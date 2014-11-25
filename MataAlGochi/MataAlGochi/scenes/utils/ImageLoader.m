@@ -113,9 +113,8 @@
             break;
     }
     
-    const int firstImage = (petState == PET_STATE_TIRED) ? 3 : 1;
     const int ammountOfImages = petState == PET_STATE_TRAINING ? 5 : 4;
-    for(int i = firstImage; i <= ammountOfImages; ++i)
+    for(int i = 1; i <= ammountOfImages; ++i)
     {
         NSString* imageName = [NSString stringWithFormat:imageFormat, petName, stateName, i];
         [imageList addObject:[UIImage imageNamed:imageName]];
