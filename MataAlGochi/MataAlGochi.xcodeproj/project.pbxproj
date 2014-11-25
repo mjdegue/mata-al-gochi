@@ -86,6 +86,7 @@
 		0D557B801A1FB1C200E97B72 /* PetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetFactory.h; sourceTree = "<group>"; };
 		0D557B811A1FB1C200E97B72 /* PetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetFactory.m; sourceTree = "<group>"; };
 		0D745C0A1A2378D500251EF1 /* GochiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiDelegate.h; sourceTree = "<group>"; };
+		0D745C0D1A23C4C300251EF1 /* GameDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				0D745C0A1A2378D500251EF1 /* GochiDelegate.h */,
+				0D745C0D1A23C4C300251EF1 /* GameDelegate.h */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";

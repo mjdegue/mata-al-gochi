@@ -13,6 +13,8 @@
 #define ENERGY_MULTIPLIER_TRAIN (-10.0f)
 #define ENERGY_MULTIPLIER_EAT   (1.0f)
 
+#define EXPERIENCE_MULTIPLIER_BY_TRAIN 45
+
 #define TIMER_EATING_DURATION 2.0f
 
 @interface Gochi ()
@@ -29,6 +31,8 @@
     [self setName:@""];
     [self setPetType:PET_INVALID];
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
+    _level = [[NSNumber alloc] initWithInt:1];
+    _experience = [[NSNumber alloc] initWithInt:0];
     return self;
 }
 
@@ -83,11 +87,14 @@
     }
 }
 
+#pragma mark - Private Methods
+
 - (void) doTrain
 {
     if([self.energy floatValue] > 0.0f)
     {
         [self addToEnergy:[[NSNumber alloc] initWithFloat:ENERGY_MULTIPLIER_TRAIN]];
+        [self plusExpe:[[NSNumber alloc] initWithInt:EXPERIENCE_MULTIPLIER_BY_TRAIN]];
     }
 }
 
@@ -115,11 +122,17 @@
     
     _energy = [[NSNumber alloc] initWithFloat:(energyValue)];
     
-    if(energyValue == 0.0f || energyValue == 100.0f)
+    //if finished eating
+    if( energyValue == 100.0f)
     {
         [self stateChange:PET_STATE_RESTING];
         [self.stateTimer invalidate];
         [self setEatingFood:nil];
+    }
+    if( energyValue == 0.0f)
+    {
+        [self stateChange:PET_STATE_TIRED];
+        [self.stateTimer invalidate];
     }
     if(self.delegate != nil)
     {
@@ -144,4 +157,30 @@
         [self.stateTimer invalidate];
     }
 }
+
+- (void) plusExpe: (NSNumber* ) expDelta
+{
+    const int maxExpInLevel = 100 * [self.level intValue] * [self.level intValue];
+    _experience = [[NSNumber alloc] initWithInt:([_experience intValue] + [expDelta intValue])];
+    
+    if([_experience intValue] >= maxExpInLevel)
+    {
+        _experience = [[NSNumber alloc] initWithInt:([_experience intValue] - maxExpInLevel)];
+        [self levelUp];
+    }
+    NSLog(@"Level: %@", self.level);
+    NSLog(@"Experience: %@", self.experience);
+    NSLog(@"Max Experience: %d", maxExpInLevel);
+    
+}
+
+- (void) levelUp
+{
+    _level = [[NSNumber alloc] initWithInt:([self.level intValue] + 1)];
+    if(self.delegate != nil)
+    {
+        [self.delegate gochiLevelUp];
+    }
+}
+
 @end

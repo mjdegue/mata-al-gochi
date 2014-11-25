@@ -21,7 +21,7 @@
 @property(nonatomic,strong) Gochi* activeGochi;
 @property(nonatomic,strong) Food* activeFood;
 @property(nonatomic,strong) Game* gameInstance;
-@property(strong, nonatomic) MFMailComposeViewController* mailComposer;
+@property(nonatomic,strong) MFMailComposeViewController* mailComposer;
 
 //IBOutlets
 @property (strong, nonatomic) IBOutlet UIImageView *imgGochiImage;
@@ -48,15 +48,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Game instance setup
-    [self setGameInstance:[Game GetInstance]];
-    
-    //Gochi methods
-    [self setActiveGochi:[self.gameInstance activeGochi]];
-    [self.activeGochi setDelegate:self];
-    [self setTitle:[self.activeGochi name]];
-    [self refreshPetImage];
-    
     //Modify the UIBar
     UIBarButtonItem* optionsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(goToFeedScreen:)];
     UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:@selector(prepareMailToSend)];
@@ -68,6 +59,18 @@
     self.gestTapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     self.gestTapGest.delegate = self;
     [self.view addGestureRecognizer:self.gestTapGest];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //Game instance setup
+    [self setGameInstance:[Game GetInstance]];
+    
+    //Gochi methods
+    [self setActiveGochi:[self.gameInstance activeGochi]];
+    [self.activeGochi setDelegate:self];
+    [self setTitle:[self.activeGochi name]];
+    [self refreshPetImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,7 +136,6 @@
     }
 }
 
-
 #pragma mark - Refactor next
 
 //where should be this
@@ -146,9 +148,7 @@
     {
         answer = YES;
     }
-    
     return answer;
-
  }
 
 - (void) startFoodDecrease
@@ -171,16 +171,7 @@
                                 }
                      completion:^(BOOL finished)
                                {
-                                   //Should move this to changeStateDelegate
-                                   /*
-                                   NSLog(@"%d", finished);
-                                   if(finished)
-                                   {
-                                       [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:[self.activeGochi petType]]];
-                                       [self.imgGochiImage stopAnimating];
-                                       [self.imgFood setImage:nil];
-                                   }
-                                 */
+                                   
                                }];
     [self.imgGochiImage setAnimationImages:
         [ImageLoader loadPetAnimationByPet:[self.activeGochi petType]
@@ -193,6 +184,7 @@
 {
     [self.imgGochiImage stopAnimating];
     [self.imgFood setImage:nil];
+    self.activeFood = nil;
 }
 
 - (IBAction)startTraining:(id)sender
@@ -250,7 +242,8 @@
             [self startGochiEat];
             break;
         case PET_STATE_TIRED:
-        break;
+            [self startGochiTired];
+            break;
     }
 }
 
@@ -259,6 +252,14 @@
     float progress = [self.activeGochi.energy floatValue] / 100.0f;
     [self.barFoodStatusBar setProgress:progress animated:YES];
     [self updateTrainingButton];
+}
+
+- (void) gochiLevelUp
+{
+    NSString* messageTittle = [[NSString alloc] initWithFormat:@"%@ leveled up", [self.activeGochi name]];
+    NSString* messageBody = [[NSString alloc] initWithFormat:@"Congratulations! %@ reached level %@", [self.activeGochi name], [self.activeGochi level]];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:messageTittle message:messageBody delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 #pragma mark - Gochi Activities
@@ -279,6 +280,13 @@
     [self.imgGochiImage setAnimationImages:[ImageLoader loadPetAnimationByPet:(self.activeGochi.petType) andPetState:PET_STATE_EATING]];
     [self.imgGochiImage startAnimating];
     [self startFoodDecrease];
+}
+
+- (void) startGochiTired
+{
+    [self.imgGochiImage setAnimationImages:[ImageLoader loadPetAnimationByPet:(self.activeGochi.petType) andPetState:PET_STATE_TIRED]];
+    [self.imgGochiImage setAnimationDuration:2.0f];
+    [self.imgGochiImage startAnimating];
 }
 
 #pragma mark - Mails

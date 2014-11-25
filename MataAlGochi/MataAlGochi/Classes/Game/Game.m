@@ -10,27 +10,37 @@
 
 @interface Game()
 @property (strong, nonatomic) NSTimer* updateTimer;
+@property (nonatomic, strong) NSMutableArray* gochisList;
 @end
 
 @implementation Game
 
--(void)setOwnGochi:(Gochi *)ownGochi
-{
-    _ownGochi = ownGochi;
-    _activeGochi = ownGochi;
-}
-
-
 #pragma mark - GameSpecifics
 - (void)update
 {
-    NSLog(@"Update gochi");
-    if(self.ownGochi != nil)
+    int gochisSize = (int)[self.gochisList count];
+    
+    for(int i = 0; i < gochisSize; ++i)
     {
-        [self.ownGochi update];
+        Gochi* gochi = [self.gochisList objectAtIndex:i];
+        [gochi update];
     }
 }
 
+#pragma mark - Add gochis
+- (void)addGochi:(Gochi *)gochi
+{
+    [self addGochi: gochi setAsActive:NO];
+}
+
+-(void)addGochi:(Gochi *)gochi setAsActive:(BOOL)setActive
+{
+    [self.gochisList addObject:gochi];
+    if(setActive)
+    {
+        self.activeGochi = gochi;
+    }
+}
 
 #pragma mark - Singleton
 static Game* instance = nil;
@@ -52,7 +62,7 @@ static Game* instance = nil;
     self = [super init];
     
     self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(update) userInfo:nil repeats:YES];
-    
+    self.gochisList = [[NSMutableArray alloc] init];
     
     return self;
 }

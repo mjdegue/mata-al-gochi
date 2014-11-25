@@ -39,7 +39,8 @@
     if([self isGochiCompleted])
     {
         Game* game = [Game GetInstance];
-        [game setOwnGochi:[self futureGochi]];
+        Gochi* gochi = [self futureGochi];
+        [game addGochi:gochi setAsActive:YES];
         return YES;
     }
     return NO;

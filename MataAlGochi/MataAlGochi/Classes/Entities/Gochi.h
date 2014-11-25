@@ -18,7 +18,11 @@
 @property(strong, nonatomic) NSNumber* petLevel;
 @property(assign, nonatomic) PetIdentifier petType;
 @property(assign, nonatomic) PetStateIdentifier petState;
+
+//Attributes
 @property(strong, nonatomic, readonly) NSNumber* energy;
+@property(strong, nonatomic, readonly) NSNumber* experience;
+@property(strong, nonatomic, readonly) NSNumber* level;
 
 //Delegate specific
 @property(strong, nonatomic) id<GochiDelegate> delegate;

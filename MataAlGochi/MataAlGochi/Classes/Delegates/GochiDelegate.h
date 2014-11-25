@@ -12,4 +12,5 @@
 
 - (void) gochiChangedFromState:(PetStateIdentifier) previousState toState:(PetStateIdentifier) newState;
 - (void) gochiEnergyModified;
+- (void) gochiLevelUp;
 @end

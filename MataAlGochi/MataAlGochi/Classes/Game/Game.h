@@ -11,11 +11,12 @@
 @interface Game : NSObject
 
 //Properties
-@property (nonatomic, strong) Gochi* ownGochi;
 @property (nonatomic, strong) Gochi* activeGochi;
 
 //Methods
 - (void) update;
+- (void) addGochi:(Gochi*) gochi;
+- (void) addGochi:(Gochi*) gochi setAsActive:(BOOL) setActive;
 
 //Singleton methods
 +(void) InitializeGame;
