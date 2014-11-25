@@ -30,6 +30,7 @@
 		0D557B7D1A1E6E7200E97B72 /* FoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */; };
 		0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */; };
 		0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B811A1FB1C200E97B72 /* PetFactory.m */; };
+		0D745C111A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C101A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		0D557B811A1FB1C200E97B72 /* PetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetFactory.m; sourceTree = "<group>"; };
 		0D745C0A1A2378D500251EF1 /* GochiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiDelegate.h; sourceTree = "<group>"; };
 		0D745C0D1A23C4C300251EF1 /* GameDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameDelegate.h; sourceTree = "<group>"; };
+		0D745C0F1A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+TimerSafeInvalidate.h"; sourceTree = "<group>"; };
+		0D745C101A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+TimerSafeInvalidate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 		0D5579F81A1BCACA00E97B72 /* MataAlGochi */ = {
 			isa = PBXGroup;
 			children = (
+				0D745C0E1A24FFEA00251EF1 /* Categories */,
 				0D557B781A1E6E0300E97B72 /* UI */,
 				0D557B551A1D272100E97B72 /* Constants */,
 				0D557B4F1A1D250100E97B72 /* Classes */,
@@ -308,6 +312,7 @@
 		0D557B781A1E6E0300E97B72 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0D745C121A2504EB00251EF1 /* ModalViewControllers */,
 				0D557B791A1E6E0300E97B72 /* CustomCells */,
 			);
 			path = UI;
@@ -339,6 +344,22 @@
 				0D745C0D1A23C4C300251EF1 /* GameDelegate.h */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		0D745C0E1A24FFEA00251EF1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0D745C0F1A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.h */,
+				0D745C101A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		0D745C121A2504EB00251EF1 /* ModalViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModalViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D745C111A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m in Sources */,
 				0D557B5D1A1D445A00E97B72 /* Game.m in Sources */,
 				0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */,
 				0D557B701A1E5F7500E97B72 /* Food.m in Sources */,

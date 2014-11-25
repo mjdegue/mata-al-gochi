@@ -102,7 +102,6 @@
 }
 
 #pragma mark - FoodDelegate
-
 - (void) prepareGochisFood: (Food*) food
 {
     self.activeFood = food;

@@ -8,6 +8,7 @@
 
 #import "Gochi.h"
 #import "CreationFlow.h"
+#import "NSTimer+TimerSafeInvalidate.h"
 
 #define ENERGY_MULTIPLIER_REST  (-1.0f)
 #define ENERGY_MULTIPLIER_TRAIN (-10.0f)
@@ -126,13 +127,13 @@
     if( energyValue == 100.0f)
     {
         [self stateChange:PET_STATE_RESTING];
-        [self.stateTimer invalidate];
+        [self.stateTimer safeInvalidate];
         [self setEatingFood:nil];
     }
     if( energyValue == 0.0f)
     {
         [self stateChange:PET_STATE_TIRED];
-        [self.stateTimer invalidate];
+        [self.stateTimer safeInvalidate];
     }
     if(self.delegate != nil)
     {
@@ -154,7 +155,7 @@
 {
     if(self.stateTimer != nil)
     {
-        [self.stateTimer invalidate];
+        [self.stateTimer safeInvalidate];
     }
 }
 
