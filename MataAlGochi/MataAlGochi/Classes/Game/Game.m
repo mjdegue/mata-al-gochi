@@ -47,10 +47,9 @@ static Game* instance = nil;
 
 +(void)InitializeGame
 {
-    dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    if(instance == nil){
         instance = [[Game alloc] initFromSingleton];
-    });
+    }
 }
 +(Game *)GetInstance
 {
@@ -77,5 +76,6 @@ static Game* instance = nil;
 {
     instance = nil;
 }
+
 
 @end

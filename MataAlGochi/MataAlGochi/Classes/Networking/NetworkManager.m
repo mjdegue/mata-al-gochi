@@ -9,7 +9,7 @@
 #import "AFNetworkActivityIndicatorManager.h"
 
 #define REQUESTS_TIME_OUT 20
-#define BASE_URL @"http://echo.jsontest.com/key/value/one/two"
+#define BASE_URL @"http://tamagotchi.herokuapp.com/"
 @implementation NetworkManager
 + (instancetype)sharedInstance
 {
@@ -45,8 +45,8 @@
 
 + (NSDictionary*) getAdditionalHeaders
 {
-    NSDictionary* answer = [[NSDictionary alloc] init];
-    
+    NSMutableDictionary* answer = [[NSMutableDictionary alloc] init];
+    [answer setObject:@"application/json" forKey:@"Content-Type"];
     return answer;
 }
 

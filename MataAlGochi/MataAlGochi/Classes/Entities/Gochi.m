@@ -47,6 +47,16 @@
     return self;
 }
 
+-(instancetype) initWithDictionary:(NSDictionary*) dictionary
+{
+    self = [super init];
+    _energy = [[NSNumber alloc] initWithInt:(int)dictionary[@"energy"]];
+    _level = [[NSNumber alloc] initWithInt:(int)dictionary[@"level"]];
+    _experience = [[NSNumber alloc] initWithInt:(int)dictionary[@"experience"]];
+    self.name = (NSString*) dictionary[@"name"];
+    return self;
+}
+
 #pragma mark - Functional Methods
 -(void) feedWith:(Food*) food
 {

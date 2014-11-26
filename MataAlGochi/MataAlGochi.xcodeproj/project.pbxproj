@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2D08C11A2660C6005D1421 /* NetworkRequestsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D08C01A2660C6005D1421 /* NetworkRequestsHelper.m */; };
 		0D5579FC1A1BCACA00E97B72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FB1A1BCACA00E97B72 /* main.m */; };
 		0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FE1A1BCACA00E97B72 /* AppDelegate.m */; };
 		0D557A071A1BCACA00E97B72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D557A061A1BCACA00E97B72 /* Images.xcassets */; };
@@ -49,7 +50,6 @@
 		0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C611A2644F200251EF1 /* UIRefreshControl+AFNetworking.m */; };
 		0D745C6B1A2644F200251EF1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C631A2644F200251EF1 /* UIWebView+AFNetworking.m */; };
 		0D745C721A26465500251EF1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C711A26465500251EF1 /* NetworkManager.m */; };
-		0D745C751A26485900251EF1 /* NetworkTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C741A26485900251EF1 /* NetworkTestClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D2D08BF1A2660C6005D1421 /* NetworkRequestsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestsHelper.h; sourceTree = "<group>"; };
+		0D2D08C01A2660C6005D1421 /* NetworkRequestsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestsHelper.m; sourceTree = "<group>"; };
 		0D5579F61A1BCACA00E97B72 /* MataAlGochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataAlGochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5579FA1A1BCACA00E97B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5579FB1A1BCACA00E97B72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -147,8 +149,6 @@
 		0D745C631A2644F200251EF1 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		0D745C701A26465500251EF1 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		0D745C711A26465500251EF1 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
-		0D745C731A26485900251EF1 /* NetworkTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTestClass.h; sourceTree = "<group>"; };
-		0D745C741A26485900251EF1 /* NetworkTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTestClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,8 +487,8 @@
 			children = (
 				0D745C701A26465500251EF1 /* NetworkManager.h */,
 				0D745C711A26465500251EF1 /* NetworkManager.m */,
-				0D745C731A26485900251EF1 /* NetworkTestClass.h */,
-				0D745C741A26485900251EF1 /* NetworkTestClass.m */,
+				0D2D08BF1A2660C6005D1421 /* NetworkRequestsHelper.h */,
+				0D2D08C01A2660C6005D1421 /* NetworkRequestsHelper.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -602,6 +602,7 @@
 				0D745C681A2644F200251EF1 /* UIImageView+AFNetworking.m in Sources */,
 				0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */,
 				0D557B5D1A1D445A00E97B72 /* Game.m in Sources */,
+				0D2D08C11A2660C6005D1421 /* NetworkRequestsHelper.m in Sources */,
 				0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */,
 				0D745C6B1A2644F200251EF1 /* UIWebView+AFNetworking.m in Sources */,
 				0D745C471A26425800251EF1 /* AFHTTPSessionManager.m in Sources */,
@@ -617,7 +618,6 @@
 				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
 				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
-				0D745C751A26485900251EF1 /* NetworkTestClass.m in Sources */,
 				0D557B591A1D291900E97B72 /* Gochi.m in Sources */,
 				0D745C661A2644F200251EF1 /* UIAlertView+AFNetworking.m in Sources */,
 				0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */,

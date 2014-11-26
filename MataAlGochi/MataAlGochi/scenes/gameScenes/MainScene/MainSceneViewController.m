@@ -10,6 +10,7 @@
 #import "ImageLoader.h"
 #import "Game.h"
 #import "Gochi.h"
+#import "NetworkRequestsHelper.h"
 
 //Local defines
 #define MAIL_STRING_WITH_FORMAT @"Buenas! Soy %@, cómo va? Quería comentarte que estuve usando la App Mata al Gochi para comerme todo y está genial. Bajatela YA!! Saludos!"
@@ -22,6 +23,8 @@
 @property(nonatomic,strong) Food* activeFood;
 @property(nonatomic,strong) Game* gameInstance;
 @property(nonatomic,strong) MFMailComposeViewController* mailComposer;
+@property(nonatomic,assign) CGPoint imgOriginalPosition;
+@property(nonatomic,assign) CGRect imgOriginalFrame;
 
 //IBOutlets
 @property (strong, nonatomic) IBOutlet UIImageView *imgGochiImage;
@@ -41,6 +44,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     [self setGameInstance:[Game GetInstance]];
+    
     return self;
 }
 
@@ -59,6 +63,10 @@
     self.gestTapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     self.gestTapGest.delegate = self;
     [self.view addGestureRecognizer:self.gestTapGest];
+    
+    //Food image setup
+    self.imgOriginalPosition = [self.imgFood center];
+    self.imgOriginalFrame = [self.imgFood frame];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -71,6 +79,10 @@
     [self.activeGochi setDelegate:self];
     [self setTitle:[self.activeGochi name]];
     [self loadImageInAppear];
+    
+    //Set food image
+    [self.imgFood setCenter:self.imgOriginalPosition];
+    [self.imgFood setFrame:self.imgOriginalFrame];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -265,6 +277,7 @@
     NSString* messageTittle = [[NSString alloc] initWithFormat:@"%@ leveled up", [self.activeGochi name]];
     NSString* messageBody = [[NSString alloc] initWithFormat:@"Congratulations! %@ reached level %@", [self.activeGochi name], [self.activeGochi level]];
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:messageTittle message:messageBody delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [[NetworkRequestsHelper sharedInstance] postGochiOnServer:self.activeGochi];
     [alert show];
 }
 
@@ -344,5 +357,6 @@
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end

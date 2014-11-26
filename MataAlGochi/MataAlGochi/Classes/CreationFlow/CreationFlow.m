@@ -9,6 +9,8 @@
 #import "CreationFlow.h"
 #import "Game.h"
 #import "Gochi.h"
+#import "NetworkRequestsHelper.h"
+
 @interface CreationFlow ()
 @property (nonatomic, strong) Gochi* futureGochi;
 //Methods
@@ -41,6 +43,7 @@
         Game* game = [Game GetInstance];
         Gochi* gochi = [self futureGochi];
         [game addGochi:gochi setAsActive:YES];
+        [[NetworkRequestsHelper sharedInstance] postGochiOnServer:gochi];
         return YES;
     }
     return NO;

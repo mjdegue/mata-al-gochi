@@ -8,7 +8,8 @@
 
 #import "MainMenuViewController.h"
 #import "TamagochiNameSelectionViewController.h"
-
+#import "NetworkRequestsHelper.h"
+#import "Game.h"
 
 @interface MainMenuViewController ()
 
@@ -39,6 +40,23 @@
 }
 
 
+- (IBAction)didPressLoadFromCloud:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFinishLoadingPet:) name:NWNOTIFICATION_GOCHI_LOADED_SUCCED object:nil];
+    [[NetworkRequestsHelper sharedInstance] getOwnGochiFromServer];
+}
 
+- (void) didFinishLoadingPet:(Gochi*) gochi
+{
+    [[Game GetInstance] setActiveGochi:gochi];
+}
 
+#pragma mark - Testing Network
+/*
+- (IBAction)networkingTestCall:(id)sender
+{
+    NetworkTestClass* net = [[NetworkTestClass alloc] init];
+    [net callMethod];
+}
+*/
 @end

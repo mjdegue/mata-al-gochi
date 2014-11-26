@@ -30,6 +30,7 @@
 //Constructor
 -(instancetype) init;
 -(instancetype) initWithName:(NSString*) name andPetType:(PetIdentifier) petType;
+-(instancetype) initWithDictionary:(NSDictionary*) dictionary;
 
 //Functional Methods
 - (void) feedWith:(Food*) food;
