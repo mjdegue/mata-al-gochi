@@ -7,6 +7,7 @@
 //
 
 #import "MainMenuViewController.h"
+#import "MainSceneViewController.h"
 #import "TamagochiNameSelectionViewController.h"
 #import "NetworkRequestsHelper.h"
 #import "Game.h"
@@ -46,9 +47,12 @@
     [[NetworkRequestsHelper sharedInstance] getOwnGochiFromServer];
 }
 
-- (void) didFinishLoadingPet:(Gochi*) gochi
+- (void) didFinishLoadingPet:(id) sender
 {
-    [[Game GetInstance] setActiveGochi:gochi];
+    Gochi* gochi = [sender object];
+    [[Game GetInstance] addGochi:gochi setAsActive:YES];
+    MainSceneViewController* mainGameScene = [[MainSceneViewController alloc] initWithNibName:@"MainSceneViewController" bundle:nil];
+    [self.navigationController pushViewController:mainGameScene animated:YES];
 }
 
 #pragma mark - Testing Network

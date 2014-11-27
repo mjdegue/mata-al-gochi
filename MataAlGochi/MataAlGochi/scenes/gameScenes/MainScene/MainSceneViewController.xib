@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -11,35 +11,40 @@
                 <outlet property="btnTrainingButton" destination="lna-gS-8Pl" id="kap-Oy-Npg"/>
                 <outlet property="imgFood" destination="dIk-nr-0SW" id="DJ8-tP-DEB"/>
                 <outlet property="imgGochiImage" destination="3MP-VX-jsr" id="ZrD-PO-Pzn"/>
+                <outlet property="lblExperience" destination="1yQ-tm-n8s" id="Rdt-tl-bdp"/>
+                <outlet property="lblLevel" destination="L7H-mT-17O" id="uVJ-rq-dP3"/>
                 <outlet property="mouthViewCollider" destination="ytZ-W7-JW8" id="nqH-TQ-WrQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ciervo_comiendo_1" id="3MP-VX-jsr">
-                    <rect key="frame" x="0.0" y="82" width="304" height="230"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ciervo_comiendo_1" translatesAutoresizingMaskIntoConstraints="NO" id="3MP-VX-jsr">
+                    <rect key="frame" x="148" y="45" width="304" height="230"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="230" id="bTG-F1-KXu"/>
+                        <constraint firstAttribute="width" constant="304" id="bph-ft-TAx"/>
+                    </constraints>
                 </imageView>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="pOY-Gh-Aty">
-                    <rect key="frame" x="40" y="72" width="240" height="2"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pOY-Gh-Aty">
+                    <rect key="frame" x="180" y="392" width="240" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="H0G-71-gK8"/>
+                        <constraint firstAttribute="height" constant="2" id="vtn-y9-5LV"/>
+                    </constraints>
                 </progressView>
-                <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="ytZ-W7-JW8">
-                    <rect key="frame" x="110" y="177" width="70" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dIk-nr-0SW">
-                    <rect key="frame" x="219" y="308" width="85" height="85"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-nr-0SW">
+                    <rect key="frame" x="517" y="517" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="VNh-bD-vdd"/>
+                        <constraint firstAttribute="height" constant="75" id="ymJ-Mk-UPW"/>
+                    </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lna-gS-8Pl">
-                    <rect key="frame" x="8" y="320" width="91" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lna-gS-8Pl">
+                    <rect key="frame" x="8" y="291" width="91" height="30"/>
                     <state key="normal" title="Start Training">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -47,8 +52,48 @@
                         <action selector="startTraining:" destination="-1" eventType="touchUpInside" id="TTJ-OF-XXU"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exp:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yQ-tm-n8s">
+                    <rect key="frame" x="8" y="329" width="200" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="PvC-cd-ySp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7H-mT-17O">
+                    <rect key="frame" x="8" y="363" width="200" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytZ-W7-JW8">
+                    <rect key="frame" x="267" y="154" width="50" height="50"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="NIK-zt-w8A"/>
+                        <constraint firstAttribute="height" constant="50" id="gYg-2P-4tU"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dIk-nr-0SW" secondAttribute="trailing" constant="8" id="4IK-ZA-MO5"/>
+                <constraint firstItem="pOY-Gh-Aty" firstAttribute="top" secondItem="L7H-mT-17O" secondAttribute="bottom" constant="8" id="4Qn-fv-czG"/>
+                <constraint firstItem="L7H-mT-17O" firstAttribute="top" secondItem="1yQ-tm-n8s" secondAttribute="bottom" constant="13" id="EF1-hf-zhw"/>
+                <constraint firstAttribute="centerX" secondItem="pOY-Gh-Aty" secondAttribute="centerX" id="MfQ-2u-c9z"/>
+                <constraint firstItem="1yQ-tm-n8s" firstAttribute="leading" secondItem="L7H-mT-17O" secondAttribute="leading" id="O3H-VU-Ioi"/>
+                <constraint firstItem="lna-gS-8Pl" firstAttribute="top" secondItem="3MP-VX-jsr" secondAttribute="bottom" constant="16" id="O4K-dn-2We"/>
+                <constraint firstItem="3MP-VX-jsr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="QUo-h7-cji"/>
+                <constraint firstItem="1yQ-tm-n8s" firstAttribute="width" secondItem="L7H-mT-17O" secondAttribute="width" id="S5Z-6b-nGH"/>
+                <constraint firstItem="1yQ-tm-n8s" firstAttribute="top" secondItem="lna-gS-8Pl" secondAttribute="bottom" constant="8" id="dOs-t6-q7n"/>
+                <constraint firstItem="lna-gS-8Pl" firstAttribute="leading" secondItem="1yQ-tm-n8s" secondAttribute="leading" id="eIc-jj-yy5"/>
+                <constraint firstAttribute="bottom" secondItem="dIk-nr-0SW" secondAttribute="bottom" constant="8" id="lZf-XT-fkM"/>
+                <constraint firstAttribute="centerX" secondItem="3MP-VX-jsr" secondAttribute="centerX" id="nn1-4R-rez"/>
+                <constraint firstItem="lna-gS-8Pl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="sB5-Ok-mEo"/>
+                <constraint firstItem="ytZ-W7-JW8" firstAttribute="centerX" secondItem="3MP-VX-jsr" secondAttribute="centerX" constant="-8" id="w03-ta-xgT"/>
+                <constraint firstItem="ytZ-W7-JW8" firstAttribute="centerY" secondItem="3MP-VX-jsr" secondAttribute="centerY" constant="19" id="wBd-Wk-M1B"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="178" y="292"/>
@@ -57,9 +102,4 @@
     <resources>
         <image name="ciervo_comiendo_1" width="319" height="373"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

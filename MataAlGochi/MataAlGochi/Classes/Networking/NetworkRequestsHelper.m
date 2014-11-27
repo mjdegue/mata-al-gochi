@@ -9,7 +9,6 @@
 #import "NetworkRequestsHelper.h"
 #import "NetworkManager.h"
 
-#define OWN_GOCHI_ID @"MD_7693"
 #define POST_EVENT_PATH @"pet"
 #define SPECIFIC_PET_GET @"pet/%@"
 
@@ -27,14 +26,12 @@
 
 -(void)postGochiOnServer:(Gochi*) gochi successBlock:(SuccessBlock) success failureBlock:(FailureBlock) failure
 {
-    NSDictionary* parameters = [self dictionaryByGochi:gochi];
+    NSDictionary* parameters = [gochi dictionaryByGochi];
     
     [[NetworkManager sharedInstance] POST:POST_EVENT_PATH parameters:parameters
                                  success:(success != nil) ? success : [self genericSuccedBlock]
                                  failure:(failure != nil) ? failure : [self genericFailureBlock]];
 }
-
-
 
 #pragma mark - Get own gochi from server
 
@@ -69,26 +66,14 @@ static NetworkRequestsHelper* instance = nil;
     return instance;
 }
 
-#pragma mark - Generic Gochi Methods
-
-- (NSDictionary*) dictionaryByGochi:(Gochi*) gochi
-{
-    NSMutableDictionary* answer = [[NSMutableDictionary alloc] init];
-    answer[@"code"] = OWN_GOCHI_ID;
-    answer[@"name"] = gochi.name;
-    answer[@"energy"] = gochi.energy;
-    answer[@"level"] = gochi.level;
-    answer[@"experience"] = gochi.experience;
-    return answer;
-}
-
+#pragma mark - Generic Methods
 
 //Private methods
 - (SuccessBlock) genericSuccedBlock
 {
     SuccessBlock block =^(NSURLSessionDataTask* task, id responseObject)
     {
-        NSLog(@"Auto success block OK!");
+        NSLog(@"Auto success block OK!:\n %@", responseObject);
     };
     return block;
 }

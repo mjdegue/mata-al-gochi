@@ -15,13 +15,13 @@
 
 //Pet properties
 @property(strong, nonatomic) NSString* name;
-@property(strong, nonatomic) NSNumber* petLevel;
 @property(assign, nonatomic) PetIdentifier petType;
 @property(assign, nonatomic) PetStateIdentifier petState;
 
 //Attributes
 @property(strong, nonatomic, readonly) NSNumber* energy;
 @property(strong, nonatomic, readonly) NSNumber* experience;
+@property(strong, nonatomic, readonly) NSNumber* maxExperience;
 @property(strong, nonatomic, readonly) NSNumber* level;
 
 //Delegate specific
@@ -30,6 +30,9 @@
 //Constructor
 -(instancetype) init;
 -(instancetype) initWithName:(NSString*) name andPetType:(PetIdentifier) petType;
+
+//Networking helper methods
+-(NSDictionary*) dictionaryByGochi;
 -(instancetype) initWithDictionary:(NSDictionary*) dictionary;
 
 //Functional Methods

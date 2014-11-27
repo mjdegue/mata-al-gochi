@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
@@ -13,14 +14,18 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ciervo_comiendo_1" translatesAutoresizingMaskIntoConstraints="NO" id="t63-DB-Em8">
-                    <rect key="frame" x="42" y="57" width="237" height="181"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ciervo_comiendo_1" translatesAutoresizingMaskIntoConstraints="NO" id="t63-DB-Em8">
+                    <rect key="frame" x="182" y="57" width="237" height="181"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="181" id="5lO-0k-OZt"/>
+                        <constraint firstAttribute="width" constant="237" id="HNj-vD-1KE"/>
+                    </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy0-ap-rlh">
-                    <rect key="frame" x="121" y="398" width="79" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy0-ap-rlh">
+                    <rect key="frame" x="261" y="398" width="79" height="30"/>
                     <state key="normal" title="Let's play :)">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -28,8 +33,8 @@
                         <action selector="didPressContinue:" destination="-1" eventType="touchUpInside" id="GZz-MT-dPc"/>
                     </connections>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KeA-w2-0aX">
-                    <rect key="frame" x="8" y="262" width="304" height="128"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KeA-w2-0aX">
+                    <rect key="frame" x="20" y="262" width="560" height="128"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI0-Yu-MNf">
                             <rect key="frame" x="-20" y="8" width="100" height="100"/>
@@ -68,10 +73,31 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="0jY-el-Lye"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="304" id="AMC-86-eoU"/>
+                    </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvs-c0-O1u">
+                    <rect key="frame" x="20" y="457" width="300" height="99"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="346" y="421"/>
+            <constraints>
+                <constraint firstItem="zy0-ap-rlh" firstAttribute="centerX" secondItem="t63-DB-Em8" secondAttribute="centerX" id="2EM-vJ-u5S"/>
+                <constraint firstAttribute="trailing" secondItem="KeA-w2-0aX" secondAttribute="trailing" constant="20" id="N89-6z-ASZ"/>
+                <constraint firstItem="KeA-w2-0aX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="O4y-BL-RX5"/>
+                <constraint firstItem="t63-DB-Em8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="57" id="Uf5-9Z-D9K"/>
+                <constraint firstItem="zy0-ap-rlh" firstAttribute="centerX" secondItem="KeA-w2-0aX" secondAttribute="centerX" constant="0.5" id="UsB-sA-BWK"/>
+                <constraint firstItem="KeA-w2-0aX" firstAttribute="top" secondItem="t63-DB-Em8" secondAttribute="bottom" constant="24" id="glP-3c-Hl6"/>
+                <constraint firstItem="zy0-ap-rlh" firstAttribute="top" secondItem="KeA-w2-0aX" secondAttribute="bottom" constant="8" id="jJq-b2-5qs"/>
+                <constraint firstItem="t63-DB-Em8" firstAttribute="centerX" secondItem="KeA-w2-0aX" secondAttribute="centerX" constant="0.5" id="mAs-BO-o78"/>
+                <constraint firstItem="KeA-w2-0aX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="148" id="nhP-0O-npj"/>
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="KeA-w2-0aX" secondAttribute="trailing" constant="148" id="qgR-ia-eGC"/>
+                <constraint firstAttribute="centerX" secondItem="t63-DB-Em8" secondAttribute="centerX" id="udM-ke-MDs"/>
+            </constraints>
+            <point key="canvasLocation" x="46" y="445"/>
         </view>
     </objects>
     <resources>
@@ -80,9 +106,4 @@
         <image name="jirafa_comiendo_1" width="319" height="373"/>
         <image name="leon_comiendo_1" width="319" height="373"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

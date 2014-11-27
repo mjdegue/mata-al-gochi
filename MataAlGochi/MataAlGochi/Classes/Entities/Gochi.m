@@ -9,6 +9,7 @@
 #import "Gochi.h"
 #import "CreationFlow.h"
 #import "NSTimer+TimerSafeInvalidate.h"
+#import "NetworkRequestsHelper.h"
 
 #define ENERGY_MULTIPLIER_REST  (-1.0f)
 #define ENERGY_MULTIPLIER_TRAIN (-10.0f)
@@ -34,6 +35,7 @@
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
     _level = [[NSNumber alloc] initWithInt:1];
     _experience = [[NSNumber alloc] initWithInt:0];
+    _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     return self;
 }
 
@@ -44,16 +46,7 @@
     [self setName:name];
     [self setPetState:PET_STATE_RESTING];
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
-    return self;
-}
-
--(instancetype) initWithDictionary:(NSDictionary*) dictionary
-{
-    self = [super init];
-    _energy = [[NSNumber alloc] initWithInt:(int)dictionary[@"energy"]];
-    _level = [[NSNumber alloc] initWithInt:(int)dictionary[@"level"]];
-    _experience = [[NSNumber alloc] initWithInt:(int)dictionary[@"experience"]];
-    self.name = (NSString*) dictionary[@"name"];
+    _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     return self;
 }
 
@@ -171,7 +164,7 @@
 
 - (void) plusExpe: (NSNumber* ) expDelta
 {
-    const int maxExpInLevel = 100 * [self.level intValue] * [self.level intValue];
+    const int maxExpInLevel = [self.maxExperience intValue];
     _experience = [[NSNumber alloc] initWithInt:([_experience intValue] + [expDelta intValue])];
     
     if([_experience intValue] >= maxExpInLevel)
@@ -179,10 +172,6 @@
         _experience = [[NSNumber alloc] initWithInt:([_experience intValue] - maxExpInLevel)];
         [self levelUp];
     }
-    NSLog(@"Level: %@", self.level);
-    NSLog(@"Experience: %@", self.experience);
-    NSLog(@"Max Experience: %d", maxExpInLevel);
-    
 }
 
 - (void) levelUp
@@ -190,8 +179,35 @@
     _level = [[NSNumber alloc] initWithInt:([self.level intValue] + 1)];
     if(self.delegate != nil)
     {
+        _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
         [self.delegate gochiLevelUp];
     }
+}
+
+#pragma mark - Network utils
+
+- (NSDictionary*) dictionaryByGochi
+{
+    NSMutableDictionary* answer = [[NSMutableDictionary alloc] init];
+    answer[@"code"] = OWN_GOCHI_ID;
+    answer[@"name"] = self.name;
+    answer[@"energy"] = self.energy;
+    answer[@"level"] = self.level;
+    answer[@"experience"] = self.experience;
+    answer[@"tipo"] = [[NSNumber alloc] initWithInt:self.petType]; //@TODO: Check this
+    return answer;
+}
+
+-(instancetype) initWithDictionary:(NSDictionary*) dictionary
+{
+    self = [super init];
+    _energy = dictionary[@"energy"];
+    _level = dictionary[@"level"];
+    _experience = dictionary[@"experience"];
+    self.name = (NSString*) dictionary[@"name"];
+    self.petType = PET_DEER; //@TODO: Replace this for real values
+    _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
+    return self;
 }
 
 @end

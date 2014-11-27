@@ -12,6 +12,8 @@
 #define NWNOTIFICATION_GOCHI_LOADED_SUCCED @"GOCHI_LOADED_NOTIFICATION_SUCCED"
 #define NWNOTIFICATION_GOCHI_LOADED_FAILURE @"GOCHI_LOADED_NOTIFICATION_FAILURE"
 
+#define OWN_GOCHI_ID @"MD_7693"
+
 typedef void (^SuccessBlock)(NSURLSessionDataTask *task, id responseObject);
 typedef void (^FailureBlock)(NSURLSessionDataTask *task, NSError *error);
 

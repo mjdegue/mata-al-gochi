@@ -32,6 +32,8 @@
 @property (strong, nonatomic) IBOutlet UIView *mouthViewCollider;
 @property (strong, nonatomic) IBOutlet UIProgressView *barFoodStatusBar;
 @property (strong, nonatomic) IBOutlet UIButton *btnTrainingButton;
+@property (strong, nonatomic) IBOutlet UILabel *lblExperience;
+@property (strong, nonatomic) IBOutlet UILabel *lblLevel;
 
 //Gestures
 @property(nonatomic,strong) UITapGestureRecognizer* gestTapGest;
@@ -79,7 +81,7 @@
     [self.activeGochi setDelegate:self];
     [self setTitle:[self.activeGochi name]];
     [self loadImageInAppear];
-    
+    [self updateLevelAndExperience];
     //Set food image
     [self.imgFood setCenter:self.imgOriginalPosition];
     [self.imgFood setFrame:self.imgOriginalFrame];
@@ -111,6 +113,14 @@
     {
         [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:self.activeGochi.petType]];
     }
+}
+
+- (void) updateLevelAndExperience
+{
+    NSString* levelLabelText = [[NSString alloc] initWithFormat:@"Level: %@", self.activeGochi.level];
+    NSString* experienceLabelText = [[NSString alloc] initWithFormat:@"Experience: %@ / %@", self.activeGochi.experience, self.activeGochi.maxExperience];
+    [self.lblLevel setText:levelLabelText];
+    [self.lblExperience setText:experienceLabelText];
 }
 
 #pragma mark - FoodDelegate
@@ -270,14 +280,29 @@
     float progress = [self.activeGochi.energy floatValue] / 100.0f;
     [self.barFoodStatusBar setProgress:progress animated:YES];
     [self updateTrainingButton];
+    [self updateLevelAndExperience];
 }
 
 - (void) gochiLevelUp
 {
     NSString* messageTittle = [[NSString alloc] initWithFormat:@"%@ leveled up", [self.activeGochi name]];
     NSString* messageBody = [[NSString alloc] initWithFormat:@"Congratulations! %@ reached level %@", [self.activeGochi name], [self.activeGochi level]];
+    
+    //Send info to server
+    SuccessBlock success = ^(NSURLSessionDataTask* task, id responseObject)
+    {
+        NSDictionary* serverResponse = (NSDictionary*)responseObject;
+        NSString* status = serverResponse[@"status"];
+        if(![status isEqualToString:@"ok"])
+        {
+            [[[UIAlertView alloc] initWithTitle:@"Hubo algun problema" message:@"Hubo algun problema" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+        }
+    };
+
+    [[NetworkRequestsHelper sharedInstance] postGochiOnServer:self.activeGochi successBlock:success failureBlock:nil];
+    
+    
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:messageTittle message:messageBody delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [[NetworkRequestsHelper sharedInstance] postGochiOnServer:self.activeGochi];
     [alert show];
 }
 
