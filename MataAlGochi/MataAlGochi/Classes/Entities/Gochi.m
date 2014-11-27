@@ -194,7 +194,7 @@
     answer[@"energy"] = self.energy;
     answer[@"level"] = self.level;
     answer[@"experience"] = self.experience;
-    answer[@"tipo"] = [[NSNumber alloc] initWithInt:self.petType]; //@TODO: Check this
+    answer[@"pet_type"] = [[NSNumber alloc] initWithInt:self.petType]; //@TODO: Check this
     return answer;
 }
 
@@ -205,7 +205,7 @@
     _level = dictionary[@"level"];
     _experience = dictionary[@"experience"];
     self.name = (NSString*) dictionary[@"name"];
-    self.petType = PET_DEER; //@TODO: Replace this for real values
+    self.petType = [dictionary[@"pet_type"] intValue]; //@TODO: Replace this for real values
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     return self;
 }

@@ -14,8 +14,8 @@ typedef enum
     PET_INVALID = -1,
     PET_DEER = 0,
     PET_CAT,
-    PET_GIRAFFE,
-    PET_LION
+    PET_LION,
+    PET_GIRAFFE    
 } PetIdentifier;
 
 typedef enum
