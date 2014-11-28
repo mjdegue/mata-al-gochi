@@ -11,6 +11,9 @@
 #import "PetConstants.h"
 #import "GochiDelegate.h"
 #import "Food.h"
+
+#define OWN_GOCHI_ID @"MD_7693"
+
 @interface Gochi : NSObject
 
 //Pet properties

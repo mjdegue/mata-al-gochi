@@ -10,6 +10,7 @@
 #import "CreationFlow.h"
 #import "NSTimer+TimerSafeInvalidate.h"
 #import "NetworkRequestsHelper.h"
+#import "NotificationManager.h"
 
 #define ENERGY_MULTIPLIER_REST  (-1.0f)
 #define ENERGY_MULTIPLIER_TRAIN (-10.0f)
@@ -138,10 +139,17 @@
         [self stateChange:PET_STATE_TIRED];
         [self.stateTimer safeInvalidate];
     }
+    
+    if(energyValue < 20.0f)
+    {
+        [NotificationManager sendLocalNotificationWithGochi:self];
+    }
     if(self.delegate != nil)
     {
         [self.delegate gochiEnergyModified];
     }
+    
+    
 }
 
 - (void) stateChange:(PetStateIdentifier)petState
@@ -181,6 +189,7 @@
     {
         _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
         [self.delegate gochiLevelUp];
+        [NotificationManager pushLevelupGochiNotification:self];
     }
 }
 
@@ -194,7 +203,7 @@
     answer[@"energy"] = self.energy;
     answer[@"level"] = self.level;
     answer[@"experience"] = self.experience;
-    answer[@"pet_type"] = [[NSNumber alloc] initWithInt:self.petType]; //@TODO: Check this
+    answer[@"pet_type"] = [[NSNumber alloc] initWithInt:self.petType];
     return answer;
 }
 
@@ -205,7 +214,7 @@
     _level = dictionary[@"level"];
     _experience = dictionary[@"experience"];
     self.name = (NSString*) dictionary[@"name"];
-    self.petType = [dictionary[@"pet_type"] intValue]; //@TODO: Replace this for real values
+    self.petType = [dictionary[@"pet_type"] intValue]; 
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     return self;
 }

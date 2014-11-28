@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "MainMenuViewController.h"
 #import "Game.h"
+#import "NotificationManager.h"
+#import "NotificationConstants.h"
+#import <Parse/Parse.h>
+
 @interface AppDelegate ()
 
 @end
@@ -32,6 +36,23 @@
     [self.window makeKeyAndVisible];
     //Ends windows and navs initializations.
     
+    //Register for local notifications
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+        [application registerForRemoteNotifications];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |                                                                               UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+    }
+    //Parse stuff
+    [Parse setApplicationId:@"guhchukKgURzzZVCHBFOxyD35VHeMQm3EUZEdJvD"
+                  clientKey:@"SnnbrQ9yOemJspA7LRt1MCACFFUYNkbQ1k2IM1vH"];
+    
+    //End register push notifications
+    
+    
     //Starts game initialization
     [Game InitializeGame];
     //ends Game initialization
@@ -39,6 +60,37 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler
+{
+    NSString* code = userInfo[@"code"];
+    if(! [code isEqualToString:OWN_GOCHI_ID])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_FIGHTING_GOCHI_GOT_INFO object:userInfo];
+    }
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    /* @TODO: Check here how to define if user comes from background or not, and how to show the gochi in that case
+     
+    NSDictionary* gochiDictionary = [notification userInfo];
+    if([self.window.rootViewController.nibName isEqualToString:@"MainSceneViewController"])
+    {
+        NSLog(@"Esta en esa pantalla");
+    }
+    else
+    {
+        NSLog(@"DSADASDSA pantalla");
+    }*/
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

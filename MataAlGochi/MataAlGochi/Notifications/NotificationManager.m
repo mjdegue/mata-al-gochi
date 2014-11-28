@@ -9,7 +9,7 @@
 #import "NotificationManager.h"
 #import <Parse/Parse.h>
 
-#define PARSE_CHANNEL_PET_FIGHT @"PeleDeMascotas"
+#define PARSE_CHANNEL_PET_FIGHT @"PeleaDeMascotas"
 
 @implementation NotificationManager
 

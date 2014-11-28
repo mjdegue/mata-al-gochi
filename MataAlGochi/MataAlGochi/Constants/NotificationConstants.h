@@ -9,5 +9,7 @@
 #ifndef MataAlGochi_NotificationConstants_h
 #define MataAlGochi_NotificationConstants_h
 
+#define NOTIFICATION_FIGHTING_GOCHI_GOT_INFO @"NOTIFICATION_FIGHTING_GOCHI_GOT_INFO"
+
 
 #endif

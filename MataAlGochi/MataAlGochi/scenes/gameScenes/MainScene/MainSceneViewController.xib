@@ -11,6 +11,7 @@
                 <outlet property="btnTrainingButton" destination="lna-gS-8Pl" id="kap-Oy-Npg"/>
                 <outlet property="imgFood" destination="dIk-nr-0SW" id="DJ8-tP-DEB"/>
                 <outlet property="imgGochiImage" destination="3MP-VX-jsr" id="ZrD-PO-Pzn"/>
+                <outlet property="lblEnemy" destination="H9j-AC-0Er" id="Q7m-X8-bjF"/>
                 <outlet property="lblExperience" destination="1yQ-tm-n8s" id="Rdt-tl-bdp"/>
                 <outlet property="lblLevel" destination="L7H-mT-17O" id="uVJ-rq-dP3"/>
                 <outlet property="mouthViewCollider" destination="ytZ-W7-JW8" id="nqH-TQ-WrQ"/>
@@ -75,12 +76,33 @@
                         <constraint firstAttribute="height" constant="50" id="gYg-2P-4tU"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9j-AC-0Er">
+                    <rect key="frame" x="385" y="303" width="200" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="95r-YM-BbY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDX-dO-0bt">
+                    <rect key="frame" x="107" y="291" width="46" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pushFakeNotification:" destination="-1" eventType="touchUpInside" id="cMm-gv-bcH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="lna-gS-8Pl" firstAttribute="centerY" secondItem="jDX-dO-0bt" secondAttribute="centerY" id="11x-Nr-IOI"/>
                 <constraint firstAttribute="trailing" secondItem="dIk-nr-0SW" secondAttribute="trailing" constant="8" id="4IK-ZA-MO5"/>
                 <constraint firstItem="pOY-Gh-Aty" firstAttribute="top" secondItem="L7H-mT-17O" secondAttribute="bottom" constant="8" id="4Qn-fv-czG"/>
+                <constraint firstAttribute="trailing" secondItem="H9j-AC-0Er" secondAttribute="trailing" constant="15" id="Cjb-2O-wtc"/>
                 <constraint firstItem="L7H-mT-17O" firstAttribute="top" secondItem="1yQ-tm-n8s" secondAttribute="bottom" constant="13" id="EF1-hf-zhw"/>
+                <constraint firstItem="lna-gS-8Pl" firstAttribute="centerY" secondItem="H9j-AC-0Er" secondAttribute="centerY" constant="-4.5" id="MUN-7g-1rE"/>
                 <constraint firstAttribute="centerX" secondItem="pOY-Gh-Aty" secondAttribute="centerX" id="MfQ-2u-c9z"/>
                 <constraint firstItem="1yQ-tm-n8s" firstAttribute="leading" secondItem="L7H-mT-17O" secondAttribute="leading" id="O3H-VU-Ioi"/>
                 <constraint firstItem="lna-gS-8Pl" firstAttribute="top" secondItem="3MP-VX-jsr" secondAttribute="bottom" constant="16" id="O4K-dn-2We"/>
@@ -93,6 +115,7 @@
                 <constraint firstItem="lna-gS-8Pl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="sB5-Ok-mEo"/>
                 <constraint firstItem="ytZ-W7-JW8" firstAttribute="centerX" secondItem="3MP-VX-jsr" secondAttribute="centerX" constant="-8" id="w03-ta-xgT"/>
                 <constraint firstItem="ytZ-W7-JW8" firstAttribute="centerY" secondItem="3MP-VX-jsr" secondAttribute="centerY" constant="19" id="wBd-Wk-M1B"/>
+                <constraint firstItem="jDX-dO-0bt" firstAttribute="leading" secondItem="lna-gS-8Pl" secondAttribute="trailing" constant="8" id="yQv-BU-rV7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

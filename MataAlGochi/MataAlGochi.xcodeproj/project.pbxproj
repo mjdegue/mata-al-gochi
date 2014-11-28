@@ -31,6 +31,19 @@
 		0D557B7D1A1E6E7200E97B72 /* FoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */; };
 		0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */; };
 		0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D557B811A1FB1C200E97B72 /* PetFactory.m */; };
+		0D57EA471A28BD4100200A2C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA461A28BD4100200A2C /* Parse.framework */; };
+		0D57EA4C1A28BE1100200A2C /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57EA4B1A28BE1100200A2C /* NotificationManager.m */; };
+		0D57EA4E1A28C66300200A2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA4D1A28C66300200A2C /* AudioToolbox.framework */; };
+		0D57EA501A28C66B00200A2C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA4F1A28C66B00200A2C /* CFNetwork.framework */; };
+		0D57EA521A28C67200200A2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA511A28C67200200A2C /* CoreGraphics.framework */; };
+		0D57EA541A28C67900200A2C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA531A28C67900200A2C /* CoreLocation.framework */; };
+		0D57EA561A28C68200200A2C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA551A28C68200200A2C /* libz.dylib */; };
+		0D57EA581A28C68900200A2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA571A28C68900200A2C /* MobileCoreServices.framework */; };
+		0D57EA5A1A28C68F00200A2C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA591A28C68F00200A2C /* QuartzCore.framework */; };
+		0D57EA5C1A28C69500200A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5B1A28C69500200A2C /* Security.framework */; };
+		0D57EA5E1A28C69C00200A2C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5D1A28C69C00200A2C /* StoreKit.framework */; };
+		0D57EA601A28C6A300200A2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */; };
+		0D57EA621A28C97400200A2C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA611A28C97400200A2C /* Bolts.framework */; };
 		0D745C111A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C101A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m */; };
 		0D745C451A26425800251EF1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C331A26425800251EF1 /* AFHTTPRequestOperation.m */; };
 		0D745C461A26425800251EF1 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C351A26425800251EF1 /* AFHTTPRequestOperationManager.m */; };
@@ -107,6 +120,21 @@
 		0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
 		0D557B801A1FB1C200E97B72 /* PetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetFactory.h; sourceTree = "<group>"; };
 		0D557B811A1FB1C200E97B72 /* PetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetFactory.m; sourceTree = "<group>"; };
+		0D57EA461A28BD4100200A2C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "MataAlGochi/ThirdParty/Parse/parse-library-1.5.0/Parse.framework"; sourceTree = "<group>"; };
+		0D57EA4A1A28BE1100200A2C /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
+		0D57EA4B1A28BE1100200A2C /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
+		0D57EA4D1A28C66300200A2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0D57EA4F1A28C66B00200A2C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0D57EA511A28C67200200A2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0D57EA531A28C67900200A2C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0D57EA551A28C68200200A2C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0D57EA571A28C68900200A2C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0D57EA591A28C68F00200A2C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0D57EA5B1A28C69500200A2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0D57EA5D1A28C69C00200A2C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0D57EA611A28C97400200A2C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "MataAlGochi/ThirdParty/Parse/parse-library-1.5.0/Bolts.framework"; sourceTree = "<group>"; };
+		0D57EA631A28EBDE00200A2C /* NotificationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationConstants.h; sourceTree = "<group>"; };
 		0D745C0A1A2378D500251EF1 /* GochiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiDelegate.h; sourceTree = "<group>"; };
 		0D745C0D1A23C4C300251EF1 /* GameDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameDelegate.h; sourceTree = "<group>"; };
 		0D745C0F1A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+TimerSafeInvalidate.h"; sourceTree = "<group>"; };
@@ -156,6 +184,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D57EA621A28C97400200A2C /* Bolts.framework in Frameworks */,
+				0D57EA601A28C6A300200A2C /* SystemConfiguration.framework in Frameworks */,
+				0D57EA5E1A28C69C00200A2C /* StoreKit.framework in Frameworks */,
+				0D57EA5C1A28C69500200A2C /* Security.framework in Frameworks */,
+				0D57EA5A1A28C68F00200A2C /* QuartzCore.framework in Frameworks */,
+				0D57EA581A28C68900200A2C /* MobileCoreServices.framework in Frameworks */,
+				0D57EA561A28C68200200A2C /* libz.dylib in Frameworks */,
+				0D57EA541A28C67900200A2C /* CoreLocation.framework in Frameworks */,
+				0D57EA521A28C67200200A2C /* CoreGraphics.framework in Frameworks */,
+				0D57EA501A28C66B00200A2C /* CFNetwork.framework in Frameworks */,
+				0D57EA4E1A28C66300200A2C /* AudioToolbox.framework in Frameworks */,
+				0D57EA471A28BD4100200A2C /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +212,18 @@
 		0D5579ED1A1BCACA00E97B72 = {
 			isa = PBXGroup;
 			children = (
+				0D57EA611A28C97400200A2C /* Bolts.framework */,
+				0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */,
+				0D57EA5D1A28C69C00200A2C /* StoreKit.framework */,
+				0D57EA5B1A28C69500200A2C /* Security.framework */,
+				0D57EA591A28C68F00200A2C /* QuartzCore.framework */,
+				0D57EA571A28C68900200A2C /* MobileCoreServices.framework */,
+				0D57EA551A28C68200200A2C /* libz.dylib */,
+				0D57EA531A28C67900200A2C /* CoreLocation.framework */,
+				0D57EA511A28C67200200A2C /* CoreGraphics.framework */,
+				0D57EA4F1A28C66B00200A2C /* CFNetwork.framework */,
+				0D57EA4D1A28C66300200A2C /* AudioToolbox.framework */,
+				0D57EA461A28BD4100200A2C /* Parse.framework */,
 				0D5579F81A1BCACA00E97B72 /* MataAlGochi */,
 				0D557A121A1BCACA00E97B72 /* MataAlGochiTests */,
 				0D5579F71A1BCACA00E97B72 /* Products */,
@@ -190,6 +242,7 @@
 		0D5579F81A1BCACA00E97B72 /* MataAlGochi */ = {
 			isa = PBXGroup;
 			children = (
+				0D57EA481A28BD7000200A2C /* Notifications */,
 				0D745C301A26425800251EF1 /* ThirdParty */,
 				0D745C0E1A24FFEA00251EF1 /* Categories */,
 				0D557B781A1E6E0300E97B72 /* UI */,
@@ -338,6 +391,7 @@
 			children = (
 				0D557B561A1D275100E97B72 /* PetConstants.h */,
 				0D557B711A1E5FA300E97B72 /* FoodConstants.h */,
+				0D57EA631A28EBDE00200A2C /* NotificationConstants.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -396,6 +450,15 @@
 				0D557B811A1FB1C200E97B72 /* PetFactory.m */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		0D57EA481A28BD7000200A2C /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				0D57EA4A1A28BE1100200A2C /* NotificationManager.h */,
+				0D57EA4B1A28BE1100200A2C /* NotificationManager.m */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		0D745C091A2378BB00251EF1 /* Delegates */ = {
@@ -542,6 +605,7 @@
 				TargetAttributes = {
 					0D5579F51A1BCACA00E97B72 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 332N44E879;
 					};
 					0D557A0E1A1BCACA00E97B72 = {
 						CreatedOnToolsVersion = 6.1;
@@ -617,6 +681,7 @@
 				0D745C671A2644F200251EF1 /* UIButton+AFNetworking.m in Sources */,
 				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
+				0D57EA4C1A28BE1100200A2C /* NotificationManager.m in Sources */,
 				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
 				0D557B591A1D291900E97B72 /* Gochi.m in Sources */,
 				0D745C661A2644F200251EF1 /* UIAlertView+AFNetworking.m in Sources */,
@@ -744,20 +809,38 @@
 		0D557A1A1A1BCACA00E97B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iOS Development: Maximiliano Degue (92TXH43V7T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Maximiliano Degue (92TXH43V7T)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MataAlGochi/ThirdParty/Parse/parse-library-1.5.0",
+				);
 				INFOPLIST_FILE = MataAlGochi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b078737b-bc1a-4aa1-ac82-d92e5a969be4";
 			};
 			name = Debug;
 		};
 		0D557A1B1A1BCACA00E97B72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iOS Development: Maximiliano Degue (92TXH43V7T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MataAlGochi/ThirdParty/Parse/parse-library-1.5.0",
+				);
 				INFOPLIST_FILE = MataAlGochi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b078737b-bc1a-4aa1-ac82-d92e5a969be4";
 			};
 			name = Release;
 		};

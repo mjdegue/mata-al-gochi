@@ -11,6 +11,8 @@
 #import "Game.h"
 #import "Gochi.h"
 #import "NetworkRequestsHelper.h"
+#import "NotificationConstants.h"
+#import "NotificationManager.h"
 
 //Local defines
 #define MAIL_STRING_WITH_FORMAT @"Buenas! Soy %@, cómo va? Quería comentarte que estuve usando la App Mata al Gochi para comerme todo y está genial. Bajatela YA!! Saludos!"
@@ -34,6 +36,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnTrainingButton;
 @property (strong, nonatomic) IBOutlet UILabel *lblExperience;
 @property (strong, nonatomic) IBOutlet UILabel *lblLevel;
+@property (strong, nonatomic) IBOutlet UILabel *lblEnemy;
 
 //Gestures
 @property(nonatomic,strong) UITapGestureRecognizer* gestTapGest;
@@ -85,8 +88,21 @@
     //Set food image
     [self.imgFood setCenter:self.imgOriginalPosition];
     [self.imgFood setFrame:self.imgOriginalFrame];
+    
+    //Set enemy label
+    [self.lblEnemy setText:@""];
+    
+    //Add observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveEnemyInfo:) name:NOTIFICATION_FIGHTING_GOCHI_GOT_INFO object:nil];
+    
+    //Suscrube to parse
+    [NotificationManager suscribeToGochisFightChannel];
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    //[NotificationManager unsuscribeToGochisFightChannel];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -383,5 +399,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void) didReceiveEnemyInfo:(NSNotification* ) sender
+{
+    NSDictionary* dictionary = (NSDictionary*)sender.object;
+    NSString* name = dictionary[@"name"];
+    NSString* level = dictionary[@"level"];
+    
+    [self.lblEnemy setText:[[NSString alloc] initWithFormat:@"Your arch-enemy %@ is now level %@", name, level]];
+}
+- (IBAction)pushFakeNotification:(id)sender
+{
+    [NotificationManager pushLevelupGochiNotification:self.activeGochi];
+}
 
 @end
