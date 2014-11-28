@@ -15,5 +15,14 @@
 
 @interface NotificationManager : NSObject
 
+//Suscribes
++ (void) suscribeToGochisFightChannel;
++ (void) unsuscribeToGochisFightChannel;
+
+//Push remote notifications
++ (void) pushLevelupGochiNotification:(Gochi*) gochi;
+
 + (void)sendLocalNotificationWithGochi:(Gochi*) gochi;
+
+
 @end
