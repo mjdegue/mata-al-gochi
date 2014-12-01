@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "PetConstants.h"
 #import "GochiDelegate.h"
 #import "Food.h"
@@ -27,6 +28,7 @@
 @property(strong, nonatomic, readonly) NSNumber* maxExperience;
 @property(strong, nonatomic, readonly) NSNumber* level;
 @property(strong, nonatomic, readonly) NSString* code;
+@property(strong, nonatomic, readonly) CLLocation* location;
 
 //Delegate specific
 @property(strong, nonatomic) id<GochiDelegate> delegate;
@@ -37,7 +39,7 @@
 
 //Networking helper methods
 -(NSDictionary*) dictionaryByGochi;
--(void) fillWithDictionary:(NSDictionary*) dictionary;
+-(instancetype) initWithDictionary:(NSDictionary*) dictionary;
 
 //Functional Methods
 - (void) feedWith:(Food*) food;

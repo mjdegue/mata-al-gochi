@@ -125,4 +125,18 @@
     return petAnimationImages;
 }
 
++ (UIImage*) loadButtonImage:(ButtonIdentifier) button
+{
+    NSString* imageName;
+    
+    switch (button) {
+        default:
+        case BTN_MAP:
+            imageName = @"Map_icon";
+            break;
+    }
+    
+    return [UIImage imageNamed:imageName];    
+}
+
 @end

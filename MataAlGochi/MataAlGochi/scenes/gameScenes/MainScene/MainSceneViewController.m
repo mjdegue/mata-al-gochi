@@ -73,6 +73,7 @@
     //Food image setup
     self.imgOriginalPosition = [self.imgFood center];
     self.imgOriginalFrame = [self.imgFood frame];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -104,6 +105,7 @@
 {
     //[NotificationManager unsuscribeToGochisFightChannel];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

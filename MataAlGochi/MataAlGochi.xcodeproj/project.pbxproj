@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D229C081A2CE65F00B023CD /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D229C071A2CE65F00B023CD /* LocationHelper.m */; };
 		0D2D08C11A2660C6005D1421 /* NetworkRequestsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D08C01A2660C6005D1421 /* NetworkRequestsHelper.m */; };
 		0D5579FC1A1BCACA00E97B72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FB1A1BCACA00E97B72 /* main.m */; };
 		0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FE1A1BCACA00E97B72 /* AppDelegate.m */; };
@@ -79,6 +80,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D229C061A2CE65F00B023CD /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
+		0D229C071A2CE65F00B023CD /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
+		0D229C091A2D019B00B023CD /* ButtonConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonConstants.h; sourceTree = "<group>"; };
 		0D2D08BF1A2660C6005D1421 /* NetworkRequestsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestsHelper.h; sourceTree = "<group>"; };
 		0D2D08C01A2660C6005D1421 /* NetworkRequestsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestsHelper.m; sourceTree = "<group>"; };
 		0D5579F61A1BCACA00E97B72 /* MataAlGochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataAlGochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +220,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D229C051A2CE64600B023CD /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				0D229C061A2CE65F00B023CD /* LocationHelper.h */,
+				0D229C071A2CE65F00B023CD /* LocationHelper.m */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
 		0D5579ED1A1BCACA00E97B72 = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +376,7 @@
 		0D557B4F1A1D250100E97B72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D229C051A2CE64600B023CD /* Tracking */,
 				0D745C6F1A26464900251EF1 /* Networking */,
 				0D745C091A2378BB00251EF1 /* Delegates */,
 				0D557B7F1A1FB1A400E97B72 /* Factories */,
@@ -399,6 +413,7 @@
 				0D557B561A1D275100E97B72 /* PetConstants.h */,
 				0D557B711A1E5FA300E97B72 /* FoodConstants.h */,
 				0D57EA631A28EBDE00200A2C /* NotificationConstants.h */,
+				0D229C091A2D019B00B023CD /* ButtonConstants.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -715,6 +730,7 @@
 				0D745C661A2644F200251EF1 /* UIAlertView+AFNetworking.m in Sources */,
 				0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */,
 				0DF3D9BC1A2CB16E00D0800A /* RankingSceneViewController.m in Sources */,
+				0D229C081A2CE65F00B023CD /* LocationHelper.m in Sources */,
 				0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */,
 				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
 				0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */,

@@ -11,6 +11,7 @@
 #import "NSTimer+TimerSafeInvalidate.h"
 #import "NetworkRequestsHelper.h"
 #import "NotificationManager.h"
+#import "LocationHelper.h"
 
 #define ENERGY_MULTIPLIER_REST  (-1.0f)
 #define ENERGY_MULTIPLIER_TRAIN (-10.0f)
@@ -38,6 +39,7 @@
     _experience = [[NSNumber alloc] initWithInt:0];
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     _code = OWN_GOCHI_ID;
+    _location = [[LocationHelper sharedInstance] lastLocation];
     return self;
 }
 
@@ -50,6 +52,7 @@
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     _code = OWN_GOCHI_ID;
+    _location = [[LocationHelper sharedInstance] lastLocation];    
     return self;
 }
 
@@ -213,18 +216,40 @@
     answer[@"level"] = self.level;
     answer[@"experience"] = self.experience;
     answer[@"pet_type"] = [[NSNumber alloc] initWithInt:self.petType];
+    
+    CLLocation* newLocation = [[LocationHelper sharedInstance] lastLocation];
+    if(newLocation !=nil)
+    {
+        _location = newLocation;
+    }
+    if(self.location != nil)
+    {
+        answer[@"position_lat"] = [[NSNumber alloc] initWithDouble:self.location.coordinate.latitude];
+        answer[@"position_lon"] = [[NSNumber alloc] initWithDouble:self.location.coordinate.longitude];
+    }
     return answer;
 }
 
--(void) fillWithDictionary:(NSDictionary*) dictionary
+-(instancetype) initWithDictionary:(NSDictionary*) dictionary
 {
-    _energy = dictionary[@"energy"];
-    _level = dictionary[@"level"];
-    _experience = dictionary[@"experience"];
-    self.name = (NSString*) dictionary[@"name"];
-    self.petType = [dictionary[@"pet_type"] intValue]; 
-    _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
-    _code = (NSString*) dictionary[@"code"];
+    self = [super init];
+    if(self)
+    {
+        _energy = dictionary[@"energy"];
+        _level = dictionary[@"level"];
+    	_experience = dictionary[@"experience"];
+    	self.name = (NSString*) dictionary[@"name"];
+        self.petType = [dictionary[@"pet_type"] intValue];
+        _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
+        _code = (NSString*) dictionary[@"code"];
+        NSNumber* posLat = [dictionary objectForKey:@"position_lat"];
+        NSNumber* posLon = [dictionary objectForKey:@"position_lon"];
+        if(posLat && posLon)
+        {
+            _location = [[CLLocation alloc] initWithLatitude:[posLat doubleValue] longitude:[posLon doubleValue]];
+        }
+    }
+    return self;
 }
 
 #pragma mark - Sorting
@@ -232,6 +257,14 @@
 - (NSComparisonResult) compare:(Gochi*) gochi
 {
     return [self.level compare:gochi.level];
+}
+
+- (NSString *)description
+{
+    NSString* format = @"Name: %@\n Level: %@\n Location :%@\n";
+    NSString* answer = [NSString stringWithFormat:format, self.name, self.level, self.location];
+    
+    return answer;
 }
 
 @end

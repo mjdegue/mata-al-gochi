@@ -41,8 +41,7 @@
     
     SuccessBlock success = ^(NSURLSessionDataTask* task, id responseObject)
     {
-        Gochi* gochi = [[Gochi alloc] init];
-        [gochi fillWithDictionary:responseObject];
+        Gochi* gochi = [[Gochi alloc] initWithDictionary:responseObject];
         [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHI_LOADED_SUCCED object:gochi];
     };
     
@@ -64,8 +63,7 @@
         NSMutableArray* gochisList = [[NSMutableArray alloc] init];
         for(NSDictionary* petDic in responseObject)
         {
-            Gochi* gochi = [[Gochi alloc] init];
-            [gochi fillWithDictionary:petDic];
+            Gochi* gochi = [[Gochi alloc] initWithDictionary:petDic];
             [gochisList addObject:gochi];
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHIS_LIST_LODED_SUCCESS object:gochisList];
@@ -109,6 +107,5 @@ static NetworkRequestsHelper* instance = nil;
     };
     return block;
 }
-
 
 @end

@@ -10,11 +10,13 @@
 #import <UIKit/UIKit.h>
 #import "PetConstants.h"
 #import "FoodConstants.h"
+#import "ButtonConstants.h"
+
 @interface ImageLoader : NSObject
 
 + (UIImage*) loadPetImageByType: (PetIdentifier) petType;
 + (UIImage*) loadFoodImageByType: (FoodIdentifier) foodType;
 + (NSArray*) loadPetAnimationByPet: (PetIdentifier) petType andPetState: (PetStateIdentifier) petState;
-
++ (UIImage*) loadButtonImage:(ButtonIdentifier) button;
 
 @end

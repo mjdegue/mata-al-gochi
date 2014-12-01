@@ -12,6 +12,7 @@
 #import "NotificationManager.h"
 #import "NotificationConstants.h"
 #import <Parse/Parse.h>
+#import "LocationHelper.h"
 
 @interface AppDelegate ()
 
@@ -56,6 +57,9 @@
     //Starts game initialization
     [Game InitializeGame];
     //ends Game initialization
+    
+    //Starts tracking illegaly the user to fill CIA projects info:
+    [[LocationHelper sharedInstance] startUpdates];
     
     return YES;
 }

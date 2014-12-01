@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GochiTableViewCell.h"
 
 
-@interface RankingSceneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RankingSceneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, GochiTableViewCellDelegate>
 
 //Constructors
 - (instancetype) initWithGochisList:(NSArray*) gochisList;

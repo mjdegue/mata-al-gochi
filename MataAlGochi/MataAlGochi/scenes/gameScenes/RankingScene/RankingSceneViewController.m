@@ -65,13 +65,21 @@
     }
     
     //Fill cell data
-    Gochi* gochi = [self.gochisList objectAtIndex:indexPath.row];
-    
+    Gochi* gochi = [self.gochisList objectAtIndex:indexPath.row];    
+    gochiCell.delegate = self;
     [gochiCell fillWithGochi:gochi shouldBright:[gochi isOwnGochi]];
     
     return gochiCell;
 }
 
+
+#pragma mark - GochiTableViewCellDelegate
+
+
+- (void) didSelectGochiInMap:(Gochi*) gochi
+{
+    
+}
 
 
 @end
