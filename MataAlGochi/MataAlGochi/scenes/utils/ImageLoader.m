@@ -139,4 +139,29 @@
     return [UIImage imageNamed:imageName];    
 }
 
++ (NSString*) imageNameByPetType:(PetIdentifier) pet
+{
+    NSString* imageName;
+    switch (pet)
+    {
+        default: //Default value is just for avoid crashes
+        case PET_CAT:
+            imageName = @"gato_comiendo_1";
+            break;
+            
+        case PET_DEER:
+            imageName = @"ciervo_comiendo_1";
+            break;
+            
+        case PET_GIRAFFE:
+            imageName = @"jirafa_comiendo_1";
+            break;
+            
+        case PET_LION:
+            imageName = @"leon_comiendo_1";
+            break;
+    }
+    return imageName;
+
+}
 @end

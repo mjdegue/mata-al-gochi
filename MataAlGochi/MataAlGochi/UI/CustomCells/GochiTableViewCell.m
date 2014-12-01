@@ -58,7 +58,8 @@
 }
 
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     // Initialization code
 }
 

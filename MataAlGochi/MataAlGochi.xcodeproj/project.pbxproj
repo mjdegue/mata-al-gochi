@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0D229C081A2CE65F00B023CD /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D229C071A2CE65F00B023CD /* LocationHelper.m */; };
+		0D229C0E1A2D0A3300B023CD /* GochiInMapSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D229C0C1A2D0A3300B023CD /* GochiInMapSceneViewController.m */; };
+		0D229C0F1A2D0A3300B023CD /* GochiInMapSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D229C0D1A2D0A3300B023CD /* GochiInMapSceneViewController.xib */; };
+		0D229C131A2D0D0B00B023CD /* GochiSpotAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D229C121A2D0D0B00B023CD /* GochiSpotAnnotation.m */; };
+		0D229C151A2D114000B023CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D229C141A2D114000B023CD /* MapKit.framework */; };
 		0D2D08C11A2660C6005D1421 /* NetworkRequestsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D08C01A2660C6005D1421 /* NetworkRequestsHelper.m */; };
 		0D5579FC1A1BCACA00E97B72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FB1A1BCACA00E97B72 /* main.m */; };
 		0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5579FE1A1BCACA00E97B72 /* AppDelegate.m */; };
@@ -83,6 +87,12 @@
 		0D229C061A2CE65F00B023CD /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
 		0D229C071A2CE65F00B023CD /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		0D229C091A2D019B00B023CD /* ButtonConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonConstants.h; sourceTree = "<group>"; };
+		0D229C0B1A2D0A3300B023CD /* GochiInMapSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiInMapSceneViewController.h; sourceTree = "<group>"; };
+		0D229C0C1A2D0A3300B023CD /* GochiInMapSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GochiInMapSceneViewController.m; sourceTree = "<group>"; };
+		0D229C0D1A2D0A3300B023CD /* GochiInMapSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GochiInMapSceneViewController.xib; sourceTree = "<group>"; };
+		0D229C111A2D0D0B00B023CD /* GochiSpotAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiSpotAnnotation.h; sourceTree = "<group>"; };
+		0D229C121A2D0D0B00B023CD /* GochiSpotAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GochiSpotAnnotation.m; sourceTree = "<group>"; };
+		0D229C141A2D114000B023CD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0D2D08BF1A2660C6005D1421 /* NetworkRequestsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestsHelper.h; sourceTree = "<group>"; };
 		0D2D08C01A2660C6005D1421 /* NetworkRequestsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestsHelper.m; sourceTree = "<group>"; };
 		0D5579F61A1BCACA00E97B72 /* MataAlGochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataAlGochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +216,7 @@
 				0D57EA521A28C67200200A2C /* CoreGraphics.framework in Frameworks */,
 				0D57EA501A28C66B00200A2C /* CFNetwork.framework in Frameworks */,
 				0D57EA4E1A28C66300200A2C /* AudioToolbox.framework in Frameworks */,
+				0D229C151A2D114000B023CD /* MapKit.framework in Frameworks */,
 				0D57EA471A28BD4100200A2C /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,9 +240,29 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
+		0D229C0A1A2D0A1300B023CD /* GochiInMap */ = {
+			isa = PBXGroup;
+			children = (
+				0D229C0B1A2D0A3300B023CD /* GochiInMapSceneViewController.h */,
+				0D229C0C1A2D0A3300B023CD /* GochiInMapSceneViewController.m */,
+				0D229C0D1A2D0A3300B023CD /* GochiInMapSceneViewController.xib */,
+			);
+			path = GochiInMap;
+			sourceTree = "<group>";
+		};
+		0D229C101A2D0CF200B023CD /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				0D229C111A2D0D0B00B023CD /* GochiSpotAnnotation.h */,
+				0D229C121A2D0D0B00B023CD /* GochiSpotAnnotation.m */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
 		0D5579ED1A1BCACA00E97B72 = {
 			isa = PBXGroup;
 			children = (
+				0D229C141A2D114000B023CD /* MapKit.framework */,
 				0D57EA611A28C97400200A2C /* Bolts.framework */,
 				0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */,
 				0D57EA5B1A28C69500200A2C /* Security.framework */,
@@ -317,6 +348,7 @@
 		0D557A251A1BD50E00E97B72 /* gameScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0D229C0A1A2D0A1300B023CD /* GochiInMap */,
 				0DF3D9B81A2CB15900D0800A /* RankingScene */,
 				0D557B671A1E52C100E97B72 /* FeedScene */,
 				0D557B431A1BE49800E97B72 /* MainScene */,
@@ -376,6 +408,7 @@
 		0D557B4F1A1D250100E97B72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D229C101A2D0CF200B023CD /* Annotations */,
 				0D229C051A2CE64600B023CD /* Tracking */,
 				0D745C6F1A26464900251EF1 /* Networking */,
 				0D745C091A2378BB00251EF1 /* Delegates */,
@@ -645,6 +678,9 @@
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 					0D557A0E1A1BCACA00E97B72 = {
@@ -682,6 +718,7 @@
 				0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */,
 				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
 				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
+				0D229C0F1A2D0A3300B023CD /* GochiInMapSceneViewController.xib in Resources */,
 				0D557B6C1A1E52D500E97B72 /* FeedSceneViewController.xib in Resources */,
 				0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */,
 				0DF3D9B71A2C8E7500D0800A /* GochiTableViewCell.xib in Resources */,
@@ -706,6 +743,7 @@
 			files = (
 				0DF3D9B61A2C8E7500D0800A /* GochiTableViewCell.m in Sources */,
 				0D745C111A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m in Sources */,
+				0D229C0E1A2D0A3300B023CD /* GochiInMapSceneViewController.m in Sources */,
 				0D745C681A2644F200251EF1 /* UIImageView+AFNetworking.m in Sources */,
 				0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */,
 				0D557B5D1A1D445A00E97B72 /* Game.m in Sources */,
@@ -722,6 +760,7 @@
 				0D745C691A2644F200251EF1 /* UIProgressView+AFNetworking.m in Sources */,
 				0D557B7D1A1E6E7200E97B72 /* FoodTableViewCell.m in Sources */,
 				0D745C671A2644F200251EF1 /* UIButton+AFNetworking.m in Sources */,
+				0D229C131A2D0D0B00B023CD /* GochiSpotAnnotation.m in Sources */,
 				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
 				0D57EA4C1A28BE1100200A2C /* NotificationManager.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "RankingSceneViewController.h"
 #import "GochiTableViewCell.h"
+#import "GochiInMapSceneViewController.h"
 
 @interface RankingSceneViewController ()
 
@@ -78,7 +79,11 @@
 
 - (void) didSelectGochiInMap:(Gochi*) gochi
 {
+    GochiInMapSceneViewController* gochiInMap = [[GochiInMapSceneViewController alloc] initWithNibName:@"GochiInMapSceneViewController" bundle:nil];
     
+    [gochiInMap.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
+    gochiInMap.gochi = gochi;
+    [self.navigationController pushViewController:gochiInMap animated:YES];
 }
 
 
