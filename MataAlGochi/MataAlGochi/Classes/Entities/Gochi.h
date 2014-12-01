@@ -26,6 +26,7 @@
 @property(strong, nonatomic, readonly) NSNumber* experience;
 @property(strong, nonatomic, readonly) NSNumber* maxExperience;
 @property(strong, nonatomic, readonly) NSNumber* level;
+@property(strong, nonatomic, readonly) NSString* code;
 
 //Delegate specific
 @property(strong, nonatomic) id<GochiDelegate> delegate;
@@ -36,15 +37,16 @@
 
 //Networking helper methods
 -(NSDictionary*) dictionaryByGochi;
--(instancetype) initWithDictionary:(NSDictionary*) dictionary;
+-(void) fillWithDictionary:(NSDictionary*) dictionary;
 
 //Functional Methods
 - (void) feedWith:(Food*) food;
 - (void) train;
 - (void) stopTraining;
-
 - (void) update;
 
-//
+//Validation methods
+- (BOOL) isOwnGochi;
+- (NSComparisonResult) compare:(Gochi*) gochi;
 
 @end

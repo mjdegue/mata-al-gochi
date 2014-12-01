@@ -54,8 +54,6 @@
     MainSceneViewController* mainGameScene = [[MainSceneViewController alloc] initWithNibName:@"MainSceneViewController" bundle:nil];
     [self.navigationController pushViewController:mainGameScene animated:YES];
 }
-
-#pragma mark - Testing Network
 /*
 - (IBAction)networkingTestCall:(id)sender
 {

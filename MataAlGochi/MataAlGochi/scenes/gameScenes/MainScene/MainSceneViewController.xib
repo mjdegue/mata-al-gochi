@@ -85,19 +85,18 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDX-dO-0bt">
-                    <rect key="frame" x="107" y="291" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY2-m1-4Bx">
+                    <rect key="frame" x="8" y="392" width="91" height="30"/>
+                    <state key="normal" title="Gochis Rank">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="pushFakeNotification:" destination="-1" eventType="touchUpInside" id="cMm-gv-bcH"/>
+                        <action selector="didAskGochisRanking:" destination="-1" eventType="touchUpInside" id="7XO-iz-Upc"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="lna-gS-8Pl" firstAttribute="centerY" secondItem="jDX-dO-0bt" secondAttribute="centerY" id="11x-Nr-IOI"/>
                 <constraint firstAttribute="trailing" secondItem="dIk-nr-0SW" secondAttribute="trailing" constant="8" id="4IK-ZA-MO5"/>
                 <constraint firstItem="pOY-Gh-Aty" firstAttribute="top" secondItem="L7H-mT-17O" secondAttribute="bottom" constant="8" id="4Qn-fv-czG"/>
                 <constraint firstAttribute="trailing" secondItem="H9j-AC-0Er" secondAttribute="trailing" constant="15" id="Cjb-2O-wtc"/>
@@ -107,15 +106,18 @@
                 <constraint firstItem="1yQ-tm-n8s" firstAttribute="leading" secondItem="L7H-mT-17O" secondAttribute="leading" id="O3H-VU-Ioi"/>
                 <constraint firstItem="lna-gS-8Pl" firstAttribute="top" secondItem="3MP-VX-jsr" secondAttribute="bottom" constant="16" id="O4K-dn-2We"/>
                 <constraint firstItem="3MP-VX-jsr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="QUo-h7-cji"/>
+                <constraint firstItem="L7H-mT-17O" firstAttribute="leading" secondItem="MY2-m1-4Bx" secondAttribute="leading" id="R9J-PL-0J7"/>
                 <constraint firstItem="1yQ-tm-n8s" firstAttribute="width" secondItem="L7H-mT-17O" secondAttribute="width" id="S5Z-6b-nGH"/>
+                <constraint firstItem="lna-gS-8Pl" firstAttribute="height" secondItem="MY2-m1-4Bx" secondAttribute="height" id="UiC-sg-4vI"/>
+                <constraint firstItem="MY2-m1-4Bx" firstAttribute="top" secondItem="pOY-Gh-Aty" secondAttribute="bottom" constant="-2" id="a4w-jN-eJE"/>
                 <constraint firstItem="1yQ-tm-n8s" firstAttribute="top" secondItem="lna-gS-8Pl" secondAttribute="bottom" constant="8" id="dOs-t6-q7n"/>
                 <constraint firstItem="lna-gS-8Pl" firstAttribute="leading" secondItem="1yQ-tm-n8s" secondAttribute="leading" id="eIc-jj-yy5"/>
                 <constraint firstAttribute="bottom" secondItem="dIk-nr-0SW" secondAttribute="bottom" constant="8" id="lZf-XT-fkM"/>
                 <constraint firstAttribute="centerX" secondItem="3MP-VX-jsr" secondAttribute="centerX" id="nn1-4R-rez"/>
                 <constraint firstItem="lna-gS-8Pl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="sB5-Ok-mEo"/>
+                <constraint firstItem="lna-gS-8Pl" firstAttribute="width" secondItem="MY2-m1-4Bx" secondAttribute="width" id="uxi-xl-of2"/>
                 <constraint firstItem="ytZ-W7-JW8" firstAttribute="centerX" secondItem="3MP-VX-jsr" secondAttribute="centerX" constant="-8" id="w03-ta-xgT"/>
                 <constraint firstItem="ytZ-W7-JW8" firstAttribute="centerY" secondItem="3MP-VX-jsr" secondAttribute="centerY" constant="19" id="wBd-Wk-M1B"/>
-                <constraint firstItem="jDX-dO-0bt" firstAttribute="leading" secondItem="lna-gS-8Pl" secondAttribute="trailing" constant="8" id="yQv-BU-rV7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

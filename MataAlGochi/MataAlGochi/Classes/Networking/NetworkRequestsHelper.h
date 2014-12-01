@@ -12,6 +12,9 @@
 #define NWNOTIFICATION_GOCHI_LOADED_SUCCED @"GOCHI_LOADED_NOTIFICATION_SUCCED"
 #define NWNOTIFICATION_GOCHI_LOADED_FAILURE @"GOCHI_LOADED_NOTIFICATION_FAILURE"
 
+#define NWNOTIFICATION_GOCHIS_LIST_LODED_SUCCESS @"NWNOTIFICATION_GOCHIS_LIST_LODED_SUCCESS"
+#define NWNOTIFICATION_GOCHIS_LIST_LODED_FAILURE @"NWNOTIFICATION_GOCHIS_LIST_LODED_FAILURE"
+
 typedef void (^SuccessBlock)(NSURLSessionDataTask *task, id responseObject);
 typedef void (^FailureBlock)(NSURLSessionDataTask *task, NSError *error);
 
@@ -21,6 +24,7 @@ typedef void (^FailureBlock)(NSURLSessionDataTask *task, NSError *error);
 -(void)postGochiOnServer:(Gochi*) gochi successBlock:(SuccessBlock) success failureBlock:(FailureBlock) failure;
 
 -(void) getOwnGochiFromServer;
+-(void) retreiveAllGochisFromServer;
 
 +(instancetype) sharedInstance;
 @end

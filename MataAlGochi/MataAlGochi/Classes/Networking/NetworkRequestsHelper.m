@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 
 #define POST_EVENT_PATH @"pet"
+#define ALL_PETS_GET @"pet/all"
 #define SPECIFIC_PET_GET @"pet/%@"
 
 @implementation NetworkRequestsHelper
@@ -40,7 +41,8 @@
     
     SuccessBlock success = ^(NSURLSessionDataTask* task, id responseObject)
     {
-        Gochi* gochi = [[Gochi alloc] initWithDictionary:(NSDictionary*)responseObject];
+        Gochi* gochi = [[Gochi alloc] init];
+        [gochi fillWithDictionary:responseObject];
         [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHI_LOADED_SUCCED object:gochi];
     };
     
@@ -54,6 +56,27 @@
     [[NetworkManager sharedInstance] GET:getUrlString parameters:nil success:success failure:failure];
 }
 
+-(void) retreiveAllGochisFromServer
+{
+    
+    SuccessBlock success = ^(NSURLSessionDataTask* task, id responseObject)
+    {
+        NSMutableArray* gochisList = [[NSMutableArray alloc] init];
+        for(NSDictionary* petDic in responseObject)
+        {
+            Gochi* gochi = [[Gochi alloc] init];
+            [gochi fillWithDictionary:petDic];
+            [gochisList addObject:gochi];
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHIS_LIST_LODED_SUCCESS object:gochisList];
+    };
+    FailureBlock failure = ^(NSURLSessionDataTask* task, NSError* error)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHIS_LIST_LODED_FAILURE object:nil];
+    };
+    
+    [[NetworkManager sharedInstance] GET:ALL_PETS_GET parameters:nil success:success failure:failure];
+}
 
 #pragma mark - singleton
 static NetworkRequestsHelper* instance = nil;
