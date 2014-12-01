@@ -41,7 +41,6 @@
 		0D57EA581A28C68900200A2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA571A28C68900200A2C /* MobileCoreServices.framework */; };
 		0D57EA5A1A28C68F00200A2C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA591A28C68F00200A2C /* QuartzCore.framework */; };
 		0D57EA5C1A28C69500200A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5B1A28C69500200A2C /* Security.framework */; };
-		0D57EA5E1A28C69C00200A2C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5D1A28C69C00200A2C /* StoreKit.framework */; };
 		0D57EA601A28C6A300200A2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */; };
 		0D57EA621A28C97400200A2C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA611A28C97400200A2C /* Bolts.framework */; };
 		0D745C111A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C101A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m */; };
@@ -63,6 +62,10 @@
 		0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C611A2644F200251EF1 /* UIRefreshControl+AFNetworking.m */; };
 		0D745C6B1A2644F200251EF1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C631A2644F200251EF1 /* UIWebView+AFNetworking.m */; };
 		0D745C721A26465500251EF1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C711A26465500251EF1 /* NetworkManager.m */; };
+		0DF3D9B61A2C8E7500D0800A /* GochiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */; };
+		0DF3D9B71A2C8E7500D0800A /* GochiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */; };
+		0DF3D9BC1A2CB16E00D0800A /* RankingSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9BA1A2CB16E00D0800A /* RankingSceneViewController.m */; };
+		0DF3D9BD1A2CB16E00D0800A /* RankingSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DF3D9BB1A2CB16E00D0800A /* RankingSceneViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +134,6 @@
 		0D57EA571A28C68900200A2C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0D57EA591A28C68F00200A2C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0D57EA5B1A28C69500200A2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		0D57EA5D1A28C69C00200A2C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0D57EA611A28C97400200A2C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "MataAlGochi/ThirdParty/Parse/parse-library-1.5.0/Bolts.framework"; sourceTree = "<group>"; };
 		0D57EA631A28EBDE00200A2C /* NotificationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationConstants.h; sourceTree = "<group>"; };
@@ -177,6 +179,12 @@
 		0D745C631A2644F200251EF1 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		0D745C701A26465500251EF1 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		0D745C711A26465500251EF1 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		0DF3D9B31A2C8E7500D0800A /* GochiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiTableViewCell.h; sourceTree = "<group>"; };
+		0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GochiTableViewCell.m; sourceTree = "<group>"; };
+		0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GochiTableViewCell.xib; sourceTree = "<group>"; };
+		0DF3D9B91A2CB16E00D0800A /* RankingSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingSceneViewController.h; sourceTree = "<group>"; };
+		0DF3D9BA1A2CB16E00D0800A /* RankingSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingSceneViewController.m; sourceTree = "<group>"; };
+		0DF3D9BB1A2CB16E00D0800A /* RankingSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingSceneViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +194,6 @@
 			files = (
 				0D57EA621A28C97400200A2C /* Bolts.framework in Frameworks */,
 				0D57EA601A28C6A300200A2C /* SystemConfiguration.framework in Frameworks */,
-				0D57EA5E1A28C69C00200A2C /* StoreKit.framework in Frameworks */,
 				0D57EA5C1A28C69500200A2C /* Security.framework in Frameworks */,
 				0D57EA5A1A28C68F00200A2C /* QuartzCore.framework in Frameworks */,
 				0D57EA581A28C68900200A2C /* MobileCoreServices.framework in Frameworks */,
@@ -214,7 +221,6 @@
 			children = (
 				0D57EA611A28C97400200A2C /* Bolts.framework */,
 				0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */,
-				0D57EA5D1A28C69C00200A2C /* StoreKit.framework */,
 				0D57EA5B1A28C69500200A2C /* Security.framework */,
 				0D57EA591A28C68F00200A2C /* QuartzCore.framework */,
 				0D57EA571A28C68900200A2C /* MobileCoreServices.framework */,
@@ -298,6 +304,7 @@
 		0D557A251A1BD50E00E97B72 /* gameScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0DF3D9B81A2CB15900D0800A /* RankingScene */,
 				0D557B671A1E52C100E97B72 /* FeedScene */,
 				0D557B431A1BE49800E97B72 /* MainScene */,
 			);
@@ -439,6 +446,9 @@
 				0D557B7A1A1E6E7200E97B72 /* FoodTableViewCell.h */,
 				0D557B7B1A1E6E7200E97B72 /* FoodTableViewCell.m */,
 				0D557B7C1A1E6E7200E97B72 /* FoodTableViewCell.xib */,
+				0DF3D9B31A2C8E7500D0800A /* GochiTableViewCell.h */,
+				0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */,
+				0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -556,6 +566,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		0DF3D9B81A2CB15900D0800A /* RankingScene */ = {
+			isa = PBXGroup;
+			children = (
+				0DF3D9B91A2CB16E00D0800A /* RankingSceneViewController.h */,
+				0DF3D9BA1A2CB16E00D0800A /* RankingSceneViewController.m */,
+				0DF3D9BB1A2CB16E00D0800A /* RankingSceneViewController.xib */,
+			);
+			path = RankingScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -606,6 +626,11 @@
 					0D5579F51A1BCACA00E97B72 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 332N44E879;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					0D557A0E1A1BCACA00E97B72 = {
 						CreatedOnToolsVersion = 6.1;
@@ -637,12 +662,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF3D9BD1A2CB16E00D0800A /* RankingSceneViewController.xib in Resources */,
 				0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */,
 				0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */,
 				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
 				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
 				0D557B6C1A1E52D500E97B72 /* FeedSceneViewController.xib in Resources */,
 				0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */,
+				0DF3D9B71A2C8E7500D0800A /* GochiTableViewCell.xib in Resources */,
 				0D557B4E1A1CED2C00E97B72 /* MainMenuViewController.xib in Resources */,
 				0D557A071A1BCACA00E97B72 /* Images.xcassets in Resources */,
 			);
@@ -662,6 +689,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF3D9B61A2C8E7500D0800A /* GochiTableViewCell.m in Sources */,
 				0D745C111A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m in Sources */,
 				0D745C681A2644F200251EF1 /* UIImageView+AFNetworking.m in Sources */,
 				0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -686,6 +714,7 @@
 				0D557B591A1D291900E97B72 /* Gochi.m in Sources */,
 				0D745C661A2644F200251EF1 /* UIAlertView+AFNetworking.m in Sources */,
 				0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */,
+				0DF3D9BC1A2CB16E00D0800A /* RankingSceneViewController.m in Sources */,
 				0D557B4D1A1CED2C00E97B72 /* MainMenuViewController.m in Sources */,
 				0D557A2C1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.m in Sources */,
 				0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */,

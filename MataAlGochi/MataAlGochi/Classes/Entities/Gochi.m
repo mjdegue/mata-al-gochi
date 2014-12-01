@@ -37,6 +37,7 @@
     _level = [[NSNumber alloc] initWithInt:1];
     _experience = [[NSNumber alloc] initWithInt:0];
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
+    _code = OWN_GOCHI_ID;
     return self;
 }
 
@@ -48,6 +49,7 @@
     [self setPetState:PET_STATE_RESTING];
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
+    _code = OWN_GOCHI_ID;
     return self;
 }
 
@@ -193,12 +195,19 @@
     }
 }
 
+#pragma mark - Validation Methods
+
+- (BOOL) isOwnGochi
+{
+    return [self.code isEqualToString:OWN_GOCHI_ID];    
+}
+
 #pragma mark - Network utils
 
 - (NSDictionary*) dictionaryByGochi
 {
     NSMutableDictionary* answer = [[NSMutableDictionary alloc] init];
-    answer[@"code"] = OWN_GOCHI_ID;
+    answer[@"code"] = self.code;
     answer[@"name"] = self.name;
     answer[@"energy"] = self.energy;
     answer[@"level"] = self.level;
@@ -207,16 +216,22 @@
     return answer;
 }
 
--(instancetype) initWithDictionary:(NSDictionary*) dictionary
+-(void) fillWithDictionary:(NSDictionary*) dictionary
 {
-    self = [super init];
     _energy = dictionary[@"energy"];
     _level = dictionary[@"level"];
     _experience = dictionary[@"experience"];
     self.name = (NSString*) dictionary[@"name"];
     self.petType = [dictionary[@"pet_type"] intValue]; 
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
-    return self;
+    _code = (NSString*) dictionary[@"code"];
+}
+
+#pragma mark - Sorting
+
+- (NSComparisonResult) compare:(Gochi*) gochi
+{
+    return [self.level compare:gochi.level];
 }
 
 @end
