@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TamagochiNameSelectionViewController : UIViewController<UITextFieldDelegate>
-
+@property (strong, nonatomic) NSString* gochisName;
 @end

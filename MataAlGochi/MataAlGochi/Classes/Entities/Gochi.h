@@ -15,12 +15,13 @@
 
 #define OWN_GOCHI_ID @"MD_7693"
 
-@interface Gochi : NSObject
+@interface Gochi : NSObject <NSCoding>
 
 //Pet properties
 @property(strong, nonatomic) NSString* name;
 @property(assign, nonatomic) PetIdentifier petType;
 @property(assign, nonatomic) PetStateIdentifier petState;
+@property(assign, nonatomic) BOOL isFinished;
 
 //Attributes
 @property(strong, nonatomic, readonly) NSNumber* energy;
@@ -29,6 +30,7 @@
 @property(strong, nonatomic, readonly) NSNumber* level;
 @property(strong, nonatomic, readonly) NSString* code;
 @property(strong, nonatomic, readonly) CLLocation* location;
+
 
 //Delegate specific
 @property(strong, nonatomic) id<GochiDelegate> delegate;
@@ -50,5 +52,10 @@
 //Validation methods
 - (BOOL) isOwnGochi;
 - (NSComparisonResult) compare:(Gochi*) gochi;
+
+//Saving gochi
+- (void) saveGochi;
+- (void) saveGochiOnServer;
+- (void) saveGochiOnDisk;
 
 @end

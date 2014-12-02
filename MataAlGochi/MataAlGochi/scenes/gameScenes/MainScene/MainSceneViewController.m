@@ -307,20 +307,6 @@
     NSString* messageTittle = [[NSString alloc] initWithFormat:@"%@ leveled up", [self.activeGochi name]];
     NSString* messageBody = [[NSString alloc] initWithFormat:@"Congratulations! %@ reached level %@", [self.activeGochi name], [self.activeGochi level]];
     
-    //Send info to server
-    SuccessBlock success = ^(NSURLSessionDataTask* task, id responseObject)
-    {
-        NSDictionary* serverResponse = (NSDictionary*)responseObject;
-        NSString* status = serverResponse[@"status"];
-        if(![status isEqualToString:@"ok"])
-        {
-            [[[UIAlertView alloc] initWithTitle:@"Hubo algun problema" message:@"Hubo algun problema" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
-        }
-    };
-
-    [[NetworkRequestsHelper sharedInstance] postGochiOnServer:self.activeGochi successBlock:success failureBlock:nil];
-    
-    
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:messageTittle message:messageBody delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [alert show];
 }

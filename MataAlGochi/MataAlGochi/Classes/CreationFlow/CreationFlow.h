@@ -9,14 +9,28 @@
 #import <Foundation/Foundation.h>
 #import "PetConstants.h"
 #import "Gochi.h"
-@interface CreationFlow : NSObject
+
+typedef struct
+{
+    BOOL selectedName;
+    BOOL selectedType;
+}CreationFlowCompletedSteps;
+
+
+@interface CreationFlow : NSObject <NSCoding>
+@property (nonatomic, assign) CreationFlowCompletedSteps completedSteps;
 
 //Creation flow methods:
+
 -(void) setGochisName:(NSString*) gochisName;
 -(NSString*) getGochisName;
 -(void) setGochisPet:(PetIdentifier) petType;
 -(BOOL) completeCreationFlow;
+-(Gochi*) getUncompleteGochi;
+-(void) setUncompletedGochi:(Gochi*)gochi;
+
 //Singleton methods
 +(CreationFlow*) GetInstance;
 +(void) DestroyInstance;
++(BOOL) isCreationFlowWorking;
 @end

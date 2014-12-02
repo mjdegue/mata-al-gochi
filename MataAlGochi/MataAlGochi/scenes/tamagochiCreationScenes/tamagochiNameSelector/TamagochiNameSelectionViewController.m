@@ -9,6 +9,7 @@
 #import "TamagochiNameSelectionViewController.h"
 #import "TamagochiAssetSelectorViewController.h"
 #import "CreationFlow.h"
+#import "Settings.h"
 
 @interface TamagochiNameSelectionViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *txtGochisName;
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.txtGochisName.delegate = self;
+    [[Settings sharedInstance] setIsCreationFlowStarted:[[NSNumber alloc] initWithBool:YES]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -30,6 +32,10 @@
     [self.lblNotificationLabel setText:@"Your gochi's name is invalid."];
     [self.lblNotificationLabel setTextColor:[UIColor redColor]];
     [self.lblNotificationLabel setHidden:YES];
+    if(self.gochisName != nil && ![self.gochisName isEqualToString:@""])
+    {
+        [self.txtGochisName setText:self.gochisName];
+    }
 }
 
 - (void)didReceiveMemoryWarning

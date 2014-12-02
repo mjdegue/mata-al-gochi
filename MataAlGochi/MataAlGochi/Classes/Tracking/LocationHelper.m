@@ -38,6 +38,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     self.lastLocation = [locations objectAtIndex:0];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MAP_LOCATION_UPDATED_NOTIFICATION object:nil];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation

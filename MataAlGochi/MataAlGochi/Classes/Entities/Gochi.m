@@ -40,6 +40,10 @@
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     _code = OWN_GOCHI_ID;
     _location = [[LocationHelper sharedInstance] lastLocation];
+    
+    //Add notification observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGochiLocation) name:MAP_LOCATION_UPDATED_NOTIFICATION object:nil];
+    
     return self;
 }
 
@@ -52,7 +56,11 @@
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     _code = OWN_GOCHI_ID;
-    _location = [[LocationHelper sharedInstance] lastLocation];    
+    _location = [[LocationHelper sharedInstance] lastLocation];
+    
+    //Add notification observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGochiLocation) name:MAP_LOCATION_UPDATED_NOTIFICATION object:nil];
+    
     return self;
 }
 
@@ -81,7 +89,8 @@
 
 -(void) update
 {
-    switch (self.petState) {
+    switch (self.petState)
+    {
         default:
         case PET_STATE_RESTING:
             [self doRest];
@@ -194,15 +203,112 @@
     {
         _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
         [self.delegate gochiLevelUp];
+        [self saveGochi];
         [NotificationManager pushLevelupGochiNotification:self];
     }
 }
+
+#pragma mark - NSCoding protocol
+/*
+ //Pet properties
+ @property(strong, nonatomic) NSString* name;
+ @property(assign, nonatomic) PetIdentifier petType;
+ @property(assign, nonatomic) PetStateIdentifier petState;
+ 
+ //Attributes
+ @property(strong, nonatomic, readonly) NSNumber* energy;
+ @property(strong, nonatomic, readonly) NSNumber* experience;
+ @property(strong, nonatomic, readonly) NSNumber* maxExperience;
+ @property(strong, nonatomic, readonly) NSNumber* level;
+ @property(strong, nonatomic, readonly) NSString* code;
+ @property(strong, nonatomic, readonly) CLLocation* location;
+ */
+
+#define KEY_NAME            @"KeyName"
+#define KEY_TYPE            @"Keytype"
+#define KEY_ENERGY          @"KeyEnergy"
+#define KEY_EXPERIENCE      @"KeyExperience"
+#define KEY_MAX_EXPERIENCE  @"KeyMaxExperience"
+#define KEY_LEVEL           @"KeyLevel"
+#define KEY_CODE            @"KeyCode"
+#define KEY_LOCATION        @"KeyLocation"
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if(self = [super init])
+    {
+        [self setName:[aDecoder decodeObjectForKey:KEY_NAME]];
+        _energy = [aDecoder decodeObjectForKey:KEY_ENERGY];
+        _experience = [aDecoder decodeObjectForKey:KEY_EXPERIENCE];
+        _maxExperience = [aDecoder decodeObjectForKey:KEY_MAX_EXPERIENCE];
+        _level = [aDecoder decodeObjectForKey:KEY_LEVEL];
+        _code = [aDecoder decodeObjectForKey:KEY_CODE];
+        _location = [aDecoder decodeObjectForKey:KEY_LOCATION];
+        [self setPetType:[[aDecoder decodeObjectForKey:KEY_TYPE] intValue]];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:KEY_NAME];
+    [aCoder encodeObject:self.energy forKey:KEY_ENERGY];
+    [aCoder encodeObject:self.experience forKey:KEY_EXPERIENCE];
+    [aCoder encodeObject:self.maxExperience forKey:KEY_MAX_EXPERIENCE];
+    [aCoder encodeObject:self.level forKey:KEY_LEVEL];
+    [aCoder encodeObject:self.code forKey:KEY_CODE];
+    [aCoder encodeObject:self.location forKey:KEY_LOCATION];
+    [aCoder encodeObject:[[NSNumber alloc] initWithInt:self.petType] forKey:KEY_TYPE];
+}
+
+#undef KEY_NAME
+#undef KEY_NAME
+#undef KEY_TYPE
+#undef KEY_ENERGY
+#undef KEY_EXPERIENCE
+#undef KEY_MAX_EXPERIENCE
+#undef KEY_LEVEL
+#undef KEY_CODE
+#undef KEY_LOCATION
+
+#pragma mark - Save gochi
+
+- (void) saveGochi
+{
+    [self saveGochiOnServer];
+    [self saveGochiOnDisk];
+}
+
+- (void) saveGochiOnDisk
+{
+    
+}
+- (void) saveGochiOnServer
+{
+    //Send info to server
+    SuccessBlock success = ^(NSURLSessionDataTask* task, id responseObject)
+    {
+        NSDictionary* serverResponse = (NSDictionary*)responseObject;
+        NSString* status = serverResponse[@"status"];
+        if(![status isEqualToString:@"ok"])
+        {
+            NSLog(@"Gochi saved on server correctly");
+        }
+        else
+        {
+            NSLog(@"Gochi have not been saved");
+        }
+    };
+    
+    [[NetworkRequestsHelper sharedInstance] postGochiOnServer:self successBlock:success failureBlock:nil];
+}
+
 
 #pragma mark - Validation Methods
 
 - (BOOL) isOwnGochi
 {
-    return [self.code isEqualToString:OWN_GOCHI_ID];    
+    return [self.code isEqualToString:OWN_GOCHI_ID];
 }
 
 #pragma mark - Network utils
@@ -248,9 +354,21 @@
         {
             _location = [[CLLocation alloc] initWithLatitude:[posLat doubleValue] longitude:[posLon doubleValue]];
         }
+        
+        //Add notification observer
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGochiLocation) name:MAP_LOCATION_UPDATED_NOTIFICATION object:nil];
     }
     return self;
 }
+
+#pragma mark - location
+
+-(void) updateGochiLocation
+{
+    _location = [[LocationHelper sharedInstance] lastLocation];
+    [self saveGochi];
+}
+
 
 #pragma mark - Sorting
 
