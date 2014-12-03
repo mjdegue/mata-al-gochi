@@ -50,6 +50,9 @@
 		0D57EA5C1A28C69500200A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5B1A28C69500200A2C /* Security.framework */; };
 		0D57EA601A28C6A300200A2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */; };
 		0D57EA621A28C97400200A2C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57EA611A28C97400200A2C /* Bolts.framework */; };
+		0D6AD1F01A2F603A00856772 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6AD1EF1A2F603A00856772 /* CoreData.framework */; };
+		0D6AD1F41A2F614400856772 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AD1F21A2F614400856772 /* DataModel.xcdatamodeld */; };
+		0D6AD1F81A2F618D00856772 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AD1F71A2F618D00856772 /* CoreDataHelper.m */; };
 		0D745C111A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C101A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.m */; };
 		0D745C451A26425800251EF1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C331A26425800251EF1 /* AFHTTPRequestOperation.m */; };
 		0D745C461A26425800251EF1 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C351A26425800251EF1 /* AFHTTPRequestOperationManager.m */; };
@@ -157,6 +160,10 @@
 		0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0D57EA611A28C97400200A2C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "MataAlGochi/ThirdParty/Parse/parse-library-1.5.0/Bolts.framework"; sourceTree = "<group>"; };
 		0D57EA631A28EBDE00200A2C /* NotificationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationConstants.h; sourceTree = "<group>"; };
+		0D6AD1EF1A2F603A00856772 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0D6AD1F31A2F614400856772 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		0D6AD1F61A2F618D00856772 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		0D6AD1F71A2F618D00856772 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		0D745C0A1A2378D500251EF1 /* GochiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiDelegate.h; sourceTree = "<group>"; };
 		0D745C0D1A23C4C300251EF1 /* GameDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameDelegate.h; sourceTree = "<group>"; };
 		0D745C0F1A25006B00251EF1 /* NSTimer+TimerSafeInvalidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+TimerSafeInvalidate.h"; sourceTree = "<group>"; };
@@ -212,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D6AD1F01A2F603A00856772 /* CoreData.framework in Frameworks */,
 				0D57EA621A28C97400200A2C /* Bolts.framework in Frameworks */,
 				0D57EA601A28C6A300200A2C /* SystemConfiguration.framework in Frameworks */,
 				0D57EA5C1A28C69500200A2C /* Security.framework in Frameworks */,
@@ -286,6 +294,7 @@
 		0D5579ED1A1BCACA00E97B72 = {
 			isa = PBXGroup;
 			children = (
+				0D6AD1EF1A2F603A00856772 /* CoreData.framework */,
 				0D229C141A2D114000B023CD /* MapKit.framework */,
 				0D57EA611A28C97400200A2C /* Bolts.framework */,
 				0D57EA5F1A28C6A300200A2C /* SystemConfiguration.framework */,
@@ -316,6 +325,7 @@
 		0D5579F81A1BCACA00E97B72 /* MataAlGochi */ = {
 			isa = PBXGroup;
 			children = (
+				0D6AD1F11A2F60F700856772 /* DataModel */,
 				0D57EA481A28BD7000200A2C /* Notifications */,
 				0D745C301A26425800251EF1 /* ThirdParty */,
 				0D745C0E1A24FFEA00251EF1 /* Categories */,
@@ -543,6 +553,24 @@
 				0D57EA4B1A28BE1100200A2C /* NotificationManager.m */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		0D6AD1F11A2F60F700856772 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D6AD1F51A2F617700856772 /* DataModelHelper */,
+				0D6AD1F21A2F614400856772 /* DataModel.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		0D6AD1F51A2F617700856772 /* DataModelHelper */ = {
+			isa = PBXGroup;
+			children = (
+				0D6AD1F61A2F618D00856772 /* CoreDataHelper.h */,
+				0D6AD1F71A2F618D00856772 /* CoreDataHelper.m */,
+			);
+			path = DataModelHelper;
 			sourceTree = "<group>";
 		};
 		0D745C091A2378BB00251EF1 /* Delegates */ = {
@@ -785,9 +813,11 @@
 				0D745C4A1A26425800251EF1 /* AFURLConnectionOperation.m in Sources */,
 				0D745C4D1A26425800251EF1 /* AFURLSessionManager.m in Sources */,
 				0D745C691A2644F200251EF1 /* UIProgressView+AFNetworking.m in Sources */,
+				0D6AD1F81A2F618D00856772 /* CoreDataHelper.m in Sources */,
 				0D557B7D1A1E6E7200E97B72 /* FoodTableViewCell.m in Sources */,
 				0D745C671A2644F200251EF1 /* UIButton+AFNetworking.m in Sources */,
 				0D229C1D1A2E338E00B023CD /* Settings.m in Sources */,
+				0D6AD1F41A2F614400856772 /* DataModel.xcdatamodeld in Sources */,
 				0D229C131A2D0D0B00B023CD /* GochiSpotAnnotation.m in Sources */,
 				0D5579FC1A1BCACA00E97B72 /* main.m in Sources */,
 				0D557B471A1BE4AC00E97B72 /* MainSceneViewController.m in Sources */,
@@ -1021,6 +1051,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0D6AD1F21A2F614400856772 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0D6AD1F31A2F614400856772 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 0D6AD1F31A2F614400856772 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0D5579EE1A1BCACA00E97B72 /* Project object */;
 }
