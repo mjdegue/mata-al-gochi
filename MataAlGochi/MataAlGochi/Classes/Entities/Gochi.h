@@ -12,10 +12,11 @@
 #import "PetConstants.h"
 #import "GochiDelegate.h"
 #import "Food.h"
+#import <CoreData/CoreData.h>
 
 #define OWN_GOCHI_ID @"MD_7693"
 
-@interface Gochi : NSObject <NSCoding>
+@interface Gochi : NSManagedObject <NSCoding>
 
 //Pet properties
 @property(strong, nonatomic) NSString* name;
@@ -23,13 +24,18 @@
 @property(assign, nonatomic) PetStateIdentifier petState;
 @property(assign, nonatomic) BOOL isFinished;
 
+//Location
+@property(strong, nonatomic) CLLocation* location;
+@property(assign, nonatomic) double latitude;
+@property(assign, nonatomic) double longitude;
+
 //Attributes
 @property(strong, nonatomic, readonly) NSNumber* energy;
 @property(strong, nonatomic, readonly) NSNumber* experience;
 @property(strong, nonatomic, readonly) NSNumber* maxExperience;
 @property(strong, nonatomic, readonly) NSNumber* level;
 @property(strong, nonatomic, readonly) NSString* code;
-@property(strong, nonatomic, readonly) CLLocation* location;
+
 
 
 //Delegate specific

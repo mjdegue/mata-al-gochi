@@ -92,17 +92,7 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    /* @TODO: Check here how to define if user comes from background or not, and how to show the gochi in that case
-     
-    NSDictionary* gochiDictionary = [notification userInfo];
-    if([self.window.rootViewController.nibName isEqualToString:@"MainSceneViewController"])
-    {
-        NSLog(@"Esta en esa pantalla");
-    }
-    else
-    {
-        NSLog(@"DSADASDSA pantalla");
-    }*/
+
     
 }
 - (void)applicationWillResignActive:(UIApplication *)application {

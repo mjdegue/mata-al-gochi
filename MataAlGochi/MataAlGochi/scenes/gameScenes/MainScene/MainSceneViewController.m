@@ -14,6 +14,7 @@
 #import "NotificationConstants.h"
 #import "NotificationManager.h"
 #import "RankingSceneViewController.h"
+#import "CoreDataHelper.h"
 
 //Local defines
 #define MAIL_STRING_WITH_FORMAT @"Buenas! Soy %@, cómo va? Quería comentarte que estuve usando la App Mata al Gochi para comerme todo y está genial. Bajatela YA!! Saludos!"
@@ -400,37 +401,13 @@
 #pragma mark - Gochis Ranking
 - (IBAction) didAskGochisRanking: (id) sender
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLoadGochisRaking:) name:NWNOTIFICATION_GOCHIS_LIST_LODED_SUCCESS object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFailLoadingGochisRanking:) name:NWNOTIFICATION_GOCHIS_LIST_LODED_FAILURE object:nil];
-    
-    [[NetworkRequestsHelper sharedInstance] retreiveAllGochisFromServer];
-}
-
-- (void) didLoadGochisRaking:(NSNotification*) sender
-{
-    //First of all :)
-    [self removeGochisListObservation];
-    
-    //Now parse info
-    NSArray* gochisList = [sender object];
+    NSArray* gochisList = [[CoreDataHelper sharedInstance] fetchAllGochis];
     
     RankingSceneViewController* rankingScene = [[RankingSceneViewController alloc] initWithGochisList:gochisList];
     
     [self.navigationController pushViewController:rankingScene animated:YES];
-    
 }
 
-- (void) didFailLoadingGochisRanking:(NSNotification*) sender
-{
-    [self removeGochisListObservation];
-    NSLog(@"Failed loading gochis ranking");
-}
 
-- (void) removeGochisListObservation
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NWNOTIFICATION_GOCHIS_LIST_LODED_SUCCESS object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NWNOTIFICATION_GOCHIS_LIST_LODED_FAILURE object:nil];
-}
 
 @end

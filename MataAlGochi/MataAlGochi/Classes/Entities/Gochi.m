@@ -12,6 +12,7 @@
 #import "NetworkRequestsHelper.h"
 #import "NotificationManager.h"
 #import "LocationHelper.h"
+#import "CoreDataHelper.h"
 
 #define ENERGY_MULTIPLIER_REST  (-1.0f)
 #define ENERGY_MULTIPLIER_TRAIN (-10.0f)
@@ -24,9 +25,29 @@
 @interface Gochi ()
 @property (strong, nonatomic) NSTimer* stateTimer;
 @property (strong, nonatomic) Food* eatingFood;
+
+
 @end
 
 @implementation Gochi
+
+#pragma mark - Synthethise
+@synthesize energy = _energy;
+@synthesize level = _level;
+@synthesize experience = _experience;
+@synthesize maxExperience = _maxExperience;
+@synthesize code = _code;
+@synthesize location;
+@synthesize longitude;
+@synthesize latitude;
+@synthesize name;
+@synthesize petType;
+@synthesize petState;
+@synthesize isFinished;
+@synthesize eatingFood;
+@synthesize delegate;
+@synthesize stateTimer;
+
 
 #pragma mark - Constructors
 -(instancetype) init
@@ -39,7 +60,7 @@
     _experience = [[NSNumber alloc] initWithInt:0];
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     _code = OWN_GOCHI_ID;
-    _location = [[LocationHelper sharedInstance] lastLocation];
+    [self setLocation:[[LocationHelper sharedInstance] lastLocation]];
     
     //Add notification observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGochiLocation) name:MAP_LOCATION_UPDATED_NOTIFICATION object:nil];
@@ -47,16 +68,16 @@
     return self;
 }
 
--(instancetype)initWithName:(NSString *)name andPetType:(PetIdentifier)petType
+-(instancetype)initWithName:(NSString *)petName andPetType:(PetIdentifier)petTypeIn
 {
     self = [super init];
-    [self setPetType:petType];
-    [self setName:name];
-    [self setPetState:PET_STATE_RESTING];
+    petType = petTypeIn;
+    name = petName;
+    petState = PET_STATE_RESTING;
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
     _maxExperience = [[NSNumber alloc] initWithInt:([self.level intValue] * [self.level intValue] * 100)];
     _code = OWN_GOCHI_ID;
-    _location = [[LocationHelper sharedInstance] lastLocation];
+    [self setLocation:[[LocationHelper sharedInstance] lastLocation]];
     
     //Add notification observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGochiLocation) name:MAP_LOCATION_UPDATED_NOTIFICATION object:nil];
@@ -106,6 +127,48 @@
     }
 }
 
+# pragma mark - Custom Getters & setters
+
+- (CLLocation *)location
+{
+    CLLocation* loc = [[CLLocation alloc] initWithLatitude:[self latitude] longitude:[self longitude]];
+    return loc;
+}
+/*
+-(void)setLatitude:(double)latitude
+{
+    [self setLatitude:latitude];
+    [self setLocation:[[CLLocation alloc] initWithLatitude:[self latitude] longitude:[self longitude]]];
+}
+
+-(void) setLongitude:(double)longitude
+{
+    [self setLongitude:longitude];
+    [self setLocation:[[CLLocation alloc] initWithLatitude:[self latitude] longitude:[self longitude]]];
+}
+
+-(void) setLocation:(CLLocation *)location
+{
+    [self setLocation:location];
+    [self setLongitude:location.coordinate.longitude];
+    [self setLatitude:location.coordinate.latitude];
+}
+
+- (CLLocation *)location
+{
+    return [self location];
+}
+
+-(double)latitude
+{
+    return [self latitude];
+}
+
+-(double)longitude
+{
+    return [self longitude];
+}
+*/
 #pragma mark - Private Methods
 
 - (void) doTrain
@@ -166,23 +229,23 @@
     
 }
 
-- (void) stateChange:(PetStateIdentifier)petState
+- (void) stateChange:(PetStateIdentifier)petStateIn
 {
     PetStateIdentifier previousState = self.petState;
-    self.petState = petState;
+    petState = petStateIn;
     if(self.delegate != nil)
     {
         [self.delegate gochiChangedFromState:previousState toState:petState];
     }
 }
-
+/*
 -(void)dealloc
 {
     if(self.stateTimer != nil)
     {
         [self.stateTimer safeInvalidate];
     }
-}
+}*/
 
 - (void) plusExpe: (NSNumber* ) expDelta
 {
@@ -243,7 +306,7 @@
         _maxExperience = [aDecoder decodeObjectForKey:KEY_MAX_EXPERIENCE];
         _level = [aDecoder decodeObjectForKey:KEY_LEVEL];
         _code = [aDecoder decodeObjectForKey:KEY_CODE];
-        _location = [aDecoder decodeObjectForKey:KEY_LOCATION];
+        [self setLocation:[aDecoder decodeObjectForKey:KEY_LOCATION]];
         [self setPetType:[[aDecoder decodeObjectForKey:KEY_TYPE] intValue]];
     }
     return self;
@@ -326,7 +389,7 @@
     CLLocation* newLocation = [[LocationHelper sharedInstance] lastLocation];
     if(newLocation !=nil)
     {
-        _location = newLocation;
+        [self setLocation: newLocation];
     }
     if(self.location != nil)
     {
@@ -338,7 +401,7 @@
 
 -(instancetype) initWithDictionary:(NSDictionary*) dictionary
 {
-    self = [super init];
+    self = [[CoreDataHelper sharedInstance] allocGochi];
     if(self)
     {
         _energy = dictionary[@"energy"];
@@ -352,7 +415,7 @@
         NSNumber* posLon = [dictionary objectForKey:@"position_lon"];
         if(posLat && posLon)
         {
-            _location = [[CLLocation alloc] initWithLatitude:[posLat doubleValue] longitude:[posLon doubleValue]];
+            [self setLocation: [[CLLocation alloc] initWithLatitude:[posLat doubleValue] longitude:[posLon doubleValue]]];
         }
         
         //Add notification observer
@@ -365,7 +428,7 @@
 
 -(void) updateGochiLocation
 {
-    _location = [[LocationHelper sharedInstance] lastLocation];
+    [self setLocation: [[LocationHelper sharedInstance] lastLocation]];
     [self saveGochi];
 }
 
