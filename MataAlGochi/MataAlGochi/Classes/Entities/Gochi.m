@@ -11,6 +11,7 @@
 #import "NSTimer+TimerSafeInvalidate.h"
 #import "NetworkRequestsHelper.h"
 #import "NotificationManager.h"
+#import "NotificationConstants.h"
 #import "LocationHelper.h"
 #import "CoreDataHelper.h"
 
@@ -52,7 +53,7 @@
 #pragma mark - Constructors
 -(instancetype) init
 {
-    self = [super init];
+    self = [[CoreDataHelper sharedInstance] allocGochi];
     [self setName:@""];
     [self setPetType:PET_INVALID];
     _energy = [[NSNumber alloc] initWithFloat:50.0f];
@@ -70,7 +71,7 @@
 
 -(instancetype)initWithName:(NSString *)petName andPetType:(PetIdentifier)petTypeIn
 {
-    self = [super init];
+    self = [[CoreDataHelper sharedInstance] allocGochi];
     petType = petTypeIn;
     name = petName;
     petState = PET_STATE_RESTING;
@@ -225,8 +226,6 @@
     {
         [self.delegate gochiEnergyModified];
     }
-    
-    
 }
 
 - (void) stateChange:(PetStateIdentifier)petStateIn
@@ -268,6 +267,7 @@
         [self.delegate gochiLevelUp];
         [self saveGochi];
         [NotificationManager pushLevelupGochiNotification:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_GOCHI_LEVELED_UP object:nil];
     }
 }
 
@@ -298,7 +298,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if(self = [super init])
+    self = [[CoreDataHelper sharedInstance] allocGochi];
+    if(self)
     {
         [self setName:[aDecoder decodeObjectForKey:KEY_NAME]];
         _energy = [aDecoder decodeObjectForKey:KEY_ENERGY];

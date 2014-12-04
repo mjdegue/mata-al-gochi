@@ -23,6 +23,7 @@ typedef void (^FailureBlock)(NSURLSessionDataTask *task, NSError *error);
 -(void)postGochiOnServer:(Gochi*) gochi;
 -(void)postGochiOnServer:(Gochi*) gochi successBlock:(SuccessBlock) success failureBlock:(FailureBlock) failure;
 
+-(void) getGochiFromServerByCode:(NSString*)code;
 -(void) getOwnGochiFromServer;
 -(void) retreiveAllGochisFromServer;
 

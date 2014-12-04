@@ -17,7 +17,7 @@
 //IBOutlets
 @property (strong, nonatomic) IBOutlet UILabel *lblGochiName;
 @property (strong, nonatomic) IBOutlet UILabel *lblGochiLevel;
-@property (strong, nonatomic) IBOutlet UIImageView *imgGochiImage;
+@property (strong, nonatomic) IBOutlet UIButton *btnGochiImage;
 @property (strong, nonatomic) IBOutlet UIButton *btnGochiLocation;
 
 @end
@@ -33,7 +33,8 @@
     [self.lblGochiName setText:gochi.name];
     [self.lblGochiLevel setText:[NSString stringWithFormat:@"Level: %@", gochi.level]];
     
-    [self.imgGochiImage setImage:[ImageLoader loadPetImageByType:gochi.petType]];
+    [self.btnGochiImage setBackgroundImage:[ImageLoader loadPetImageByType:gochi.petType] forState:UIControlStateNormal];
+    
     if(shouldBright)
     {
         [self setBackgroundColor:[UIColor orangeColor]];
@@ -75,6 +76,13 @@
     {
         [self.delegate didSelectGochiInMap:self.gochi];
     }
+}
+
+- (IBAction)wantToVisitGochi:(id)sender
+{
+    NSString* urlFormat = @"tamagotchi://pet/%@";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:urlFormat, self.gochi.code]]];
+
 }
 
 @end

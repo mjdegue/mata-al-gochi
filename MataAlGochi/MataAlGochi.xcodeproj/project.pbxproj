@@ -72,6 +72,8 @@
 		0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C611A2644F200251EF1 /* UIRefreshControl+AFNetworking.m */; };
 		0D745C6B1A2644F200251EF1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C631A2644F200251EF1 /* UIWebView+AFNetworking.m */; };
 		0D745C721A26465500251EF1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C711A26465500251EF1 /* NetworkManager.m */; };
+		0DBF10E71A30E9D200EB6C68 /* VisitGochiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF10E51A30E9D200EB6C68 /* VisitGochiViewController.m */; };
+		0DBF10E81A30E9D200EB6C68 /* VisitGochiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBF10E61A30E9D200EB6C68 /* VisitGochiViewController.xib */; };
 		0DF3D9B61A2C8E7500D0800A /* GochiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */; };
 		0DF3D9B71A2C8E7500D0800A /* GochiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */; };
 		0DF3D9BC1A2CB16E00D0800A /* RankingSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9BA1A2CB16E00D0800A /* RankingSceneViewController.m */; };
@@ -206,6 +208,9 @@
 		0D745C631A2644F200251EF1 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		0D745C701A26465500251EF1 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		0D745C711A26465500251EF1 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		0DBF10E41A30E9D200EB6C68 /* VisitGochiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitGochiViewController.h; sourceTree = "<group>"; };
+		0DBF10E51A30E9D200EB6C68 /* VisitGochiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitGochiViewController.m; sourceTree = "<group>"; };
+		0DBF10E61A30E9D200EB6C68 /* VisitGochiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitGochiViewController.xib; sourceTree = "<group>"; };
 		0DF3D9B31A2C8E7500D0800A /* GochiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiTableViewCell.h; sourceTree = "<group>"; };
 		0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GochiTableViewCell.m; sourceTree = "<group>"; };
 		0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GochiTableViewCell.xib; sourceTree = "<group>"; };
@@ -382,6 +387,7 @@
 		0D557A251A1BD50E00E97B72 /* gameScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0DBF10E01A30D80E00EB6C68 /* VisitGochi */,
 				0D229C0A1A2D0A1300B023CD /* GochiInMap */,
 				0DF3D9B81A2CB15900D0800A /* RankingScene */,
 				0D557B671A1E52C100E97B72 /* FeedScene */,
@@ -668,6 +674,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		0DBF10E01A30D80E00EB6C68 /* VisitGochi */ = {
+			isa = PBXGroup;
+			children = (
+				0DBF10E41A30E9D200EB6C68 /* VisitGochiViewController.h */,
+				0DBF10E51A30E9D200EB6C68 /* VisitGochiViewController.m */,
+				0DBF10E61A30E9D200EB6C68 /* VisitGochiViewController.xib */,
+			);
+			path = VisitGochi;
+			sourceTree = "<group>";
+		};
 		0DF3D9B81A2CB15900D0800A /* RankingScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,6 +788,7 @@
 				0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */,
 				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
 				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
+				0DBF10E81A30E9D200EB6C68 /* VisitGochiViewController.xib in Resources */,
 				0D229C0F1A2D0A3300B023CD /* GochiInMapSceneViewController.xib in Resources */,
 				0D557B6C1A1E52D500E97B72 /* FeedSceneViewController.xib in Resources */,
 				0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */,
@@ -800,6 +817,7 @@
 				0D229C0E1A2D0A3300B023CD /* GochiInMapSceneViewController.m in Sources */,
 				0D745C681A2644F200251EF1 /* UIImageView+AFNetworking.m in Sources */,
 				0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */,
+				0DBF10E71A30E9D200EB6C68 /* VisitGochiViewController.m in Sources */,
 				0D557B5D1A1D445A00E97B72 /* Game.m in Sources */,
 				0D2D08C11A2660C6005D1421 /* NetworkRequestsHelper.m in Sources */,
 				0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */,

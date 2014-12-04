@@ -18,6 +18,8 @@
 #import "MainSceneViewController.h"
 #import "TamagochiAssetSelectorViewController.h"
 #import "TamagochiNameSelectionViewController.h"
+#import "VisitGochiViewController.h"
+#import "NetworkRequestsHelper.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +29,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //Add observation
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveInStorage) name:NOTIFICATION_GOCHI_LEVELED_UP object:nil];
     
     //Starts windows and navs initialization:
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -105,7 +110,6 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
     [self saveInStorage];
-
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -182,6 +186,33 @@
         TamagochiAssetSelectorViewController* assetScene = [[TamagochiAssetSelectorViewController alloc] initWithNibName:@"TamagochiAssetSelectorViewController" bundle:nil];
         [rootController pushViewController:assetScene animated:NO];
     }
+}
+
+
+//URL handling
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    NSString* petCode = [url lastPathComponent];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFinishLoadingPet:) name:NWNOTIFICATION_GOCHI_LOADED_SUCCED object:nil];
+    [[NetworkRequestsHelper sharedInstance] getGochiFromServerByCode:petCode];
+    return YES;
+}
+
+//receive gochi:
+
+- (void) didFinishLoadingPet:(id) sender
+{
+    Gochi* gochi = [sender object];
+    NSLog(@"Gochi: %@", gochi);
+    
+    //first of all remove observation
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    VisitGochiViewController* visitGochi = [[VisitGochiViewController alloc] initWithNibName:@"VisitGochiViewController" bundle:nil];
+    visitGochi.gochi = gochi;
+    UINavigationController* rootController = (UINavigationController*)self.window.rootViewController;
+    [rootController pushViewController:visitGochi animated:YES];
 }
 
 

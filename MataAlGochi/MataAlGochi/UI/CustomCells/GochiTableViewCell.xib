@@ -15,13 +15,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzB-xq-95A">
-                        <rect key="frame" x="8" y="8" width="59" height="59"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="59" id="QrJ-r3-yAF"/>
-                            <constraint firstAttribute="width" constant="59" id="fUh-11-bZh"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gochi name very piola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-5G-SaD">
                         <rect key="frame" x="75" y="9" width="150" height="21"/>
                         <constraints>
@@ -33,13 +26,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gochi Level very piola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjc-hc-F4V">
-                        <rect key="frame" x="75" y="38" width="181" height="15"/>
+                        <rect key="frame" x="75" y="38" width="123" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFf-lF-TmY">
-                        <rect key="frame" x="253" y="8" width="59" height="59"/>
+                        <rect key="frame" x="262" y="9" width="50" height="50"/>
                         <color key="backgroundColor" red="1" green="0.85015009929999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,28 +41,41 @@
                             <action selector="didAskGochiInMap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K1c-oU-VeQ"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEO-f4-hQS">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <color key="backgroundColor" red="0.1354984327" green="0.48014962189999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="hvv-73-yXE"/>
+                            <constraint firstAttribute="width" constant="50" id="r9I-RL-f7S"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="wantToVisitGochi:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bxc-UR-UnY"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hFf-lF-TmY" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="1Kc-s9-I86"/>
-                    <constraint firstItem="hFf-lF-TmY" firstAttribute="width" secondItem="nzB-xq-95A" secondAttribute="width" id="4zB-ae-iNV"/>
-                    <constraint firstItem="nzB-xq-95A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="6mG-mO-KT8"/>
-                    <constraint firstItem="hFf-lF-TmY" firstAttribute="top" secondItem="nzB-xq-95A" secondAttribute="top" id="FBX-LX-928"/>
-                    <constraint firstItem="Ge7-5G-SaD" firstAttribute="leading" secondItem="fjc-hc-F4V" secondAttribute="leading" id="Sju-Py-Jwc"/>
-                    <constraint firstItem="Ge7-5G-SaD" firstAttribute="leading" secondItem="nzB-xq-95A" secondAttribute="trailing" constant="8" id="dEP-U2-QrN"/>
-                    <constraint firstItem="hFf-lF-TmY" firstAttribute="height" secondItem="nzB-xq-95A" secondAttribute="height" id="ioL-PL-UET"/>
-                    <constraint firstItem="Ge7-5G-SaD" firstAttribute="top" secondItem="nzB-xq-95A" secondAttribute="top" constant="1" id="q54-j2-val"/>
-                    <constraint firstItem="nzB-xq-95A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="qQj-Xg-C0O"/>
-                    <constraint firstItem="Ge7-5G-SaD" firstAttribute="width" secondItem="fjc-hc-F4V" secondAttribute="width" constant="-31" id="tHC-84-fZD"/>
-                    <constraint firstItem="fjc-hc-F4V" firstAttribute="top" secondItem="Ge7-5G-SaD" secondAttribute="bottom" constant="8" id="y9z-B9-XZK"/>
+                    <constraint firstItem="fjc-hc-F4V" firstAttribute="top" secondItem="Ge7-5G-SaD" secondAttribute="bottom" constant="8" id="BDL-8W-2Tf"/>
+                    <constraint firstItem="IEO-f4-hQS" firstAttribute="height" secondItem="hFf-lF-TmY" secondAttribute="height" id="Mul-6u-7WX"/>
+                    <constraint firstItem="hFf-lF-TmY" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Mzb-Fy-yv7"/>
+                    <constraint firstItem="IEO-f4-hQS" firstAttribute="top" secondItem="Ge7-5G-SaD" secondAttribute="top" constant="-1" id="b76-av-XX7"/>
+                    <constraint firstItem="Ge7-5G-SaD" firstAttribute="leading" secondItem="fjc-hc-F4V" secondAttribute="leading" id="cRj-RX-liI"/>
+                    <constraint firstItem="Ge7-5G-SaD" firstAttribute="leading" secondItem="IEO-f4-hQS" secondAttribute="trailing" constant="17" id="gh3-vA-nqD"/>
+                    <constraint firstItem="IEO-f4-hQS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pfQ-vK-84l"/>
+                    <constraint firstItem="IEO-f4-hQS" firstAttribute="top" secondItem="hFf-lF-TmY" secondAttribute="top" constant="-1" id="rtU-OY-B0I"/>
+                    <constraint firstItem="IEO-f4-hQS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="tHM-fx-3nX"/>
+                    <constraint firstItem="IEO-f4-hQS" firstAttribute="width" secondItem="hFf-lF-TmY" secondAttribute="width" id="z3m-ro-Rid"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btnGochiImage" destination="IEO-f4-hQS" id="Z4j-ic-kcx"/>
                 <outlet property="btnGochiLocation" destination="hFf-lF-TmY" id="mpF-rC-9IZ"/>
-                <outlet property="imgGochiImage" destination="nzB-xq-95A" id="3ve-eV-TkQ"/>
                 <outlet property="lblGochiLevel" destination="fjc-hc-F4V" id="zaP-rB-Ue7"/>
                 <outlet property="lblGochiName" destination="Ge7-5G-SaD" id="6sR-op-FE0"/>
             </connections>
-            <point key="canvasLocation" x="2" y="139.5"/>
+            <point key="canvasLocation" x="0.0" y="63.5"/>
         </tableViewCell>
     </objects>
 </document>

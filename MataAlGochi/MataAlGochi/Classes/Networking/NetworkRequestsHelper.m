@@ -38,6 +38,11 @@
 
 -(void) getOwnGochiFromServer
 {
+    [self getGochiFromServerByCode:OWN_GOCHI_ID];
+}
+
+-(void) getGochiFromServerByCode:(NSString *)code
+{
     
     SuccessBlock success = ^(NSURLSessionDataTask* task, id responseObject)
     {
@@ -49,8 +54,8 @@
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHI_LOADED_FAILURE object:nil];
     };
-
-    NSString* getUrlString = [NSString stringWithFormat:SPECIFIC_PET_GET, OWN_GOCHI_ID];
+    
+    NSString* getUrlString = [NSString stringWithFormat:SPECIFIC_PET_GET, code];
     
     [[NetworkManager sharedInstance] GET:getUrlString parameters:nil success:success failure:failure];
 }

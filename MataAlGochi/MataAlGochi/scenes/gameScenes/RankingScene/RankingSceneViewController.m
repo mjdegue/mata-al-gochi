@@ -75,12 +75,6 @@
 {
     [self removeGochisListObservation];
 }
-/*
-- (void)dealloc
-{
-    
-    [self removeGochisListObservation];
-}*/
 
 - (void)viewDidLoad
 {
