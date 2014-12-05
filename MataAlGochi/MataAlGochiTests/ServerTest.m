@@ -64,8 +64,8 @@
          if(error)
          {
              NSLog(@"Error: %@", [error localizedDescription]);
+             XCTFail(@"Error, post went in timeout");
          }
-         XCTFail(@"Error, post went in timeout");
      }];
     
 }
@@ -99,8 +99,8 @@
          if(error)
          {
              NSLog(@"Error: %@", [error localizedDescription]);
+             XCTFail(@"Error, get went in timeout");
          }
-         XCTFail(@"Error, get went in timeout");
      }];
 }
 
@@ -130,8 +130,8 @@
          if(error)
          {
              NSLog(@"Error: %@", [error localizedDescription]);
+             XCTFail(@"Error, get went in timeout");
          }
-         XCTFail(@"Error, get went in timeout");
      }];
 }
 

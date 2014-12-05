@@ -9,7 +9,7 @@
 #import "AFNetworkActivityIndicatorManager.h"
 
 #define REQUESTS_TIME_OUT 20
-#define BASE_URL @"http://169.254.226.91:3000/"
+#define BASE_URL @"http://tamagotchi.herokuapp.com/"
 @implementation NetworkManager
 + (instancetype)sharedInstance
 {
