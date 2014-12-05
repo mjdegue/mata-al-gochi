@@ -63,5 +63,4 @@
 - (void) saveGochi;
 - (void) saveGochiOnServer;
 - (void) saveGochiOnDisk;
-
 @end

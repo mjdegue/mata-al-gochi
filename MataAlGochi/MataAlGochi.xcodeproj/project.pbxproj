@@ -74,6 +74,7 @@
 		0D745C721A26465500251EF1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D745C711A26465500251EF1 /* NetworkManager.m */; };
 		0DBF10E71A30E9D200EB6C68 /* VisitGochiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF10E51A30E9D200EB6C68 /* VisitGochiViewController.m */; };
 		0DBF10E81A30E9D200EB6C68 /* VisitGochiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBF10E61A30E9D200EB6C68 /* VisitGochiViewController.xib */; };
+		0DBF10EA1A31F4F900EB6C68 /* ServerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF10E91A31F4F900EB6C68 /* ServerTest.m */; };
 		0DF3D9B61A2C8E7500D0800A /* GochiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */; };
 		0DF3D9B71A2C8E7500D0800A /* GochiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */; };
 		0DF3D9BC1A2CB16E00D0800A /* RankingSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9BA1A2CB16E00D0800A /* RankingSceneViewController.m */; };
@@ -211,6 +212,7 @@
 		0DBF10E41A30E9D200EB6C68 /* VisitGochiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitGochiViewController.h; sourceTree = "<group>"; };
 		0DBF10E51A30E9D200EB6C68 /* VisitGochiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitGochiViewController.m; sourceTree = "<group>"; };
 		0DBF10E61A30E9D200EB6C68 /* VisitGochiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitGochiViewController.xib; sourceTree = "<group>"; };
+		0DBF10E91A31F4F900EB6C68 /* ServerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerTest.m; sourceTree = "<group>"; };
 		0DF3D9B31A2C8E7500D0800A /* GochiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiTableViewCell.h; sourceTree = "<group>"; };
 		0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GochiTableViewCell.m; sourceTree = "<group>"; };
 		0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GochiTableViewCell.xib; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			children = (
 				0D557A151A1BCACA00E97B72 /* MataAlGochiTests.m */,
 				0D557A131A1BCACA00E97B72 /* Supporting Files */,
+				0DBF10E91A31F4F900EB6C68 /* ServerTest.m */,
 			);
 			path = MataAlGochiTests;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBF10EA1A31F4F900EB6C68 /* ServerTest.m in Sources */,
 				0D557A161A1BCACA00E97B72 /* MataAlGochiTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

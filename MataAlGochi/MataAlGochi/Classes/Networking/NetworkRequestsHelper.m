@@ -41,6 +41,13 @@
     [self getGochiFromServerByCode:OWN_GOCHI_ID];
 }
 
+-(void) getGochiFromServerByCode:(NSString *)code success:(SuccessBlock)success failure:(FailureBlock)failure
+{
+    NSString* getUrlString = [NSString stringWithFormat:SPECIFIC_PET_GET, code];
+    
+    [[NetworkManager sharedInstance] GET:getUrlString parameters:nil success:success failure:failure];
+}
+
 -(void) getGochiFromServerByCode:(NSString *)code
 {
     
@@ -55,9 +62,12 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHI_LOADED_FAILURE object:nil];
     };
     
-    NSString* getUrlString = [NSString stringWithFormat:SPECIFIC_PET_GET, code];
-    
-    [[NetworkManager sharedInstance] GET:getUrlString parameters:nil success:success failure:failure];
+    [self getGochiFromServerByCode:code success:success failure:failure];
+}
+
+-(void) retreiveAllGochisFromServerWithSuccess:(SuccessBlock) success failure:(FailureBlock) failure
+{
+    [[NetworkManager sharedInstance] GET:ALL_PETS_GET parameters:nil success:success failure:failure];
 }
 
 -(void) retreiveAllGochisFromServer
@@ -77,8 +87,8 @@
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:NWNOTIFICATION_GOCHIS_LIST_LODED_FAILURE object:nil];
     };
+    [self retreiveAllGochisFromServerWithSuccess:success failure:failure];
     
-    [[NetworkManager sharedInstance] GET:ALL_PETS_GET parameters:nil success:success failure:failure];
 }
 
 #pragma mark - singleton
