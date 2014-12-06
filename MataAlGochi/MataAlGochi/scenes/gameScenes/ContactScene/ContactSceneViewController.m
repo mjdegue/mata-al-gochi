@@ -86,7 +86,8 @@
 
 - (void)didStartCallToPhone:(NSString *)phone
 {
-    NSString* phoneURL = [NSString stringWithFormat:@"tel:%@", phone];
+    NSString* phoneURL = [NSString stringWithFormat:@"tel://%@", phone];
+    NSLog(@"Calling with string: %@", phoneURL);
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneURL]];
 }
 
