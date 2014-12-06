@@ -15,10 +15,9 @@
 #import "NotificationManager.h"
 #import "RankingSceneViewController.h"
 #import "CoreDataHelper.h"
+#import "ContactSceneViewController.h"
 
-//Local defines
-#define MAIL_STRING_WITH_FORMAT @"Buenas! Soy %@, cómo va? Quería comentarte que estuve usando la App Mata al Gochi para comerme todo y está genial. Bajatela YA!! Saludos!"
-#define MAIL_SUBJECT @"Que App mas copada que tengo para vos";
+
 
 @interface MainSceneViewController ()
 
@@ -26,7 +25,6 @@
 @property(nonatomic,strong) Gochi* activeGochi;
 @property(nonatomic,strong) Food* activeFood;
 @property(nonatomic,strong) Game* gameInstance;
-@property(nonatomic,strong) MFMailComposeViewController* mailComposer;
 @property(nonatomic,assign) CGPoint imgOriginalPosition;
 @property(nonatomic,assign) CGRect imgOriginalFrame;
 
@@ -350,44 +348,11 @@
 #pragma mark - Mails
 -(void) prepareMailToSend
 {
-    //NSString* mailBody = [[NSString alloc] initWithFormat:MAIL_STRING_WITH_FORMAT, self.a];
-    NSString* mailBody = [[NSString alloc] initWithFormat:MAIL_STRING_WITH_FORMAT, self.activeGochi.name];
-    NSString* mailSubject = MAIL_SUBJECT;
-    self.mailComposer = [[MFMailComposeViewController alloc]init];
-    self.mailComposer.mailComposeDelegate = self;
-    [self.mailComposer setSubject:mailSubject];
-    [self.mailComposer setMessageBody:mailBody isHTML:NO];
-    [self presentViewController:self.mailComposer animated:YES completion:nil];
+    ContactSceneViewController* contactScene = [[ContactSceneViewController alloc] init];
+    [self.navigationController pushViewController:contactScene animated:YES];
+
 }
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    UIAlertView *alert;
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            alert = [[UIAlertView alloc] initWithTitle:@"Cancel by user" message:@"You canceled the mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alert show];
-            break;
-        case MFMailComposeResultSaved:
-            alert = [[UIAlertView alloc] initWithTitle:@"Draft Saved" message:@"Composed Mail is saved in draft." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alert show];
-            break;
-        case MFMailComposeResultSent:
-            alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"You have successfully sent email." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alert show];
-            break;
-        case MFMailComposeResultFailed:
-            alert = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Sorry! Failed to send." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alert show];
-            break;
-        default:
-            break;
-    }
-    
-    // Close the Mail Interface
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void) didReceiveEnemyInfo:(NSNotification* ) sender
 {

@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PetConstants.h"
 #import "FeedSceneViewController.h"
-#import <MessageUI/MessageUI.h>
 #import "GochiDelegate.h"
 
-@interface MainSceneViewController : UIViewController<FoodDelegate, UIGestureRecognizerDelegate, GochiDelegate, MFMailComposeViewControllerDelegate>
+@interface MainSceneViewController : UIViewController<FoodDelegate, UIGestureRecognizerDelegate, GochiDelegate>
 
 @end

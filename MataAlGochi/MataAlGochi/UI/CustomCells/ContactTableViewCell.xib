@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="ContactTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30S-fI-tfy">
+                        <rect key="frame" x="8" y="9" width="220" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="cmM-gN-9sN"/>
+                            <constraint firstAttribute="width" constant="220" id="itZ-eZ-Tur"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jak-xp-qy2">
+                        <rect key="frame" x="8" y="30" width="220" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twk-IH-Mga">
+                        <rect key="frame" x="8" y="48" width="220" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jia-eR-eVF">
+                        <rect key="frame" x="8" y="65" width="220" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-JR-Pyf">
+                        <rect key="frame" x="279" y="9" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="PI1-O4-ZB0"/>
+                            <constraint firstAttribute="width" constant="25" id="c7a-9U-Bte"/>
+                        </constraints>
+                        <state key="normal" image="mail_image">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="didPressMailButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ayI-fT-Z4B"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIt-0N-FWd">
+                        <rect key="frame" x="279" y="56" width="25" height="25"/>
+                        <state key="normal" backgroundImage="telephone">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="didPressPhoneButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PFR-1A-Wyq"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Twk-IH-Mga" firstAttribute="top" secondItem="Jak-xp-qy2" secondAttribute="bottom" constant="-3" id="2H6-XV-u8Z"/>
+                    <constraint firstItem="Jak-xp-qy2" firstAttribute="top" secondItem="30S-fI-tfy" secondAttribute="bottom" id="3CU-0W-U7O"/>
+                    <constraint firstItem="Jia-eR-eVF" firstAttribute="width" secondItem="30S-fI-tfy" secondAttribute="width" id="AUh-mj-uXv"/>
+                    <constraint firstItem="Jia-eR-eVF" firstAttribute="top" secondItem="Twk-IH-Mga" secondAttribute="bottom" constant="-4" id="DAd-1W-24k"/>
+                    <constraint firstItem="30S-fI-tfy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="I9i-hc-1WR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qfp-JR-Pyf" secondAttribute="trailing" constant="8" id="JUc-7e-Ogp"/>
+                    <constraint firstItem="GIt-0N-FWd" firstAttribute="width" secondItem="qfp-JR-Pyf" secondAttribute="width" id="Jhd-0b-EZP"/>
+                    <constraint firstItem="GIt-0N-FWd" firstAttribute="leading" secondItem="qfp-JR-Pyf" secondAttribute="leading" id="LHf-xs-iFS"/>
+                    <constraint firstItem="Jia-eR-eVF" firstAttribute="height" secondItem="30S-fI-tfy" secondAttribute="height" id="P3c-cN-z7Y"/>
+                    <constraint firstItem="GIt-0N-FWd" firstAttribute="height" secondItem="qfp-JR-Pyf" secondAttribute="height" id="SfS-QW-BnF"/>
+                    <constraint firstItem="Jia-eR-eVF" firstAttribute="leading" secondItem="30S-fI-tfy" secondAttribute="leading" id="cV7-W8-wN3"/>
+                    <constraint firstItem="Jak-xp-qy2" firstAttribute="width" secondItem="30S-fI-tfy" secondAttribute="width" id="dRT-qF-3aY"/>
+                    <constraint firstItem="Twk-IH-Mga" firstAttribute="height" secondItem="30S-fI-tfy" secondAttribute="height" id="fY3-Ie-Ceb"/>
+                    <constraint firstItem="30S-fI-tfy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gKJ-Ba-lXL"/>
+                    <constraint firstItem="Jak-xp-qy2" firstAttribute="leading" secondItem="30S-fI-tfy" secondAttribute="leading" id="gZH-uv-OaP"/>
+                    <constraint firstItem="Twk-IH-Mga" firstAttribute="leading" secondItem="30S-fI-tfy" secondAttribute="leading" id="niC-EK-KhI"/>
+                    <constraint firstItem="Twk-IH-Mga" firstAttribute="width" secondItem="30S-fI-tfy" secondAttribute="width" id="nrM-BO-1Vq"/>
+                    <constraint firstItem="Jak-xp-qy2" firstAttribute="height" secondItem="30S-fI-tfy" secondAttribute="height" id="rdw-38-puI"/>
+                    <constraint firstItem="qfp-JR-Pyf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="xUS-LV-ZtB"/>
+                    <constraint firstItem="GIt-0N-FWd" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="yfS-QA-oHG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnMailButton" destination="qfp-JR-Pyf" id="KaG-TZ-U66"/>
+                <outlet property="btnPhoneButton" destination="GIt-0N-FWd" id="2UH-va-Uhs"/>
+                <outlet property="lblCompany" destination="Jia-eR-eVF" id="iK8-VJ-a7y"/>
+                <outlet property="lblMail" destination="Jak-xp-qy2" id="z22-Mt-NIb"/>
+                <outlet property="lblName" destination="30S-fI-tfy" id="zAI-Bd-1pF"/>
+                <outlet property="lblPhone" destination="Twk-IH-Mga" id="bWY-s9-52o"/>
+            </connections>
+            <point key="canvasLocation" x="220" y="103"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mail_image" width="50" height="50"/>
+        <image name="telephone" width="32" height="32"/>
+    </resources>
+</document>
