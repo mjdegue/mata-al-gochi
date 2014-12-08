@@ -20,6 +20,7 @@
 #import "TamagochiNameSelectionViewController.h"
 #import "VisitGochiViewController.h"
 #import "NetworkRequestsHelper.h"
+#import "ContactsManager.h"
 
 @interface AppDelegate ()
 
@@ -55,7 +56,8 @@
     //ends Game initialization
     
     
-
+    //ask user contact information
+    [[ContactsManager sharedInstance] askAuthorizationToUser];    
     
     //Register for local notifications
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)

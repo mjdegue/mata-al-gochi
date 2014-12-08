@@ -75,6 +75,12 @@
 		0DBF10E71A30E9D200EB6C68 /* VisitGochiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF10E51A30E9D200EB6C68 /* VisitGochiViewController.m */; };
 		0DBF10E81A30E9D200EB6C68 /* VisitGochiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBF10E61A30E9D200EB6C68 /* VisitGochiViewController.xib */; };
 		0DBF10EA1A31F4F900EB6C68 /* ServerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF10E91A31F4F900EB6C68 /* ServerTest.m */; };
+		0DBF11611A32434800EB6C68 /* ContactSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF115F1A32434800EB6C68 /* ContactSceneViewController.m */; };
+		0DBF11621A32434800EB6C68 /* ContactSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBF11601A32434800EB6C68 /* ContactSceneViewController.xib */; };
+		0DBF11641A3243E700EB6C68 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBF11631A3243E700EB6C68 /* AddressBook.framework */; };
+		0DBF116A1A324FD000EB6C68 /* ContactsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF11691A324FD000EB6C68 /* ContactsManager.m */; };
+		0DBF116E1A33376600EB6C68 /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF116C1A33376600EB6C68 /* ContactTableViewCell.m */; };
+		0DBF116F1A33376600EB6C68 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBF116D1A33376600EB6C68 /* ContactTableViewCell.xib */; };
 		0DF3D9B61A2C8E7500D0800A /* GochiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */; };
 		0DF3D9B71A2C8E7500D0800A /* GochiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */; };
 		0DF3D9BC1A2CB16E00D0800A /* RankingSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3D9BA1A2CB16E00D0800A /* RankingSceneViewController.m */; };
@@ -213,6 +219,16 @@
 		0DBF10E51A30E9D200EB6C68 /* VisitGochiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitGochiViewController.m; sourceTree = "<group>"; };
 		0DBF10E61A30E9D200EB6C68 /* VisitGochiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitGochiViewController.xib; sourceTree = "<group>"; };
 		0DBF10E91A31F4F900EB6C68 /* ServerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerTest.m; sourceTree = "<group>"; };
+		0DBF115E1A32434800EB6C68 /* ContactSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactSceneViewController.h; sourceTree = "<group>"; };
+		0DBF115F1A32434800EB6C68 /* ContactSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactSceneViewController.m; sourceTree = "<group>"; };
+		0DBF11601A32434800EB6C68 /* ContactSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactSceneViewController.xib; sourceTree = "<group>"; };
+		0DBF11631A3243E700EB6C68 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		0DBF11651A3243EC00EB6C68 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		0DBF11681A324FD000EB6C68 /* ContactsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsManager.h; sourceTree = "<group>"; };
+		0DBF11691A324FD000EB6C68 /* ContactsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsManager.m; sourceTree = "<group>"; };
+		0DBF116B1A33376600EB6C68 /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
+		0DBF116C1A33376600EB6C68 /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
+		0DBF116D1A33376600EB6C68 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		0DF3D9B31A2C8E7500D0800A /* GochiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GochiTableViewCell.h; sourceTree = "<group>"; };
 		0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GochiTableViewCell.m; sourceTree = "<group>"; };
 		0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GochiTableViewCell.xib; sourceTree = "<group>"; };
@@ -226,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBF11641A3243E700EB6C68 /* AddressBook.framework in Frameworks */,
 				0D6AD1F01A2F603A00856772 /* CoreData.framework in Frameworks */,
 				0D57EA621A28C97400200A2C /* Bolts.framework in Frameworks */,
 				0D57EA601A28C6A300200A2C /* SystemConfiguration.framework in Frameworks */,
@@ -301,6 +318,8 @@
 		0D5579ED1A1BCACA00E97B72 = {
 			isa = PBXGroup;
 			children = (
+				0DBF11651A3243EC00EB6C68 /* AddressBookUI.framework */,
+				0DBF11631A3243E700EB6C68 /* AddressBook.framework */,
 				0D6AD1EF1A2F603A00856772 /* CoreData.framework */,
 				0D229C141A2D114000B023CD /* MapKit.framework */,
 				0D57EA611A28C97400200A2C /* Bolts.framework */,
@@ -390,6 +409,7 @@
 		0D557A251A1BD50E00E97B72 /* gameScenes */ = {
 			isa = PBXGroup;
 			children = (
+				0DBF115D1A32432500EB6C68 /* ContactScene */,
 				0DBF10E01A30D80E00EB6C68 /* VisitGochi */,
 				0D229C0A1A2D0A1300B023CD /* GochiInMap */,
 				0DF3D9B81A2CB15900D0800A /* RankingScene */,
@@ -451,6 +471,7 @@
 		0D557B4F1A1D250100E97B72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0DBF11671A324F7900EB6C68 /* ContactsManager */,
 				0D229C1A1A2E338500B023CD /* Settings */,
 				0D229C161A2E03D600B023CD /* FileManager */,
 				0D229C101A2D0CF200B023CD /* Annotations */,
@@ -542,6 +563,9 @@
 				0DF3D9B31A2C8E7500D0800A /* GochiTableViewCell.h */,
 				0DF3D9B41A2C8E7500D0800A /* GochiTableViewCell.m */,
 				0DF3D9B51A2C8E7500D0800A /* GochiTableViewCell.xib */,
+				0DBF116B1A33376600EB6C68 /* ContactTableViewCell.h */,
+				0DBF116C1A33376600EB6C68 /* ContactTableViewCell.m */,
+				0DBF116D1A33376600EB6C68 /* ContactTableViewCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -687,6 +711,25 @@
 			path = VisitGochi;
 			sourceTree = "<group>";
 		};
+		0DBF115D1A32432500EB6C68 /* ContactScene */ = {
+			isa = PBXGroup;
+			children = (
+				0DBF115E1A32434800EB6C68 /* ContactSceneViewController.h */,
+				0DBF115F1A32434800EB6C68 /* ContactSceneViewController.m */,
+				0DBF11601A32434800EB6C68 /* ContactSceneViewController.xib */,
+			);
+			path = ContactScene;
+			sourceTree = "<group>";
+		};
+		0DBF11671A324F7900EB6C68 /* ContactsManager */ = {
+			isa = PBXGroup;
+			children = (
+				0DBF11681A324FD000EB6C68 /* ContactsManager.h */,
+				0DBF11691A324FD000EB6C68 /* ContactsManager.m */,
+			);
+			path = ContactsManager;
+			sourceTree = "<group>";
+		};
 		0DF3D9B81A2CB15900D0800A /* RankingScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +831,7 @@
 			files = (
 				0DF3D9BD1A2CB16E00D0800A /* RankingSceneViewController.xib in Resources */,
 				0D557B481A1BE4AC00E97B72 /* MainSceneViewController.xib in Resources */,
+				0DBF116F1A33376600EB6C68 /* ContactTableViewCell.xib in Resources */,
 				0D557B7E1A1E6E7200E97B72 /* FoodTableViewCell.xib in Resources */,
 				0D557A0A1A1BCACA00E97B72 /* LaunchScreen.xib in Resources */,
 				0D557A2D1A1BD50E00E97B72 /* TamagochiNameSelectionViewController.xib in Resources */,
@@ -797,6 +841,7 @@
 				0D557A321A1BD54000E97B72 /* TamagochiAssetSelectorViewController.xib in Resources */,
 				0DF3D9B71A2C8E7500D0800A /* GochiTableViewCell.xib in Resources */,
 				0D557B4E1A1CED2C00E97B72 /* MainMenuViewController.xib in Resources */,
+				0DBF11621A32434800EB6C68 /* ContactSceneViewController.xib in Resources */,
 				0D557A071A1BCACA00E97B72 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +866,7 @@
 				0D745C681A2644F200251EF1 /* UIImageView+AFNetworking.m in Sources */,
 				0D745C6A1A2644F200251EF1 /* UIRefreshControl+AFNetworking.m in Sources */,
 				0DBF10E71A30E9D200EB6C68 /* VisitGochiViewController.m in Sources */,
+				0DBF11611A32434800EB6C68 /* ContactSceneViewController.m in Sources */,
 				0D557B5D1A1D445A00E97B72 /* Game.m in Sources */,
 				0D2D08C11A2660C6005D1421 /* NetworkRequestsHelper.m in Sources */,
 				0D5579FF1A1BCACA00E97B72 /* AppDelegate.m in Sources */,
@@ -846,6 +892,7 @@
 				0D557A311A1BD54000E97B72 /* TamagochiAssetSelectorViewController.m in Sources */,
 				0D557B591A1D291900E97B72 /* Gochi.m in Sources */,
 				0D745C661A2644F200251EF1 /* UIAlertView+AFNetworking.m in Sources */,
+				0DBF116E1A33376600EB6C68 /* ContactTableViewCell.m in Sources */,
 				0D557B821A1FB1C200E97B72 /* PetFactory.m in Sources */,
 				0DF3D9BC1A2CB16E00D0800A /* RankingSceneViewController.m in Sources */,
 				0D229C081A2CE65F00B023CD /* LocationHelper.m in Sources */,
@@ -854,6 +901,7 @@
 				0D557B531A1D254900E97B72 /* CreationFlow.m in Sources */,
 				0D745C721A26465500251EF1 /* NetworkManager.m in Sources */,
 				0D745C491A26425800251EF1 /* AFSecurityPolicy.m in Sources */,
+				0DBF116A1A324FD000EB6C68 /* ContactsManager.m in Sources */,
 				0D557B771A1E671300E97B72 /* ImageLoader.m in Sources */,
 				0D745C641A2644F200251EF1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				0D745C461A26425800251EF1 /* AFHTTPRequestOperationManager.m in Sources */,
