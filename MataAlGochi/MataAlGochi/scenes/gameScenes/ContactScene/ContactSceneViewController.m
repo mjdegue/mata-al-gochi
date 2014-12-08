@@ -86,9 +86,18 @@
 
 - (void)didStartCallToPhone:(NSString *)phone
 {
-    NSString* phoneURL = [NSString stringWithFormat:@"tel://%@", phone];
-    NSLog(@"Calling with string: %@", phoneURL);
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneURL]];
+    NSString* phoneStr = [NSString stringWithFormat:@"tel://%@", phone];
+    
+    NSURL* phoneURL = [NSURL URLWithString:phoneStr];
+    if([[UIApplication sharedApplication] canOpenURL:phoneURL])
+    {
+        [[UIApplication sharedApplication] openURL:phoneURL];
+    }
+    else
+    {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Poor guy" message:@"You have to buy a device, poor guy" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 //Local defines
